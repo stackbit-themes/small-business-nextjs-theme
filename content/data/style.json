@@ -13,13 +13,13 @@
         "letterSpacing": "normal"
     },
     "h3": {
-        "weight": "bold",
+        "weight": "normal",
         "decoration": "none",
         "case": "none",
         "letterSpacing": "normal"
     },
     "fontBody": "ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
-    "fontHeadlines": "ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+    "fontHeadlines": "ui-serif, Georgia, Cambria, \"Times New Roman\", Times, serif",
     "body": "#414c58",
     "headlines": "#303941",
     "primary": "#ff3064",
@@ -31,8 +31,8 @@
         "weight": "normal",
         "case": "none",
         "letterSpacing": "normal",
-        "borderRadius": 0,
-        "horizontalPadding": 24,
+        "borderRadius": "9999px",
+        "horizontalPadding": 30,
         "verticalPadding": 12,
         "shadow": "none"
     },
@@ -40,9 +40,9 @@
         "weight": "normal",
         "case": "none",
         "letterSpacing": "normal",
-        "borderRadius": 0,
+        "borderRadius": "9999px",
         "borderStyle": "solid",
-        "horizontalPadding": 24,
+        "horizontalPadding": 30,
         "verticalPadding": 12,
         "shadow": "none"
     }

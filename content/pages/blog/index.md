@@ -6,17 +6,25 @@ sections:
     elementId: ''
     colors: colors-b
     quote: |
-      # Experience it for yourself
+      ## Experience it for yourself
     backgroundImage:
       type: ImageBlock
-      url: /images/bg.png
+      url: /images/BG.png
       altText: Product Marketing Manager Quote
     styles:
       self:
         height: auto
         width: wide
-        margin: ["mt-0", "mb-0", "ml-0", "mr-0"]
-        padding: ["pt-36", "pb-12", "pr-4", "pl-4"]
+        margin:
+          - mt-0
+          - mb-0
+          - ml-0
+          - mr-0
+        padding:
+          - pt-36
+          - pb-12
+          - pr-4
+          - pl-4
         justifyContent: center
       quote:
         textAlign: left
@@ -31,7 +39,7 @@ sections:
   - type: FeaturedPostsSection
     variant: variant-a
     colors: colors-a
-    title: Current offers
+    title: Upcoming adventures
     posts:
       - content/pages/blog/post-three.md
       - content/pages/blog/post-two.md
@@ -40,62 +48,131 @@ sections:
       self:
         height: auto
         width: wide
-        margin: ["mt-0", "mb-0", "ml-0", "mr-0"]
-        padding: ["pt-12", "pb-12", "pr-4", "pl-4"]
+        margin:
+          - mt-0
+          - mb-0
+          - ml-0
+          - mr-0
+        padding:
+          - pt-36
+          - pb-36
+          - pr-4
+          - pl-4
         justifyContent: center
       title:
         fontWeight: '700'
         fontStyle: normal
         textAlign: center
-        margin: ["mt-0", "mb-12"]
+        margin:
+          - mt-0
+          - mb-12
       subtitle:
         fontWeight: '400'
         fontStyle: normal
         textAlign: center
       actions:
         justifyContent: center
-  - type: HeroSection
-    elementId: ''
-    colors: colors-f
-    title: All about the art of selling fish
-    subtitle: Fresh. Better. Faster
-    text: |-
-      Aenean eros ipsum, interdum quis dignissim non, sollicitudin vitae nisl. Aenean vel aliquet elit, at blandit ipsum. Sed eleifend felis sit amet erat molestie, hendrerit malesuada justo ultrices. Nunc volutpat at erat vitae interdum. Ut nec massa eget lorem blandit condimentum et at risus.
-    actions:
-      - type: Button
-        label: Get Started
-        url: /
-        style: primary
-        elementId: hero-main-button
-      - type: Button
-        label: Learn More
-        url: /
-        style: secondary
-    feature:
-      type: ImageBlock
-      url: /images/hero-image.png
-      altText: Hero section image
+  - elementId: ''
+    colors: colors-c
+    quote: >
+      ### “I couldn’t believe how fun walking up at 5am could be.  Would
+      definitely consider doing this again”.
+    backgroundImage:
+      url: /images/fishing-three.jpg
+      altText: ''
+      styles:
+        self:
+          opacity: 75
+    styles:
+      self:
+        height: screen
+        width: wide
+        margin:
+          - mt-0
+          - mb-0
+          - ml-0
+          - mr-0
+        padding:
+          - pt-36
+          - pb-4
+          - pl-4
+          - pr-4
+        justifyContent: center
+      quote:
+        textAlign: left
+      name:
+        fontWeight: 400
+        fontStyle: normal
+        textAlign: left
+      title:
+        fontWeight: 400
+        fontStyle: normal
+        textAlign: left
+    type: QuoteSection
+  - elementId: contact-form
+    colors: colors-a
+    title: Join our club
+    text: >
+      We will notify you every time a shipment is heading to your neighbourhood,
+      and you could immediately let us know if you want in or not
+    form:
+      type: FormBlock
+      elementId: contact-form
+      action: /.netlify/functions/submission_created
+      destination: ''
+      fields:
+        - type: TextFormControl
+          name: name
+          label: Name
+          placeholder: Your name
+          isRequired: true
+          width: 1/2
+        - type: EmailFormControl
+          name: email
+          label: Email
+          placeholder: Your email
+          isRequired: true
+          width: 1/2
+        - type: TextFormControl
+          name: home-address
+          label: Home address
+          placeholder: Your home address
+          isRequired: true
+          width: full
+        - type: CheckboxFormControl
+          name: updates
+          label: Sign me up to receive updates
+          width: full
+      submitLabel: Send Message
     styles:
       self:
         height: auto
-        width: wide
-        margin: ['mt-0', 'mb-0', 'ml-0', 'mr-0']
-        padding: ['pt-12', 'pb-12', 'pl-4', 'pr-4']
+        width: narrow
+        margin:
+          - mt-0
+          - mb-36
+          - ml-0
+          - mr-0
+        padding:
+          - pt-12
+          - pb-12
+          - pl-4
+          - pr-4
         alignItems: center
         justifyContent: center
-        flexDirection: row
+        flexDirection: col
       title:
-        fontWeight: '700'
+        fontWeight: 700
         fontStyle: normal
-        textAlign: left
-      subtitle:
-        fontWeight: '400'
-        fontStyle: normal
-        textAlign: left
-        margin: ['mt-5', 'mb-5']
+        textAlign: center
+        margin:
+          - mt-36
+          - mb-12
       text:
-        textAlign: left
-        margin: ['mt-0', 'mb-10']
-      actions:
-        justifyContent: flex-start
+        textAlign: center
+        margin:
+          - mt-0
+          - mb-12
+    action: /.netlify/functions/submission_created
+    type: ContactSection
 ---

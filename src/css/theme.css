@@ -11,3 +11,12 @@
     }
 }
 */
+
+@layer components {
+    .sb-input,
+    .sb-select,
+    .sb-textarea {
+        @apply border-2;
+    }
+}
+

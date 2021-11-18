@@ -8,7 +8,7 @@ excerpt: >-
   the sea has to offer, nothing more, and no cheating.
 featuredImage:
   type: ImageBlock
-  url: /images/dude-holding-fish.png
+  url: /images/fishing.jpg
   altText: Post Image
 bottomSections:
   - type: CtaSection

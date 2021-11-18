@@ -1,7 +1,7 @@
 {
     "type": "Config",
     "header": {
-        "headerVariant": "variant-d",
+        "headerVariant": "variant-c",
         "primaryColors": "colors-b",
         "secondaryColors": "colors-i",
         "title": "Small Business",
@@ -34,16 +34,23 @@
         "secondaryLinks": [
             {
                 "type": "Button",
-                "label": "Join us",
+                "label": "Contact us",
                 "url": "/",
-                "altText": "Join us",
-                "style": "secondary"
+                "altText": "Contact us",
+                "style": "secondary",
+                "showIcon": true,
+                "icon": "arrowRight"
             }
         ],
         "styles": {
             "self": {
                 "width": "narrow",
-                "padding": ["pt-5", "pb-5", "pr-4", "pl-4"]
+                "padding": [
+                    "pt-5",
+                    "pb-5",
+                    "pr-4",
+                    "pl-4"
+                ]
             }
         }
     },
@@ -116,7 +123,12 @@
         "styles": {
             "self": {
                 "width": "narrow",
-                "padding": ["pt-16", "pb-16", "pr-4", "pl-4"]
+                "padding": [
+                    "pt-16",
+                    "pb-16",
+                    "pr-4",
+                    "pl-4"
+                ]
             }
         }
     }

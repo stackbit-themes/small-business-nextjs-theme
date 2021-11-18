@@ -5,10 +5,8 @@ sections:
   - type: HeroSection
     elementId: ''
     colors: colors-a
-    title: We do fishing differently.
+    title: We do fishing differently
     subtitle: Fresh. Better. Faster
-    text: |-
-      Aenean eros ipsum, interdum quis dignissim non, sollicitudin vitae nisl. Aenean vel aliquet elit, at blandit ipsum. Sed eleifend felis sit amet erat molestie, hendrerit malesuada justo ultrices. Nunc volutpat at erat vitae interdum. Ut nec massa eget lorem blandit condimentum et at risus.
     actions:
       - type: Button
         label: Get Started
@@ -18,53 +16,104 @@ sections:
         label: Learn More
         url: /
         style: secondary
+        showIcon: true
+        icon: arrowRight
     feature:
       type: ImageBlock
-      url: /images/hero-image.png
+      url: /images/hero.jpg
       altText: Hero section image
     styles:
       self:
-        height: screen
+        height: auto
         width: wide
-        margin: ["mt-0", "mb-0", "ml-0", "mr-0"]
-        padding: ["pt-12", "pb-12", "pr-4", "pl-4"]
+        margin:
+          - mt-24
+          - mb-0
+          - ml-0
+          - mr-0
+        padding:
+          - pt-12
+          - pb-12
+          - pr-4
+          - pl-4
         alignItems: center
         justifyContent: center
-        flexDirection: row-reverse
+        flexDirection: col
       title:
         fontWeight: '700'
         fontStyle: normal
-        textAlign: left
+        textAlign: center
       subtitle:
         fontWeight: '400'
         fontStyle: normal
-        textAlign: left
-        margin: ["mt-8", "mb-8"]
+        textAlign: center
+        margin:
+          - mt-8
+          - mb-8
       text:
-        textAlign: left
+        textAlign: center
       actions:
-        justifyContent: flex-start
+        justifyContent: center
+  - elementId: ''
+    colors: colors-a
+    quote: >
+      ## “It’s great to see someone taking action while still maintaining a
+      sustainbale fish supply to home cooks. ”
+    name: Johnna Doe
+    title: Head chef at Parks
+    backgroundImage:
+      url: /images/BG.png
+      altText: Product Marketing Manager Quote
+    styles:
+      self:
+        height: auto
+        width: wide
+        margin:
+          - mt-0
+          - mb-0
+          - ml-0
+          - mr-0
+        padding:
+          - pt-36
+          - pb-36
+          - pl-4
+          - pr-4
+        justifyContent: center
+      quote:
+        textAlign: center
+      name:
+        fontWeight: 400
+        fontStyle: normal
+        textAlign: center
+      title:
+        fontWeight: 400
+        fontStyle: normal
+        textAlign: center
+    type: QuoteSection
   - type: FeaturedPostsSection
     elementId: ''
     variant: variant-a
     colors: colors-a
-    title: Services & Experiences
-    subtitle: "Like we said, it's more than just fishing"
-    actions:
-      - type: Button
-        label: View all
-        url: /
-        style: primary
+    title: Upcoming adventures
+    subtitle: 'Like we said, it''s more than just fishing'
     posts:
       - content/pages/blog/post-three.md
       - content/pages/blog/post-two.md
       - content/pages/blog/post-one.md
     styles:
       self:
-        height: screen
+        height: auto
         width: wide
-        margin: ["mt-0", "mb-0", "ml-0", "mr-0"]
-        padding: ["pt-12", "pb-12", "pr-4", "pl-4"]
+        margin:
+          - mt-24
+          - mb-36
+          - ml-0
+          - mr-0
+        padding:
+          - pt-12
+          - pb-12
+          - pr-4
+          - pl-4
         justifyContent: center
       title:
         fontWeight: '700'
@@ -74,14 +123,54 @@ sections:
         fontWeight: '400'
         fontStyle: normal
         textAlign: center
-        margin: ["mt-0", "mb-12"]
+        margin:
+          - mt-0
+          - mb-12
       actions:
         justifyContent: center
-  - type: ContactSection
-    elementId: contact-form
-    colors: colors-f
-    title: Contact us
-    text: We look forward to hearing from you.
+  - elementId: ''
+    colors: colors-c
+    quote: >
+      ### This is someone else, not from our team, but she also loves fishing, so
+      we thought we should highlight her.
+    backgroundImage:
+      url: /images/fishing.jpg
+      altText: ''
+      styles:
+        self:
+          opacity: 75
+    styles:
+      self:
+        height: screen
+        width: wide
+        margin:
+          - mt-0
+          - mb-0
+          - ml-0
+          - mr-0
+        padding:
+          - pt-36
+          - pb-4
+          - pl-4
+          - pr-4
+        justifyContent: center
+      quote:
+        textAlign: left
+      name:
+        fontWeight: 400
+        fontStyle: normal
+        textAlign: left
+      title:
+        fontWeight: 400
+        fontStyle: normal
+        textAlign: left
+    type: QuoteSection
+  - elementId: contact-form
+    colors: colors-a
+    title: Join our club
+    text: >
+      We will notify you every time a shipment is heading to your neighbourhood,
+      and you could immediately let us know if you want in or not
     form:
       type: FormBlock
       elementId: contact-form
@@ -111,25 +200,35 @@ sections:
           label: Sign me up to receive updates
           width: full
       submitLabel: Send Message
-    feature:
-      type: ImageBlock
-      url: /images/trout.png
-      altText: Contact form image
     styles:
       self:
         height: auto
-        width: wide
-        margin: ["mt-0", "mb-0", "ml-0", "mr-0"]
-        padding: ["pt-12", "pb-24", "pr-4", "pl-4"]
+        width: narrow
+        margin:
+          - mt-0
+          - mb-36
+          - ml-0
+          - mr-0
+        padding:
+          - pt-12
+          - pb-12
+          - pl-4
+          - pr-4
         alignItems: center
         justifyContent: center
-        flexDirection: row-reverse
+        flexDirection: col
       title:
-        fontWeight: '700'
+        fontWeight: 700
         fontStyle: normal
-        textAlign: left
-        margin: ["mt-0", "mb-4"]
+        textAlign: center
+        margin:
+          - mt-36
+          - mb-12
       text:
-        textAlign: left
-        margin: ["mt-0", "mb-12"]
+        textAlign: center
+        margin:
+          - mt-0
+          - mb-12
+    action: /.netlify/functions/submission_created
+    type: ContactSection
 ---
