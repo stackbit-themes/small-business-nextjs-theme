@@ -2,245 +2,22 @@
     "model": "TestimonialsSection",
     "presets": [
         {
-            "label": "Light, same alignment",
-            "thumbnail": "images/testimonial-light.jpg",
+            "label": "Testimonials light - with big image, text left",
+            "thumbnail": "images/testimonials-light-big-image.png",
             "data": {
                 "colors": "colors-a",
-                "title": "Testimonials",
-                "subtitle": "What our customers say about us",
-                "testimonials": [
-                    {
-                        "quote": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
-                        "name": "Hilary Ouse",
-                        "title": "Head Fisherman & Finance",
-                        "image": {
-                            "type": "ImageBlock",
-                            "url": "/images/fisherwoman.jpg",
-                            "altText": "Head Fisherman & Finance"
-                        },
-                        "styles": {
-                            "self": {
-                                "margin": ["mt-0", "mb-0"],
-                                "flexDirection": "row-reverse"
-                            },
-                            "quote": {
-                                "textAlign": "left"
-                            },
-                            "name": {
-                                "fontWeight": 400,
-                                "fontStyle": "normal",
-                                "textAlign": "left"
-                            },
-                            "title": {
-                                "fontWeight": 400,
-                                "fontStyle": "normal",
-                                "textAlign": "left"
-                            }
-                        }
-                    },
-                    {
-                        "quote": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-                        "name": "Dianne Ameter",
-                        "title": "Head Fisherman & Founder",
-                        "image": {
-                            "type": "ImageBlock",
-                            "url": "/images/fisherwoman2.jpg",
-                            "altText": "Head Fisherman & Founder"
-                        },
-                        "styles": {
-                            "self": {
-                                "margin": ["mt-0", "mb-0"],
-                                "flexDirection": "row-reverse"
-                            },
-                            "quote": {
-                                "textAlign": "left"
-                            },
-                            "name": {
-                                "fontWeight": 400,
-                                "fontStyle": "normal",
-                                "textAlign": "left"
-                            },
-                            "title": {
-                                "fontWeight": 400,
-                                "fontStyle": "normal",
-                                "textAlign": "left"
-                            }
-                        }
-                    }
-                ],
-                "styles": {
-                    "self": {
-                        "height": "auto",
-                        "width": "wide",
-                        "margin": ["mt-0", "mb-0", "ml-0", "mr-0"],
-                        "padding": ["pt-12", "pb-12", "pl-4", "pr-4"],
-                        "justifyContent": "center"
-                    },
-                    "title": {
-                        "fontWeight": 700,
-                        "fontStyle": "normal",
-                        "textAlign": "left"
-                    },
-                    "subtitle": {
-                        "fontWeight": 400,
-                        "fontStyle": "normal",
-                        "textAlign": "left"
-                    }
-                }
-            }
-        },
-        {
-            "label": "Light, different alignment",
-            "thumbnail": "images/testimonial-diff-align.jpg",
-            "data": {
-                "colors": "colors-a",
-                "title": "Testimonials",
-                "subtitle": "What our customers say about us",
-                "testimonials": [
-                    {
-                        "quote": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
-                        "name": "Hilary Ouse",
-                        "title": "Head Fisherman & Finance",
-                        "image": {
-                            "type": "ImageBlock",
-                            "url": "/images/fisherwoman.jpg",
-                            "altText": "Head Fisherman & Finance"
-                        },
-                        "styles": {
-                            "self": {
-                                "margin": ["mt-0", "mb-0"],
-                                "flexDirection": "row-reverse"
-                            },
-                            "quote": {
-                                "textAlign": "right"
-                            },
-                            "name": {
-                                "fontWeight": 400,
-                                "fontStyle": "normal",
-                                "textAlign": "right"
-                            },
-                            "title": {
-                                "fontWeight": 400,
-                                "fontStyle": "normal",
-                                "textAlign": "right"
-                            }
-                        }
-                    },
-                    {
-                        "quote": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-                        "name": "Dianne Ameter",
-                        "title": "Head Fisherman & Founder",
-                        "image": {
-                            "type": "ImageBlock",
-                            "url": "/images/fisherwoman2.jpg",
-                            "altText": "Head Fisherman & Founder"
-                        },
-                        "styles": {
-                            "self": {
-                                "margin": ["mt-0", "mb-0"],
-                                "flexDirection": "row"
-                            },
-                            "quote": {
-                                "textAlign": "left"
-                            },
-                            "name": {
-                                "fontWeight": 400,
-                                "fontStyle": "normal",
-                                "textAlign": "left"
-                            },
-                            "title": {
-                                "fontWeight": 400,
-                                "fontStyle": "normal",
-                                "textAlign": "left"
-                            }
-                        }
-                    }
-                ],
-                "styles": {
-                    "self": {
-                        "height": "auto",
-                        "width": "wide",
-                        "margin": ["mt-0", "mb-0", "ml-0", "mr-0"],
-                        "padding": ["pt-12", "pb-12", "pl-4", "pr-4"],
-                        "justifyContent": "center"
-                    },
-                    "title": {
-                        "fontWeight": 700,
-                        "fontStyle": "normal",
-                        "textAlign": "left"
-                    },
-                    "subtitle": {
-                        "fontWeight": 400,
-                        "fontStyle": "normal",
-                        "textAlign": "left"
-                    }
-                }
-            }
-        },
-        {
-            "label": "Dark, same alignment, no title",
-            "thumbnail": "images/testimonial-dark.jpg",
-            "data": {
-                "colors": "colors-c",
+                "variant": "variant-a",
                 "title": "",
                 "subtitle": "",
                 "testimonials": [
                     {
-                        "quote": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
-                        "name": "Hilary Ouse",
-                        "title": "Head Fisherman & Finance",
+                        "quote": "\"Such a great experience to be using this product. It really helped with what I needed help with.\"\n",
+                        "name": "Carla Rogers",
+                        "title": "Happy customer",
                         "image": {
                             "type": "ImageBlock",
-                            "url": "/images/fisherwoman.jpg",
-                            "altText": "Head Fisherman & Finance"
-                        },
-                        "styles": {
-                            "self": {
-                                "margin": ["mt-0", "mb-0"],
-                                "flexDirection": "row"
-                            },
-                            "quote": {
-                                "textAlign": "right"
-                            },
-                            "name": {
-                                "fontWeight": 400,
-                                "fontStyle": "normal",
-                                "textAlign": "right"
-                            },
-                            "title": {
-                                "fontWeight": 400,
-                                "fontStyle": "normal",
-                                "textAlign": "right"
-                            }
-                        }
-                    },
-                    {
-                        "quote": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-                        "name": "Dianne Ameter",
-                        "title": "Head Fisherman & Founder",
-                        "image": {
-                            "type": "ImageBlock",
-                            "url": "/images/fisherwoman2.jpg",
-                            "altText": "Head Fisherman & Founder"
-                        },
-                        "styles": {
-                            "self": {
-                                "margin": ["mt-0", "mb-0"],
-                                "flexDirection": "row"
-                            },
-                            "quote": {
-                                "textAlign": "right"
-                            },
-                            "name": {
-                                "fontWeight": 400,
-                                "fontStyle": "normal",
-                                "textAlign": "right"
-                            },
-                            "title": {
-                                "fontWeight": 400,
-                                "fontStyle": "normal",
-                                "textAlign": "right"
-                            }
+                            "url": "/images/carla.jpg",
+                            "altText": "Photo of Carla Rogers"
                         }
                     }
                 ],
@@ -248,22 +25,92 @@
                     "self": {
                         "height": "auto",
                         "width": "wide",
-                        "margin": ["mt-0", "mb-0", "ml-0", "mr-0"],
-                        "padding": ["pt-12", "pb-12", "pl-4", "pr-4"],
+                        "margin": ["mt-0", "mb-0"],
+                        "padding": ["pt-28", "pb-28"],
                         "justifyContent": "center"
                     },
                     "title": {
-                        "fontWeight": 700,
-                        "fontStyle": "normal",
-                        "textAlign": "right"
+                        "textAlign": "center"
                     },
                     "subtitle": {
-                        "fontWeight": 400,
-                        "fontStyle": "normal",
-                        "textAlign": "right"
+                        "textAlign": "center"
                     }
                 }
             }
-        }  
+        },
+        {
+            "label": "Testimonials light - with small image, text left",
+            "thumbnail": "images/testimonials-light-small-image.png",
+            "data": {
+                "colors": "colors-a",
+                "variant": "variant-b",
+                "title": "",
+                "subtitle": "",
+                "testimonials": [
+                    {
+                        "quote": "\"Such a great experience to be using this product. It really helped with what I needed help with.\"\n",
+                        "name": "Carla Rogers",
+                        "title": "Happy customer",
+                        "image": {
+                            "type": "ImageBlock",
+                            "url": "/images/carla.jpg",
+                            "altText": "Photo of Carla Rogers"
+                        }
+                    }
+                ],
+                "styles": {
+                    "self": {
+                        "height": "auto",
+                        "width": "wide",
+                        "margin": ["mt-0", "mb-0"],
+                        "padding": ["pt-28", "pb-28"],
+                        "justifyContent": "center"
+                    },
+                    "title": {
+                        "textAlign": "left"
+                    },
+                    "subtitle": {
+                        "textAlign": "left"
+                    }
+                }
+            }
+        },
+        {
+            "label": "Testimonials light - with small image, text center",
+            "thumbnail": "images/testimonials-light-text-image.png",
+            "data": {
+                "colors": "colors-a",
+                "variant": "variant-c",
+                "title": "",
+                "subtitle": "",
+                "testimonials": [
+                    {
+                        "quote": "\"Such a great experience to be using this product. It really helped with what I needed help with.\"\n",
+                        "name": "Carla Rogers",
+                        "title": "Happy customer",
+                        "image": {
+                            "type": "ImageBlock",
+                            "url": "/images/carla.jpg",
+                            "altText": "Photo of Carla Rogers"
+                        }
+                    }
+                ],
+                "styles": {
+                    "self": {
+                        "height": "auto",
+                        "width": "wide",
+                        "margin": ["mt-0", "mb-0"],
+                        "padding": ["pt-28", "pb-28"],
+                        "justifyContent": "center"
+                    },
+                    "title": {
+                        "textAlign": "center"
+                    },
+                    "subtitle": {
+                        "textAlign": "center"
+                    }
+                }
+            }
+        }
     ]
 }

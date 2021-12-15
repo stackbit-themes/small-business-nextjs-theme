@@ -1,13 +1,12 @@
 {
     "type": "Person",
-    "id": "dianne-ameter",
     "firstName": "Dianne",
     "lastName": "Ameter",
-    "role": "Head Fisherwoman & Founder",
+    "role": "Designer",
     "bio": "This feature is the thing you were missing in your workflow, thank god we have it for you to use.",
     "image": {
         "type": "ImageBlock",
-        "url": "/images/fisherwoman-two.jpg",
-        "altText": "Person photo"
+        "url": "/images/dianne-ameter.jpg",
+        "altText": "Dianne Ameter photo"
     }
 }

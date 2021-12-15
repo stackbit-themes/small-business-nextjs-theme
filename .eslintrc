@@ -1,8 +1,0 @@
-{
-    "plugins": [],
-    "extends": ["next", "prettier"],
-    "ignorePatterns": ["node_modules", "out", ".next"],
-    "rules": {
-        "react/display-name": "off"
-    }
-}

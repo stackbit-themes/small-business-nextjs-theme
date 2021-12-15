@@ -2,25 +2,31 @@
     "model": "CtaSection",
     "presets": [
         {
-            "label": "Button dark",
-            "thumbnail": "images/cta-dark.jpg",
+            "label": "CTA light - button bottom",
+            "thumbnail": "images/cta-light-bottom.png",
             "data": {
-                "colors": "colors-c",
+                "colors": "colors-a",
+                "backgroundImage": null,
+                "actions": [
+                    {
+                        "type": "Button",
+                        "label": "Try it now",
+                        "url": "/",
+                        "style": "primary"
+                    }
+                ],
                 "styles": {
                     "self": {
                         "height": "auto",
-                        "width": "wide",
+                        "width": "narrow",
                         "margin": ["mt-0", "mb-0", "ml-0", "mr-0"],
-                        "padding": ["pt-12", "pb-12", "pl-4", "pr-4"],
+                        "padding": ["pt-24", "pb-24", "pl-4", "pr-4"],
                         "alignItems": "center",
                         "justifyContent": "center",
                         "flexDirection": "col"
                     },
                     "title": {
-                        "fontWeight": 700,
-                        "fontStyle": "normal",
-                        "textAlign": "left",
-                        "margin": ["mt-0", "mb-4"]
+                        "textAlign": "left"
                     },
                     "text": {
                         "textAlign": "left"
@@ -32,25 +38,75 @@
             }
         },
         {
-            "label": "Button light",
-            "thumbnail": "images/cta-light.jpg",
+            "label": "CTA dark - button bottom",
+            "thumbnail": "images/cta-dark-bottom.png",
             "data": {
-                "colors": "colors-a",
+                "colors": "colors-f",
+                "backgroundImage": null,
+                "actions": [
+                    {
+                        "type": "Button",
+                        "label": "Try it now",
+                        "url": "/",
+                        "style": "primary"
+                    },
+                    {
+                        "type": "Button",
+                        "label": "Learn More",
+                        "showIcon": true,
+                        "icon": "arrowRight",
+                        "url": "/",
+                        "style": "link"
+                    }
+                ],
                 "styles": {
                     "self": {
                         "height": "auto",
-                        "width": "wide",
+                        "width": "narrow",
                         "margin": ["mt-0", "mb-0", "ml-0", "mr-0"],
-                        "padding": ["pt-12", "pb-12", "pl-4", "pr-4"],
+                        "padding": ["pt-24", "pb-24", "pl-4", "pr-4"],
                         "alignItems": "center",
                         "justifyContent": "center",
                         "flexDirection": "col"
                     },
                     "title": {
-                        "fontWeight": 700,
-                        "fontStyle": "normal",
-                        "textAlign": "left",
-                        "margin": ["mt-0", "mb-4"]
+                        "textAlign": "left"
+                    },
+                    "text": {
+                        "textAlign": "left"
+                    },
+                    "actions": {
+                        "justifyContent": "flex-start"
+                    }
+                }
+            }
+        },
+        {
+            "label": "CTA dark - button right",
+            "thumbnail": "images/cta-dark-right.png",
+            "data": {
+                "colors": "colors-f",
+                "backgroundImage": null,
+                "actions": [
+                    {
+                        "type": "Button",
+                        "label": "Try it now",
+                        "url": "/",
+                        "style": "primary"
+                    }
+                ],
+                "styles": {
+                    "self": {
+                        "height": "auto",
+                        "width": "narrow",
+                        "margin": ["mt-0", "mb-0", "ml-0", "mr-0"],
+                        "padding": ["pt-24", "pb-24", "pl-4", "pr-4"],
+                        "alignItems": "center",
+                        "justifyContent": "center",
+                        "flexDirection": "row"
+                    },
+                    "title": {
+                        "textAlign": "left"
                     },
                     "text": {
                         "textAlign": "left"

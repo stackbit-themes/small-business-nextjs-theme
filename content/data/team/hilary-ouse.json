@@ -1,13 +1,12 @@
 {
     "type": "Person",
-    "id": "hilary-ouse",
-    "firstName": "Hilary ",
+    "firstName": "Hilary",
     "lastName": "Ouse",
-    "role": "Head Fisherman & Finance",
+    "role": "Co-founder & CTO",
     "bio": "This feature is the thing you were missing in your workflow, thank god we have it for you to use.",
     "image": {
         "type": "ImageBlock",
-        "url": "/images/fisherwoman.jpg",
-        "altText": "Person photo"
-      }
+        "url": "/images/hilary-ouse.jpg",
+        "altText": "Hilary Ouse photo"
+    }
 }

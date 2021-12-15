@@ -2,15 +2,10 @@
     "type": "Config",
     "header": {
         "headerVariant": "variant-c",
-        "primaryColors": "colors-b",
-        "secondaryColors": "colors-i",
-        "title": "Small Business",
-        "isTitleVisible": false,
-        "logo": {
-            "type": "ImageBlock",
-            "url": "/images/logo.svg",
-            "altText": "Sakanaya logo"
-        },
+        "primaryColors": "colors-a",
+        "secondaryColors": "colors-f",
+        "title": "Business",
+        "isTitleVisible": true,
         "primaryLinks": [
             {
                 "type": "Link",
@@ -20,15 +15,21 @@
             },
             {
                 "type": "Link",
-                "label": "Our offers",
-                "url": "/blog",
+                "label": "About",
+                "url": "/about",
                 "altText": ""
             },
             {
                 "type": "Link",
-                "label": "About us",
-                "url": "/about",
+                "label": "Adventures",
+                "url": "/adventures",
                 "altText": ""
+            },
+            {
+                "type": "Link",
+                "label": "Blog",
+                "altText": "Blog",
+                "url": "/blog"
             }
         ],
         "secondaryLinks": [
@@ -37,9 +38,7 @@
                 "label": "Contact us",
                 "url": "/",
                 "altText": "Contact us",
-                "style": "secondary",
-                "showIcon": true,
-                "icon": "arrowRight"
+                "style": "primary"
             }
         ],
         "styles": {
@@ -55,13 +54,8 @@
         }
     },
     "footer": {
-        "colors": "colors-f",
-        "logo": {
-            "type": "ImageBlock",
-            "url": "/images/logo.svg",
-            "altText": "Sakanaya logo"
-        },
-        "text": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.  \nEaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.",
+        "colors": "colors-h",
+        "title": "Business",
         "contacts": {
             "phoneNumber": "850-123-5021",
             "phoneAltText": "Our phone",
@@ -80,6 +74,18 @@
             },
             {
                 "type": "Link",
+                "label": "About",
+                "url": "/about",
+                "altText": ""
+            },
+            {
+                "type": "Link",
+                "label": "Adventures",
+                "url": "/adventures",
+                "altText": ""
+            },
+            {
+                "type": "Link",
                 "label": "Blog",
                 "url": "/blog",
                 "altText": ""
@@ -89,22 +95,22 @@
             {
                 "type": "Social",
                 "altText": "Twitter",
+                "label": "Twitter",
                 "url": "/",
-                "showIcon": true,
                 "icon": "twitter"
             },
             {
                 "type": "Social",
                 "altText": "Instagram",
+                "label": "Instagram",
                 "url": "/",
-                "showIcon": true,
                 "icon": "instagram"
             },
             {
                 "type": "Social",
                 "altText": "Facebook",
+                "label": "Facebook",
                 "url": "/",
-                "showIcon": true,
                 "icon": "facebook"
             }
         ],

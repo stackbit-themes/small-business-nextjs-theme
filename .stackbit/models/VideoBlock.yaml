@@ -1,0 +1,40 @@
+type: object
+name: VideoBlock
+label: Video
+labelField: url
+fieldGroups:
+  - name: settings
+    label: Settings
+fields:
+  - type: string
+    name: url
+    label: Video source (.mp4) 
+    description: The URL of the video (.mp4)
+    default: 'https://assets.stackbit.com/components/videos/default/stackbit-for-marketers.mp4'
+  - type: image
+    name: thumbnailUrl
+    label: Video thumbnail
+    description: The URL of the video thumbnail
+    default: 'https://assets.stackbit.com/components/images/default/stackbit-for-marketers.jpeg'
+  - type: boolean
+    name: autoplay
+    label: Autoplay
+    default: false
+  - type: boolean
+    name: loop
+    label: Loop
+    default: false
+  - type: boolean
+    name: muted
+    label: Muted
+    default: false
+  - type: boolean
+    name: controls
+    label: Controls
+    default: true
+  - type: string
+    name: elementId
+    group: settings
+    label: Element ID
+    description: The unique ID for an HTML element, must not contain whitespace
+    default: ''

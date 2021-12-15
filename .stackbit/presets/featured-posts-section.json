@@ -1,63 +1,23 @@
 {
     "model": "FeaturedPostsSection",
-    "presets": [{
-            "label": "3 columns, light",
-            "thumbnail": "images/featured-posts-3-col-light.jpg",
-            "data": {
-                "title": "Latest posts",
-                "subtitle": "",
-                "variant": "variant-a",
-                "colors": "colors-a",
-                "styles": {
-                    "self": {
-                        "height": "auto",
-                        "width": "wide",
-                        "margin": ["mt-0", "mb-0", "ml-0", "mr-0"],
-                        "padding": ["pt-12", "pb-12", "pl-4", "pr-4"],
-                        "justifyContent": "center"
-                    },
-                    "title": {
-                        "fontWeight": 700,
-                        "fontStyle": "normal",
-                        "textAlign": "center",
-                        "margin": ["mt-0", "mb-12"]
-                    }
-                }
-            }
-        },
+    "presets": [
         {
-            "label": "List, light",
-            "thumbnail": "images/featured-posts-light.jpg",
+            "label": "Featured posts light - 2 columns",
+            "thumbnail": "images/feat-posts-light-2-col.png",
             "data": {
-                "title": "Latest posts",
-                "subtitle": "",
-                "variant": "variant-d",
-                "colors": "colors-a",
-                "styles": {
-                    "self": {
-                        "height": "auto",
-                        "width": "wide",
-                        "margin": ["mt-0", "mb-0", "ml-0", "mr-0"],
-                        "padding": ["pt-12", "pb-12", "pl-4", "pr-4"],
-                        "justifyContent": "center"
-                    },
-                    "title": {
-                        "fontWeight": 700,
-                        "fontStyle": "normal",
-                        "textAlign": "center",
-                        "margin": ["mt-0", "mb-12"]
-                    }
-                }
-            }
-        },
-        {
-            "label": "2 columns, dark",
-            "thumbnail": "images/featured-posts-dark.jpg",
-            "data": {
-                "title": "Latest posts",
-                "subtitle": "",
                 "variant": "variant-b",
-                "colors": "colors-c",
+                "colors": "colors-h",
+                "title": "Featured",
+                "subtitle": "Featured blog posts section example",
+                "actions": [
+                    {
+                        "type": "Button",
+                        "label": "View All",
+                        "altText": "View All Posts",
+                        "url": "/blog",
+                        "style": "primary"
+                    }
+                ],
                 "styles": {
                     "self": {
                         "height": "auto",
@@ -67,10 +27,87 @@
                         "justifyContent": "center"
                     },
                     "title": {
-                        "fontWeight": 700,
-                        "fontStyle": "normal",
-                        "textAlign": "center",
-                        "margin": ["mt-0", "mb-12"]
+                        "textAlign": "center"
+                    },
+                    "subtitle": {
+                        "textAlign": "center"
+                    },
+                    "actions": {
+                        "justifyContent": "center"
+                    }
+                }
+            }
+        },
+        {
+            "label": "Featured posts light - cards",
+            "thumbnail": "images/feat-posts-light-cards.png",
+            "data": {
+                "variant": "variant-c",
+                "colors": "colors-h",
+                "title": "Featured",
+                "subtitle": "Featured blog posts section example",
+                "actions": [
+                    {
+                        "type": "Button",
+                        "label": "View All",
+                        "altText": "View All Posts",
+                        "url": "/blog",
+                        "style": "primary"
+                    }
+                ],
+                "styles": {
+                    "self": {
+                        "height": "auto",
+                        "width": "wide",
+                        "margin": ["mt-0", "mb-0", "ml-0", "mr-0"],
+                        "padding": ["pt-12", "pb-12", "pl-4", "pr-4"],
+                        "justifyContent": "center"
+                    },
+                    "title": {
+                        "textAlign": "center"
+                    },
+                    "subtitle": {
+                        "textAlign": "center"
+                    },
+                    "actions": {
+                        "justifyContent": "center"
+                    }
+                }
+            }
+        },
+        {
+            "label": "Featured posts dark - 3 columns",
+            "thumbnail": "images/feat-posts-dark-3-col.png",
+            "data": {
+                "variant": "variant-a",
+                "colors": "colors-f",
+                "title": "Featured",
+                "subtitle": "Featured blog posts section example",
+                "actions": [
+                    {
+                        "type": "Button",
+                        "label": "View All",
+                        "altText": "View All Posts",
+                        "url": "/blog",
+                        "style": "primary"
+                    }
+                ],
+                "styles": {
+                    "self": {
+                        "height": "auto",
+                        "width": "wide",
+                        "margin": ["mt-0", "mb-0", "ml-0", "mr-0"],
+                        "padding": ["pt-12", "pb-12", "pl-4", "pr-4"],
+                        "justifyContent": "center"
+                    },
+                    "title": {
+                        "textAlign": "center"
+                    },
+                    "subtitle": {
+                        "textAlign": "center"
+                    },
+                    "actions": {
+                        "justifyContent": "center"
                     }
                 }
             }

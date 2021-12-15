@@ -2,32 +2,64 @@
     "model": "ContactSection",
     "presets": [
         {
-            "label": "Light, with image",
-            "thumbnail": "images/contact-light.jpg",
+            "label": "Contact light - no media",
+            "thumbnail": "images/contact-light-no-media.png",
             "data": {
+                "colors": "colors-h",
                 "title": "Contact us",
                 "text": "We look forward to hearing from you.",
-                "feature":{
-                    "type":"ImageBlock",
-                    "url":"/images/trout.png",
-                    "altText":"Contact us"
+                "form": {
+                    "type": "FormBlock",
+                    "elementId": "contact-form",
+                    "action": "/.netlify/functions/submission_created",
+                    "destination": "",
+                    "fields": [
+                        {
+                            "type": "TextFormControl",
+                            "name": "name",
+                            "label": "Name",
+                            "placeholder": "Your name",
+                            "isRequired": "true",
+                            "width": "1/2"
+                        },
+                        {
+                            "type": "EmailFormControl",
+                            "name": "email",
+                            "label": "Email",
+                            "placeholder": "Your email",
+                            "isRequired": "true",
+                            "width": "1/2"
+                        },
+                        {
+                            "type": "TextFormControl",
+                            "name": "address",
+                            "label": "Home address",
+                            "placeholder": "Your home address",
+                            "isRequired": "false",
+                            "width": "full"
+                        },
+                        {
+                            "type": "CheckboxFormControl",
+                            "name": "updates",
+                            "label": "Sign me up to receive updates",
+                            "isRequired": "false",
+                            "width": "full"
+                        }
+                    ],
+                    "submitLabel": "Send Message"
                 },
-                "colors": "colors-a",
-                "elementId": "contact-form",
-                "action": "/.netlify/functions/submission_created",
+                "media": null,
                 "styles": {
                     "self": {
                         "height": "auto",
-                        "width": "wide",
+                        "width": "narrow",
                         "margin": ["mt-0", "mb-0", "ml-0", "mr-0"],
                         "padding": ["pt-12", "pb-12", "pl-4", "pr-4"],
                         "alignItems": "center",
                         "justifyContent": "center",
-                        "flexDirection": "row-reverse"
+                        "flexDirection": "row"
                     },
                     "title": {
-                        "fontWeight": 700,
-                        "fontStyle": "normal",
                         "textAlign": "left"
                     },
                     "text": {
@@ -37,19 +69,57 @@
             }
         },
         {
-            "label": "Dark, no image",
-            "thumbnail": "images/contact-dark.jpg",
+            "label": "Contact light - image right",
+            "thumbnail": "images/contact-light-image-right.png",
             "data": {
+                "colors": "colors-h",
                 "title": "Contact us",
                 "text": "We look forward to hearing from you.",
-                "feature":{
-                    "type":"ImageBlock",
-                    "url":"",
-                    "altText":""
+                "form": {
+                    "type": "FormBlock",
+                    "elementId": "contact-form",
+                    "action": "/.netlify/functions/submission_created",
+                    "destination": "",
+                    "fields": [
+                        {
+                            "type": "TextFormControl",
+                            "name": "name",
+                            "label": "Name",
+                            "placeholder": "Your name",
+                            "isRequired": "true",
+                            "width": "1/2"
+                        },
+                        {
+                            "type": "EmailFormControl",
+                            "name": "email",
+                            "label": "Email",
+                            "placeholder": "Your email",
+                            "isRequired": "true",
+                            "width": "1/2"
+                        },
+                        {
+                            "type": "TextFormControl",
+                            "name": "address",
+                            "label": "Home address",
+                            "placeholder": "Your home address",
+                            "isRequired": "false",
+                            "width": "full"
+                        },
+                        {
+                            "type": "CheckboxFormControl",
+                            "name": "updates",
+                            "label": "Sign me up to receive updates",
+                            "isRequired": "false",
+                            "width": "full"
+                        }
+                    ],
+                    "submitLabel": "Send Message"
                 },
-                "colors": "colors-c",
-                "elementId": "contact-form",
-                "action": "/.netlify/functions/submission_created",
+                "media": {
+                    "type": "ImageBlock",
+                    "url": "/images/careers.jpg",
+                    "altText": "Contact form image"
+                },
                 "styles": {
                     "self": {
                         "height": "auto",
@@ -61,8 +131,49 @@
                         "flexDirection": "row"
                     },
                     "title": {
-                        "fontWeight": 700,
-                        "fontStyle": "normal",
+                        "textAlign": "left"
+                    },
+                    "text": {
+                        "textAlign": "left"
+                    }
+                }
+            }
+        },
+        {
+            "label": "Contact dark - no media",
+            "thumbnail": "images/contact-dark-no-media.png",
+            "data": {
+                "colors": "colors-f",
+                "title": "Get early access",
+                "text": "Sign up your team today to be the first to try out our new product to increase your team's productivity.",
+                "form": {
+                    "type": "FormBlock",
+                    "elementId": "sign-up-form",
+                    "action": "/.netlify/functions/submission_created",
+                    "destination": "",
+                    "fields": [
+                        {
+                            "type": "EmailFormControl",
+                            "name": "email",
+                            "placeholder": "Your email",
+                            "isRequired": "true",
+                            "width": "full"
+                        }
+                    ],
+                    "submitLabel": "Sign Up"
+                },
+                "media": null,
+                "styles": {
+                    "self": {
+                        "height": "auto",
+                        "width": "narrow",
+                        "margin": ["mt-0", "mb-0", "ml-0", "mr-0"],
+                        "padding": ["pt-12", "pb-12", "pl-4", "pr-4"],
+                        "alignItems": "center",
+                        "justifyContent": "center",
+                        "flexDirection": "row"
+                    },
+                    "title": {
                         "textAlign": "left"
                     },
                     "text": {
