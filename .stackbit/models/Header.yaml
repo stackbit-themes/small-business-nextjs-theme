@@ -20,11 +20,7 @@ fields:
         value: variant-b
       - label: Header with logo on the left and primary links on the right
         value: variant-c
-      - label: Header with logo centered and primary links on the left
-        value: variant-d
-      - label: Header with logo centered and primary links centered
-        value: variant-e
-    default: variant-c
+    default: variant-a
   - type: enum
     name: primaryColors
     label: Primary colors

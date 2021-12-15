@@ -1,7 +1,7 @@
 {
     "type": "Config",
     "header": {
-        "headerVariant": "variant-c",
+        "headerVariant": "variant-b",
         "primaryColors": "colors-a",
         "secondaryColors": "colors-f",
         "title": "Business",
@@ -38,7 +38,10 @@
                 "label": "Contact us",
                 "url": "/",
                 "altText": "Contact us",
-                "style": "primary"
+                "style": "primary",
+                "showIcon": true,
+                "icon": "arrowRight",
+                "iconPosition": "right"
             }
         ],
         "styles": {

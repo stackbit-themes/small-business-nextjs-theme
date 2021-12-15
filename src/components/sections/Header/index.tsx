@@ -22,6 +22,7 @@ export default function Header(props) {
                     Skip to main content
                 </Link>
                 {headerVariants(props)}
+                <div className="sb-divider" />
             </div>
         </header>
     );
@@ -36,10 +37,6 @@ function headerVariants(props) {
             return headerVariantB(props);
         case 'variant-c':
             return headerVariantC(props);
-        case 'variant-d':
-            return headerVariantD(props);
-        case 'variant-e':
-            return headerVariantE(props);
     }
     return null;
 }
@@ -110,58 +107,6 @@ function headerVariantC(props) {
             )}
             {(primaryLinks.length > 0 || secondaryLinks.length > 0) && <MobileMenu {...props} />}
         </div>
-    );
-}
-
-function headerVariantD(props) {
-    const primaryLinks = props.primaryLinks || [];
-    const secondaryLinks = props.secondaryLinks || [];
-    return (
-        <div className="flex items-center relative">
-            {(props.logo || (props.title && props.isTitleVisible)) && (
-                <div className="mr-8 lg:mr-0 lg:absolute lg:top-1/2 lg:left-1/2 lg:transform lg:-translate-y-1/2 lg:-translate-x-1/2">
-                    {siteLogoLink(props)}
-                </div>
-            )}
-            {primaryLinks.length > 0 && (
-                <ul className="hidden lg:flex lg:items-center space-x-8" data-sb-field-path=".primaryLinks">
-                    {listOfLinks(primaryLinks)}
-                </ul>
-            )}
-            {secondaryLinks.length > 0 && (
-                <ul className="hidden lg:flex lg:items-center ml-auto space-x-8" data-sb-field-path=".secondaryLinks">
-                    {listOfLinks(secondaryLinks)}
-                </ul>
-            )}
-            {(primaryLinks.length > 0 || secondaryLinks.length > 0) && <MobileMenu {...props} />}
-        </div>
-    );
-}
-
-function headerVariantE(props) {
-    const primaryLinks = props.primaryLinks || [];
-    const secondaryLinks = props.secondaryLinks || [];
-    return (
-        <>
-            <div className="flex items-center relative">
-                {(props.logo || (props.title && props.isTitleVisible)) && (
-                    <div className="mr-8 lg:mr-0 lg:absolute lg:top-1/2 lg:left-1/2 lg:transform lg:-translate-y-1/2 lg:-translate-x-1/2">
-                        {siteLogoLink(props)}
-                    </div>
-                )}
-                {secondaryLinks.length > 0 && (
-                    <ul className="hidden lg:flex lg:items-center space-x-8 ml-auto" data-sb-field-path=".secondaryLinks">
-                        {listOfLinks(secondaryLinks)}
-                    </ul>
-                )}
-                {(primaryLinks.length > 0 || secondaryLinks.length > 0) && <MobileMenu {...props} />}
-            </div>
-            {primaryLinks.length > 0 && (
-                <ul className="hidden lg:flex lg:items-center lg:justify-center space-x-8 mt-4" data-sb-field-path=".primaryLinks">
-                    {listOfLinks(primaryLinks)}
-                </ul>
-            )}
-        </>
     );
 }
 
