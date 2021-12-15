@@ -5,7 +5,7 @@ import classNames from 'classnames';
 import { getComponent } from '../../components-registry';
 import { mapStylesToClassNames as mapStyles } from '../../../utils/map-styles-to-class-names';
 import { getDataAttrs } from '../../../utils/get-data-attrs';
-import { Action, Badge } from '../../atoms';
+import { Action } from '../../atoms';
 
 export default function FeatureHighlightSection(props) {
     const cssId = props.elementId || null;
@@ -116,9 +116,8 @@ function featureHighlightBody(props) {
     const styles = props.styles || {};
     return (
         <>
-            {props.badge && <Badge {...props.badge} data-sb-field-path=".badge" />}
             {props.title && (
-                <h2 className={classNames(styles.title ? mapStyles(styles.title) : null, { 'mt-4': props.badge?.label })} data-sb-field-path=".title">
+                <h2 className={classNames(styles.title ? mapStyles(styles.title) : null)} data-sb-field-path=".title">
                     {props.title}
                 </h2>
             )}
@@ -152,7 +151,7 @@ function featureHighlightActions(props) {
     return (
         <div
             className={classNames('overflow-x-hidden', {
-                'mt-8': props.title || props.subtitle || props.text || props.badge
+                'mt-8': props.title || props.subtitle || props.text
             })}
         >
             <div

@@ -5,7 +5,7 @@ import classNames from 'classnames';
 import { getComponent } from '../../components-registry';
 import { mapStylesToClassNames as mapStyles } from '../../../utils/map-styles-to-class-names';
 import { getDataAttrs } from '../../../utils/get-data-attrs';
-import { Action, Badge } from '../../atoms';
+import { Action } from '../../atoms';
 
 export default function HeroSection(props) {
     const cssId = props.elementId || null;
@@ -86,9 +86,8 @@ function heroBody(props) {
     const styles = props.styles || {};
     return (
         <div>
-            {props.badge && <Badge {...props.badge} data-sb-field-path=".badge" />}
             {props.title && (
-                <h2 className={classNames('h1', styles.title ? mapStyles(styles.title) : null, { 'mt-4': props.badge?.label })} data-sb-field-path=".title">
+                <h2 className={classNames('h1', styles.title ? mapStyles(styles.title) : null)} data-sb-field-path=".title">
                     {props.title}
                 </h2>
             )}
@@ -122,7 +121,7 @@ function heroActions(props) {
     return (
         <div
             className={classNames('overflow-x-hidden', {
-                'mt-8': props.title || props.subtitle || props.text || props.badge
+                'mt-8': props.title || props.subtitle || props.text
             })}
         >
             <div

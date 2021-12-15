@@ -162,11 +162,6 @@
         @apply flex items-center h-4 before:flex-grow before:h-px before:bg-current;
     }
 
-    /* Badge */
-    .sb-component-badge {
-        @apply uppercase tracking-wider text-primary;
-    }
-
     /* Featured items */
     .sb-component-item-hover {
         @apply transition duration-200 ease-in;
@@ -244,28 +239,6 @@
         }
     }
     .colors-b {
-        @apply bg-light text-primary;
-        .sb-input,
-        .sb-select,
-        .sb-textarea {
-            @apply text-primary placeholder-primary placeholder-opacity-75;
-        }
-        .sb-component-button-primary,
-        .sb-component-social-primary {
-            @apply bg-primary border-primary text-on-primary;
-        }
-        .sb-component-button-secondary,
-        .sb-component-social-secondary {
-            @apply border-dark text-dark;
-        }
-        .sb-card {
-            @apply bg-dark bg-opacity-5;
-        }
-        .sb-component-item-hover {
-            @apply hover:bg-primary hover:text-on-primary;
-        }
-    }
-    .colors-c {
         @apply bg-dark text-on-dark;
         .sb-input,
         .sb-select,
@@ -287,54 +260,7 @@
             @apply hover:bg-light hover:text-on-light;
         }
     }
-    .colors-d {
-        @apply bg-dark text-primary;
-        .sb-input,
-        .sb-select,
-        .sb-textarea {
-            @apply text-primary placeholder-primary placeholder-opacity-75;
-        }
-        .sb-component-button-primary,
-        .sb-component-social-primary {
-            @apply bg-primary border-primary text-on-primary;
-        }
-        .sb-component-button-secondary,
-        .sb-component-social-secondary {
-            @apply border-on-dark text-on-dark;
-        }
-        .sb-card {
-            @apply bg-light;
-        }
-        .sb-component-item-hover {
-            @apply hover:bg-light hover:text-primary;
-        }
-    }
-    .colors-e {
-        @apply bg-primary text-on-primary;
-        .sb-input,
-        .sb-select,
-        .sb-textarea {
-            @apply text-on-primary placeholder-on-primary placeholder-opacity-75;
-        }
-        .sb-component-button-primary,
-        .sb-component-social-primary {
-            @apply bg-dark border-dark text-on-dark;
-        }
-        .sb-component-button-secondary,
-        .sb-component-social-secondary {
-            @apply border-on-primary text-on-primary;
-        }
-        .sb-component-badge {
-            @apply text-on-primary;
-        }
-        .sb-card {
-            @apply bg-light text-on-light;
-        }
-        .sb-component-item-hover {
-            @apply hover:bg-light hover:text-on-light;
-        }
-    }
-    .colors-f {
+    .colors-c {
         @apply bg-secondary text-on-secondary;
         .sb-input,
         .sb-select,
@@ -343,42 +269,20 @@
         }
         .sb-component-button-primary,
         .sb-component-social-primary {
-            @apply bg-primary border-primary text-on-primary;
-        }
-        .sb-component-button-secondary,
-        .sb-component-social-secondary {
-            @apply border-light text-light;
-        }
-        .sb-card {
-            @apply bg-light text-on-light;
-        }
-        .sb-component-item-hover {
-            @apply hover:bg-primary hover:text-light;
-        }
-    }
-    .colors-g {
-        @apply bg-secondary text-primary;
-        .sb-input,
-        .sb-select,
-        .sb-textarea {
-            @apply text-primary placeholder-primary placeholder-opacity-75;
-        }
-        .sb-component-button-primary,
-        .sb-component-social-primary {
-            @apply bg-primary border-primary text-on-primary;
+            @apply bg-dark border-dark text-on-primary;
         }
         .sb-component-button-secondary,
         .sb-component-social-secondary {
             @apply border-dark text-dark;
         }
         .sb-card {
-            @apply bg-light;
+            @apply bg-light text-on-light;
         }
         .sb-component-item-hover {
-            @apply hover:bg-primary hover:text-light;
+            @apply hover:bg-dark hover:text-light;
         }
     }
-    .colors-h {
+    .colors-d {
         @apply bg-complementary text-on-complementary;
         .sb-input,
         .sb-select,
@@ -397,7 +301,7 @@
             @apply bg-light text-on-light;
         }
         .sb-component-item-hover {
-            @apply hover:bg-primary hover:text-light;
+            @apply hover:bg-dark hover:text-light;
         }
     }
 }
