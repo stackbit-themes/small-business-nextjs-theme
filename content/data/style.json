@@ -1,49 +1,49 @@
 {
     "type": "ThemeStyle",
-    "fontHeadlines": "sans",
+    "fontHeadlines": "fontPrimary",
     "h1": {
         "size": "6xl",
-        "weight": "normal",
+        "weight": "medium",
         "decoration": "none",
         "case": "none",
         "letterSpacing": "normal"
     },
     "h2": {
         "size": "5xl",
-        "weight": "normal",
+        "weight": "medium",
         "decoration": "none",
         "case": "none",
         "letterSpacing": "normal"
     },
     "h3": {
         "size": "3xl",
-        "weight": "normal",
+        "weight": "medium",
         "decoration": "none",
         "case": "none",
         "letterSpacing": "normal"
     },
     "h4": {
         "size": "2xl",
-        "weight": "bold",
+        "weight": "medium",
         "decoration": "none",
         "case": "none",
         "letterSpacing": "normal"
     },
     "h5": {
         "size": "xl",
-        "weight": "bold",
+        "weight": "medium",
         "decoration": "none",
         "case": "none",
         "letterSpacing": "normal"
     },
     "h6": {
         "size": "lg",
-        "weight": "bold",
+        "weight": "medium",
         "decoration": "none",
         "case": "none",
         "letterSpacing": "normal"
     },
-    "fontBody": "sansAlt",
+    "fontBody": "fontSecondary",
     "main": "#EAECEB",
     "light": "#ffffff",
     "onLight": "#000000",

@@ -15,10 +15,10 @@ fields:
     label: Font - headlines & subtitles
     group: text-styles
     options:
-      - label: Sans
-        value: sans
-      - label: Sans alt
-        value: sansAlt
+      - label: Font primary
+        value: fontPrimary
+      - label: Font secondary
+        value: fontSecondary
   - type: object
     name: h1
     label: H1
@@ -64,9 +64,9 @@ fields:
         options:
           - label: Normal
             value: normal
-          - label: Bold
-            value: bold
-        default: bold
+          - label: Medium
+            value: medium
+        default: medium
       - type: enum
         name: decoration
         label: Decoration
@@ -154,9 +154,9 @@ fields:
         options:
           - label: Normal
             value: normal
-          - label: Bold
-            value: bold
-        default: bold
+          - label: Medium
+            value: medium
+        default: medium
       - type: enum
         name: decoration
         label: Decoration
@@ -244,9 +244,9 @@ fields:
         options:
           - label: Normal
             value: normal
-          - label: Bold
-            value: bold
-        default: bold
+          - label: Medium
+            value: medium
+        default: medium
       - type: enum
         name: decoration
         label: Decoration
@@ -334,9 +334,9 @@ fields:
         options:
           - label: Normal
             value: normal
-          - label: Bold
-            value: bold
-        default: bold
+          - label: Medium
+            value: medium
+        default: medium
       - type: enum
         name: decoration
         label: Decoration
@@ -424,9 +424,9 @@ fields:
         options:
           - label: Normal
             value: normal
-          - label: Bold
-            value: bold
-        default: bold
+          - label: Medium
+            value: medium
+        default: medium
       - type: enum
         name: decoration
         label: Decoration
@@ -514,9 +514,9 @@ fields:
         options:
           - label: Normal
             value: normal
-          - label: Bold
-            value: bold
-        default: bold
+          - label: Medium
+            value: medium
+        default: medium
       - type: enum
         name: decoration
         label: Decoration
@@ -564,10 +564,10 @@ fields:
     label: Font - body & captions
     group: text-styles
     options:
-      - label: Sans
-        value: sans
-      - label: Sans alt
-        value: sansAlt
+      - label: Font primary
+        value: fontPrimary
+      - label: Font secondary
+        value: fontSecondary
   - type: color
     name: main
     label: Site background
@@ -625,8 +625,8 @@ fields:
         options:
           - label: Normal
             value: normal
-          - label: Bold
-            value: bold
+          - label: Medium
+            value: medium
         default: normal
       - type: enum
         name: case
@@ -713,9 +713,9 @@ fields:
         options:
           - label: Normal
             value: normal
-          - label: Bold
-            value: bold
-        default: bold
+          - label: Medium
+            value: medium
+        default: medium
       - type: enum
         name: case
         label: Case
@@ -817,9 +817,9 @@ fields:
         options:
           - label: Normal
             value: normal
-          - label: Bold
-            value: bold
-        default: bold
+          - label: Medium
+            value: medium
+        default: medium
       - type: enum
         name: case
         label: Case

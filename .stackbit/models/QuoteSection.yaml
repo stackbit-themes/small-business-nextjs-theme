@@ -69,11 +69,11 @@ fields:
       quote:
         textAlign: ['left', 'center', 'right']
       name:
-        fontWeight: ['400', '700']
+        fontWeight: ['400', '500']
         fontStyle: ['normal', 'italic']
         textAlign: ['left', 'center', 'right']
       title:
-        fontWeight: ['400', '700']
+        fontWeight: ['400', '500']
         fontStyle: ['normal', 'italic']
         textAlign: ['left', 'center', 'right']
     default:

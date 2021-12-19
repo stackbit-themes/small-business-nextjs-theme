@@ -107,7 +107,7 @@ fields:
             color: '$complementary'
         boxShadow: '*'
       title:
-        fontWeight: ['400', '700']
+        fontWeight: ['400', '500']
         fontStyle: ['normal', 'italic']
         textAlign: ['left', 'center', 'right']
       text:

@@ -66,10 +66,10 @@ fields:
             color: '$complementary'
         textAlign: ['left', 'center', 'right']
       title:
-        fontWeight: ['400', '700']
+        fontWeight: ['400', '500']
         fontStyle: ['normal', 'italic']
       subtitle:
-        fontWeight: ['400', '700']
+        fontWeight: ['400', '500']
         fontStyle: ['normal', 'italic']
     default:
       self:

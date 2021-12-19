@@ -33,8 +33,8 @@ module.exports = {
                 '9/16': '56.25%'
             },
             fontFamily: {
-                sans: ['Rakkas', 'cursive'],
-                sansAlt: ['Roboto Mono', 'monospace']
+                fontPrimary: ['Space Grotesk', 'sans-serif'],
+                fontSecondary: ['Roboto Mono', 'monospace']
             }
         }
     },

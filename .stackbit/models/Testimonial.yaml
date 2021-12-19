@@ -37,10 +37,10 @@ fields:
     name: styles
     styles:
       name:
-        fontWeight: ['400', '700']
+        fontWeight: ['400', '500']
         fontStyle: ['normal', 'italic']
       title:
-        fontWeight: ['400', '700']
+        fontWeight: ['400', '500']
         fontStyle: ['normal', 'italic']
     default:
       name:

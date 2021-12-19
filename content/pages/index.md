@@ -164,7 +164,7 @@ sections:
     title: Get early access
     text: >
       Sign up your team today to be the first to try out our new product to
-      increase your team’s productivity
+      increase your team’s **productivity**
     form:
       type: FormBlock
       elementId: sign-up-form
