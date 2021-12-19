@@ -22,7 +22,6 @@ export default function Header(props) {
                     Skip to main content
                 </Link>
                 {headerVariants(props)}
-                <div className="sb-divider" />
             </div>
         </header>
     );

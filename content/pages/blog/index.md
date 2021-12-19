@@ -7,7 +7,7 @@ postFeed:
   showAuthor: false
   showExcerpt: false
   variant: variant-a
-  colors: colors-a
+  colors: colors-d
   styles:
     self:
       width: wide

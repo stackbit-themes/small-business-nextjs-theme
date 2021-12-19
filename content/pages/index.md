@@ -4,7 +4,7 @@ layout: PageLayout
 sections:
   - type: HeroSection
     elementId: homepage-hero-1
-    colors: colors-a
+    colors: colors-d
     title: 'We do fishing differently'
     subtitle: 'Fresh. Better. Faster'
     actions:
@@ -46,7 +46,7 @@ sections:
         textAlign: left
       actions:
         justifyContent: flex-start
-  - colors: colors-a
+  - colors: colors-d
     elementId: ''
     title: Seasonal adventures
     items:
@@ -118,7 +118,7 @@ sections:
         justifyContent: flex-start
     type: FeaturedItemsSection
   - elementId: ''
-    colors: colors-a
+    colors: colors-d
     title: Time to leave your desk. Let’s go flying
     text: >
       We’re local, seasonal fisherman, supporting fishing restrictions.
@@ -160,7 +160,7 @@ sections:
         justifyContent: flex-start
     type: FeatureHighlightSection
   - type: ContactSection
-    colors: colors-a
+    colors: colors-d
     title: Get early access
     text: >
       Sign up your team today to be the first to try out our new product to
