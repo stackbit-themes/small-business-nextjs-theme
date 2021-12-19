@@ -15,6 +15,16 @@ fieldGroups:
 fields:
   - name: colors
     default: colors-f
+  - type: enum
+    name: variant
+    group: styles
+    label: Arrangement
+    options:
+      - label: Title at the top
+        value: variant-a
+      - label: Title on the left
+        value: variant-b
+    default: variant-a
   - type: string
     name: title
     label: Title

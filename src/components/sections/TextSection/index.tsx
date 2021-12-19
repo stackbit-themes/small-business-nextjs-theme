@@ -36,13 +36,26 @@ export default function TextSection(props) {
             }}
         >
             <div className={classNames('flex', 'w-full', mapStyles({ justifyContent: sectionJustifyContent }))}>
-                <div className={classNames('w-full', mapMaxWidthStyles(sectionWidth))}>{textBody(props)}</div>
+                <div className={classNames('w-full', mapMaxWidthStyles(sectionWidth))}>
+                    {textBodyVariants(props)}
+                </div>
             </div>
         </div>
     );
 }
 
-function textBody(props) {
+function textBodyVariants(props) {
+    const variant = props.variant || 'variant-a';
+    switch (variant) {
+        case 'variant-a':
+            return textBodyVariantA(props);
+        case 'variant-b':
+            return textBodyVariantB(props);
+    }
+    return null;
+}
+
+function textBodyVariantA(props) {
     const styles = props.styles || {};
     return (
         <div>
@@ -67,6 +80,42 @@ function textBody(props) {
                 >
                     {props.text}
                 </Markdown>
+            )}
+        </div>
+    );
+}
+
+function textBodyVariantB(props) {
+    const styles = props.styles || {};
+    return (
+        <div className="flex flex-wrap">
+            {(props.title || props.subtitle) && (
+                <div className={classNames('w-full', { 'lg:w-1/3 lg:pr-3': props.text })}>
+                    {props.title && (
+                        <h2 className={classNames(styles.title ? mapStyles(styles.title) : null)} data-sb-field-path=".title">
+                            {props.title}
+                        </h2>
+                    )}
+                    {props.subtitle && (
+                        <p
+                            className={classNames('text-xl', 'sm:text-2xl', styles.subtitle ? mapStyles(styles.subtitle) : null, { 'mt-2': props.title })}
+                            data-sb-field-path=".subtitle"
+                        >
+                            {props.subtitle}
+                        </p>
+                    )}
+                </div>
+            )}
+            {props.text && (
+                <div className={classNames('w-full', { 'mt-12 lg:mt-0 lg:w-2/3 lg:pl-3': props.title || props.subtitle })}>
+                    <Markdown
+                        options={{ forceBlock: true, forceWrapper: true }}
+                        className={classNames('sb-markdown', 'sm:text-lg', styles.text ? mapStyles(styles.text) : null)}
+                        data-sb-field-path=".text"
+                    >
+                        {props.text}
+                    </Markdown>
+                </div>
             )}
         </div>
     );
