@@ -50,6 +50,7 @@ fields:
     default: center
   - type: number
     name: opacity
+    group: styles
     label: Opacity
     controlType: 'slider'
     min: 0
