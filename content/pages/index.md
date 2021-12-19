@@ -16,11 +16,12 @@ sections:
         label: Get Started
         url: 'https://www.stackbit.com/'
         style: secondary
-    media:
-      type: ImageBlock
+    backgroundImage:
+      type: BackgroundImage
       url: /images/hero.png
-      altText: Image alt text
-      caption: Image caption
+      backgroundSize: cover
+      backgroundPosition: center
+      opacity: 70
     styles:
       self:
         height: auto
@@ -32,7 +33,7 @@ sections:
           - mr-0
         padding:
           - pt-12
-          - pb-28
+          - pb-96
           - pr-4
           - pl-4
         alignItems: center

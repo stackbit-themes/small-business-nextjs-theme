@@ -38,12 +38,7 @@
                 "colors": "colors-c",
                 "backgroundImage": {
                     "url": "/images/bg.jpg",
-                    "altText": "Product Marketing Manager Quote",
-                    "styles": {
-                        "self": {
-                            "opacity": 70
-                        }
-                    }
+                    "opacity": 70
                 },
                 "styles": {
                     "self": {

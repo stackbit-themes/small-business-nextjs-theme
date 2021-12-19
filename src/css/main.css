@@ -136,15 +136,17 @@
         @apply inline-flex items-center justify-center no-underline relative;
     }
     .sb-component-link:after {
-        @apply bg-current absolute left-0;
+        @apply bg-current absolute left-0 w-full;
         bottom: -2px;
         content: '';
         height: 2px;
-        width: 0;
-        transition: width 0.2s ease-in;
+        transform: scaleX(0);
+        transform-origin: 100% 50%;
+        transition: transform 0.25s ease-in-out;
     }
     .sb-component-link:hover:after {
-        @apply w-full;
+        transform: scaleX(1);
+        transform-origin: 0% 50%;
     }
 
     /* Socials */

@@ -60,6 +60,12 @@ fields:
       type: ImageBlock
       url: https://assets.stackbit.com/components/images/default/hero.png
       altText: Hero section image
+  - type: model
+    name: backgroundImage
+    group: styles
+    label: Background image
+    models:
+      - BackgroundImage
   - type: style
     name: styles
     styles:

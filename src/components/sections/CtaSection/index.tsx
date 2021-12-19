@@ -4,7 +4,7 @@ import classNames from 'classnames';
 
 import { mapStylesToClassNames as mapStyles } from '../../../utils/map-styles-to-class-names';
 import { getDataAttrs } from '../../../utils/get-data-attrs';
-import Action from '../../atoms/Action';
+import { Action, BackgroundImage } from '../../atoms';
 
 export default function CtaSection(props) {
     const cssId = props.elementId || null;
@@ -49,7 +49,7 @@ export default function CtaSection(props) {
                     borderWidth: sectionStyles.borderWidth ? `${sectionStyles.borderWidth}px` : null
                 }}
             >
-                {props.backgroundImage && ctaBackgroundImage(props.backgroundImage)}
+                {props.backgroundImage && <BackgroundImage {...props.backgroundImage} />}
                 <div
                     className={classNames(
                         'relative',
@@ -82,24 +82,6 @@ export default function CtaSection(props) {
                 </div>
             </div>
         </div>
-    );
-}
-
-function ctaBackgroundImage(image) {
-    const imageUrl = image.url;
-    if (!imageUrl) {
-        return null;
-    }
-    const imageStyles = image.styles?.self || {};
-    const imageOpacity = imageStyles.opacity || imageStyles.opacity === 0 ? imageStyles.opacity : 100;
-    return (
-        <div
-            className="bg-cover bg-center block absolute inset-0"
-            style={{
-                backgroundImage: `url('${imageUrl}')`,
-                opacity: imageOpacity * 0.01
-            }}
-        />
     );
 }
 

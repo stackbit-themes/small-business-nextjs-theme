@@ -8,8 +8,6 @@ export default function ImageBlock(props) {
     }
     const cssClasses = props.className || null;
     const cssId = props.elementId || null;
-    const styles = props.styles?.self || {};
-    const imageOpacity = styles.opacity || styles.opacity === 0 ? styles.opacity : 100;
     const annotationPrefix = props['data-sb-field-path'] || '';
     const annotations = [
         `${annotationPrefix}`,
@@ -24,7 +22,6 @@ export default function ImageBlock(props) {
             className={classNames('sb-component', 'sb-component-block', 'sb-component-image-block', cssClasses)}
             src={url}
             alt={altText || ''}
-            style={{ opacity: imageOpacity * 0.01 }}
             data-sb-field-path={annotations.join(' ').trim()}
         />
     );

@@ -5,7 +5,7 @@ import classNames from 'classnames';
 import { getComponent } from '../../components-registry';
 import { mapStylesToClassNames as mapStyles } from '../../../utils/map-styles-to-class-names';
 import { getDataAttrs } from '../../../utils/get-data-attrs';
-import { Action } from '../../atoms';
+import { Action, BackgroundImage } from '../../atoms';
 
 export default function HeroSection(props) {
     const cssId = props.elementId || null;
@@ -28,6 +28,7 @@ export default function HeroSection(props) {
                 'flex',
                 'flex-col',
                 'justify-center',
+                'relative',
                 mapMinHeightStyles(sectionHeight),
                 sectionStyles.margin,
                 sectionStyles.padding || 'py-12 px-4',
@@ -39,7 +40,8 @@ export default function HeroSection(props) {
                 borderWidth: sectionStyles.borderWidth ? `${sectionStyles.borderWidth}px` : null
             }}
          >
-            <div className={classNames('flex', 'w-full', mapStyles({ justifyContent: sectionJustifyContent }))}>
+            {props.backgroundImage && <BackgroundImage {...props.backgroundImage} />}
+            <div className={classNames('relative', 'flex', 'w-full', mapStyles({ justifyContent: sectionJustifyContent }))}>
                 <div className={classNames('w-full', mapMaxWidthStyles(sectionWidth))}>
                     <div
                         className={classNames(

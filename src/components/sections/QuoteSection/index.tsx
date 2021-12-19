@@ -4,6 +4,7 @@ import classNames from 'classnames';
 
 import { mapStylesToClassNames as mapStyles } from '../../../utils/map-styles-to-class-names';
 import { getDataAttrs } from '../../../utils/get-data-attrs';
+import { BackgroundImage } from '../../atoms';
 
 export default function QuoteSection(props) {
     const cssId = props.elementId || null;
@@ -36,7 +37,7 @@ export default function QuoteSection(props) {
                 borderWidth: sectionStyles.borderWidth ? `${sectionStyles.borderWidth}px` : null
             }}
         >
-            {props.backgroundImage && quoteBackgroundImage(props.backgroundImage)}
+            {props.backgroundImage && <BackgroundImage {...props.backgroundImage} />}
             <div
                 className={classNames(
                     'flex',
@@ -48,24 +49,6 @@ export default function QuoteSection(props) {
                 <div className={classNames('w-full', mapMaxWidthStyles(sectionWidth))}>{quoteContent(props)}</div>
             </div>
         </div>
-    );
-}
-
-function quoteBackgroundImage(image) {
-    const imageUrl = image.url;
-    if (!imageUrl) {
-        return null;
-    }
-    const imageStyles = image.styles?.self || {};
-    const imageOpacity = imageStyles.opacity || imageStyles.opacity === 0 ? imageStyles.opacity : 100;
-    return (
-        <div
-            className="bg-cover bg-center block absolute inset-0"
-            style={{
-                backgroundImage: `url('${imageUrl}')`,
-                opacity: imageOpacity * 0.01
-            }}
-        />
     );
 }
 
