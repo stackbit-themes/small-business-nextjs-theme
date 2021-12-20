@@ -59,24 +59,24 @@ function quoteContent(props) {
             {props.quote && (
                 <Markdown
                     options={{ forceBlock: true, forceWrapper: true }}
-                    className={classNames('sb-markdown', 'text-3xl', 'sm:text-4xl', styles.quote ? mapStyles(styles.quote) : null)}
+                    className={classNames('sb-markdown', 'text-4xl', 'sm:text-5xl', styles.quote ? mapStyles(styles.quote) : null)}
                     data-sb-field-path=".quote"
                 >
                     {props.quote}
                 </Markdown>
             )}
             {(props.name || props.title) && (
-                <footer>
+                <footer className="mt-8 sm:mt-10">
                     {props.name && (
                         <span
-                            className={classNames('block', 'text-2xl', 'sm:text-3xl', styles.name ? mapStyles(styles.name) : null)}
+                            className={classNames('block', 'text-lg', styles.name ? mapStyles(styles.name) : null)}
                             data-sb-field-path=".name"
                         >
                             {props.name}
                         </span>
                     )}
                     {props.title && (
-                        <span className={classNames('block', 'text-lg', 'mt-1.5', styles.title ? mapStyles(styles.title) : null)} data-sb-field-path=".title">
+                        <span className={classNames('block', 'text-lg', styles.title ? mapStyles(styles.title) : null)} data-sb-field-path=".title">
                             {props.title}
                         </span>
                     )}
@@ -101,7 +101,7 @@ function mapMaxWidthStyles(width) {
         case 'narrow':
             return 'max-w-screen-md';
         case 'wide':
-            return 'max-w-screen-xl';
+            return 'max-w-screen-lg';
         case 'full':
             return 'max-w-full';
     }
