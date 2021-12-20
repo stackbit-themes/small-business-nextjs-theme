@@ -14,7 +14,6 @@ export default function FeaturedItemsSection(props) {
     const sectionHeight = styles.self?.height || 'auto';
     const sectionJustifyContent = styles.self?.justifyContent || 'center';
     const featuredItems = props.items || [];
-    const actions = props.actions || [];
     return (
         <div
             id={cssId}
@@ -58,7 +57,7 @@ export default function FeaturedItemsSection(props) {
                     {featuredItemActions(props)}
                     {featuredItems.length > 0 && (
                         <div
-                            className={classNames('grid', 'gap-6', 'lg:gap-8', mapColStyles(props?.columns || 3), { 'mt-12 lg:mt-16': props.title || props.subtitle || actions.length > 0 })}
+                            className={classNames('grid', 'gap-6', 'lg:gap-8', mapColStyles(props?.columns || 3), { 'mt-12 lg:mt-16': props.title || props.subtitle || (props.actions || []).length > 0 })}
                             data-sb-field-path=".items"
                         >
                             {props.items.map((item, index) => (

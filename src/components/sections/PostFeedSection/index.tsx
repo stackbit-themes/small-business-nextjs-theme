@@ -12,10 +12,10 @@ import getPageUrlPath from '../../../utils/get-page-url-path';
 export default function PostFeedSection(props) {
     const cssId = props.elementId || null;
     const colors = props.colors || 'colors-a';
-    const sectionStyles = props.styles?.self || {};
-    const sectionWidth = sectionStyles.width || 'wide';
-    const sectionHeight = sectionStyles.height || 'auto';
-    const sectionJustifyContent = sectionStyles.justifyContent || 'center';
+    const styles = props.styles || {};
+    const sectionWidth = styles.self?.width || 'wide';
+    const sectionHeight = styles.self?.height || 'auto';
+    const sectionJustifyContent = styles.self?.justifyContent || 'center';
     return (
         <div
             id={cssId}
@@ -30,48 +30,36 @@ export default function PostFeedSection(props) {
                 'justify-center',
                 'relative',
                 mapMinHeightStyles(sectionHeight),
-                sectionStyles.margin,
-                sectionStyles.padding || 'py-12 px-4',
-                sectionStyles.borderColor,
-                sectionStyles.borderRadius ? mapStyles({ borderRadius: sectionStyles.borderRadius }) : null,
-                sectionStyles.borderStyle ? mapStyles({ borderStyle: sectionStyles.borderStyle }) : 'border-none'
+                styles.self?.margin,
+                styles.self?.padding || 'py-12 px-4',
+                styles.self?.borderColor,
+                styles.self?.borderRadius ? mapStyles({ borderRadius: styles.self?.borderRadius }) : null,
+                styles.self?.borderStyle ? mapStyles({ borderStyle: styles.self?.borderStyle }) : 'border-none'
             )}
             style={{
-                borderWidth: sectionStyles.borderWidth ? `${sectionStyles.borderWidth}px` : null
+                borderWidth: styles.self?.borderWidth ? `${styles.self?.borderWidth}px` : null
             }}
         >
             <div className={classNames('flex', 'w-full', mapStyles({ justifyContent: sectionJustifyContent }))}>
                 <div className={classNames('w-full', mapMaxWidthStyles(sectionWidth))}>
-                    {postFeedHeader(props)}
-                    {postFeedVariants(props)}
+                    {props.title && (
+                        <h2 className={classNames(styles.title ? mapStyles(styles.title) : null)} data-sb-field-path=".title">
+                            {props.title}
+                        </h2>
+                    )}
+                    {props.subtitle && (
+                        <p
+                            className={classNames('text-lg', 'sm:text-xl', styles.subtitle ? mapStyles(styles.subtitle) : null, { 'mt-6': props.title })}
+                            data-sb-field-path=".subtitle"
+                        >
+                            {props.subtitle}
+                        </p>
+                    )}
                     {postFeedActions(props)}
+                    {postFeedVariants(props)}
                     {props.pageLinks}
                 </div>
             </div>
-        </div>
-    );
-}
-
-function postFeedHeader(props) {
-    if (!props.title && !props.subtitle) {
-        return null;
-    }
-    const styles = props.styles || {};
-    return (
-        <div>
-            {props.title && (
-                <h2 className={classNames(styles.title ? mapStyles(styles.title) : null)} data-sb-field-path=".title">
-                    {props.title}
-                </h2>
-            )}
-            {props.subtitle && (
-                <p
-                    className={classNames('text-lg', 'sm:text-xl', styles.subtitle ? mapStyles(styles.subtitle) : null, { 'mt-6': props.title })}
-                    data-sb-field-path=".subtitle"
-                >
-                    {props.subtitle}
-                </p>
-            )}
         </div>
     );
 }
@@ -83,7 +71,7 @@ function postFeedActions(props) {
     }
     const styles = props.styles || {};
     return (
-        <div className="mt-12 overflow-x-hidden">
+        <div className={classNames('overflow-x-hidden', { 'mt-8': props.title || props.subtitle })}>
             <div
                 className={classNames('flex', 'flex-wrap', 'items-center', '-mx-2', styles.actions ? mapStyles(styles.actions) : null)}
                 data-sb-field-path=".actions"
@@ -115,7 +103,7 @@ function postsVariantA(props) {
         return null;
     }
     return (
-        <div className={classNames('grid', 'gap-x-6', 'gap-y-12', 'md:grid-cols-3', 'lg:gap-x-8', { 'mt-12': props.title || props.subtitle })} data-sb-field-path=".posts">
+        <div className={classNames('grid', 'gap-x-6', 'gap-y-12', 'md:grid-cols-3', 'lg:gap-x-8', { 'mt-12': props.title || props.subtitle || (props.actions || []).length > 0 })} data-sb-field-path=".posts">
             {posts.map((post, index) => (
                 <article key={index} data-sb-object-id={post.__metadata?.id}>
                     {post.featuredImage && (
@@ -136,6 +124,12 @@ function postsVariantA(props) {
                             </p>
                         )}
                         <PostAttribution showAuthor={props.showAuthor} post={post} className={classNames(props.showExcerpt && post.excerpt ? 'mt-6': 'mt-2')} />
+                        <div className="mt-3">
+                            <Link href={getPageUrlPath(post)} className="sb-component sb-component-block sb-component-button sb-component-button-primary">
+                                <span>Read post</span>
+                                <ArrowRightIcon className="fill-current h-5 w-5 ml-3" />
+                            </Link>
+                        </div>
                     </div>
                 </article>
             ))}
@@ -149,7 +143,7 @@ function postsVariantB(props) {
         return null;
     }
     return (
-        <div className={classNames('grid', 'gap-x-6', 'gap-y-12', 'md:grid-cols-5', 'lg:gap-x-8', { 'mt-12': props.title || props.subtitle })} data-sb-field-path=".posts">
+        <div className={classNames('grid', 'gap-x-6', 'gap-y-12', 'md:grid-cols-5', 'lg:gap-x-8', { 'mt-12': props.title || props.subtitle || (props.actions || []).length > 0 })} data-sb-field-path=".posts">
             {posts.map((post, index) => (
                 <article
                     key={index}
@@ -191,7 +185,7 @@ function postsVariantC(props) {
         return null;
     }
     return (
-        <div className={classNames('grid', 'gap-6', 'md:grid-cols-3', 'lg:gap-8', { 'mt-12': props.title || props.subtitle })} data-sb-field-path=".posts">
+        <div className={classNames('grid', 'gap-6', 'md:grid-cols-3', 'lg:gap-8', { 'mt-12': props.title || props.subtitle || (props.actions || []).length > 0 })} data-sb-field-path=".posts">
             {posts.map((post, index) => {
                 return (
                     <article
@@ -225,10 +219,10 @@ function postsVariantC(props) {
                                     )}
                                 </div>
                                 <div className="mt-3">
-                                <Link href={getPageUrlPath(post)} className="sb-component sb-component-block sb-component-link">
-                                    <span>Read post</span>
-                                    <ArrowRightIcon className="fill-current h-5 w-5 ml-3" />
-                                </Link>
+                                    <Link href={getPageUrlPath(post)} className="sb-component sb-component-block sb-component-link">
+                                        <span>Read post</span>
+                                        <ArrowRightIcon className="fill-current h-5 w-5 ml-3" />
+                                    </Link>
                                 </div>
                             </div>
                         </div>
