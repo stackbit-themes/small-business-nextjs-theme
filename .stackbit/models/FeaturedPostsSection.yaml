@@ -13,7 +13,7 @@ fields:
   - name: subtitle
     default: Featured blog posts section example
   - name: colors
-    default: colors-h
+    default: colors-d
   - type: list
     name: posts
     label: Posts

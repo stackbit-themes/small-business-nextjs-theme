@@ -115,16 +115,20 @@ function ctaActions(props) {
     if (actions.length === 0) {
         return null;
     }
-    const styles = props.styles || {};
+    const sectionFlexDirection = props.styles?.self?.flexDirection || 'row';
+    const actionsJustifyContent = props.styles?.actions?.justifyContent || 'center';
     return (
-        <div className={classNames('w-full', styles.self?.flexDirection === 'row' ? 'lg:w-auto' : null)}>
-            <div className="overflow-x-hidden">
+        <div className={classNames('w-full', { 'lg:w-auto': sectionFlexDirection === 'row' })}>
+            <div
+                className={classNames('flex', mapStyles({ justifyContent: actionsJustifyContent }))}
+                data-sb-field-path=".actions"
+            >
                 <div
-                    className={classNames('flex', 'flex-wrap', 'items-center', '-mx-2', 'lg:flex-nowrap', styles.actions ? mapStyles(styles.actions) : null)}
+                    className={classNames('flex', 'flex-col', 'space-y-4', actionsJustifyContent === 'center' ? 'items-center' : 'items-start', { 'lg:items-center': sectionFlexDirection === 'row' && actionsJustifyContent !== 'center' })}
                     data-sb-field-path=".actions"
                 >
                     {actions.map((action, index) => (
-                        <Action key={index} {...action} className="mb-3 mx-2 lg:whitespace-nowrap" data-sb-field-path={`.${index}`} />
+                        <Action key={index} {...action} className="lg:whitespace-nowrap" data-sb-field-path={`.${index}`} />
                     ))}
                 </div>
             </div>

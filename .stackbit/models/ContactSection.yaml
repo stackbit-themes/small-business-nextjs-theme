@@ -14,7 +14,7 @@ fieldGroups:
     label: Settings
 fields:
   - name: colors
-    default: colors-h
+    default: colors-d
   - type: enum
     name: backgroundSize
     group: styles

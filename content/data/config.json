@@ -2,8 +2,9 @@
     "type": "Config",
     "header": {
         "headerVariant": "variant-b",
+        "isSticky": false,
         "primaryColors": "colors-d",
-        "secondaryColors": "colors-f",
+        "secondaryColors": "colors-d",
         "title": "Business",
         "isTitleVisible": true,
         "primaryLinks": [
@@ -57,7 +58,7 @@
         }
     },
     "footer": {
-        "colors": "colors-h",
+        "colors": "colors-d",
         "title": "Business",
         "contacts": {
             "phoneNumber": "850-123-5021",

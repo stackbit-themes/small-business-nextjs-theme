@@ -161,7 +161,7 @@
 
     /* Dividers */
     .sb-divider {
-        @apply flex items-center h-10 before:flex-grow before:h-px before:bg-current;
+        @apply flex items-center before:flex-grow before:h-px before:bg-current;
     }
 
     /* Featured items */

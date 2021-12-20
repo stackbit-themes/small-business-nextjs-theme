@@ -14,15 +14,18 @@ export default function Header(props) {
     const headerWidth = headerStyles.width || 'narrow';
     return (
         <header
-            className={classNames('sb-component', 'sb-component-header', primaryColors, 'relative', headerStyles.padding || 'py-5 px-4')}
+            className={classNames('sb-component', 'sb-component-header', primaryColors, props.isSticky ? 'sticky top-0 z-10' : 'relative')}
             data-sb-field-path={`${props.annotationPrefix}:header`}
         >
-            <div className={classNames('mx-auto', mapMaxWidthStyles(headerWidth))}>
-                <Link href="#main" className="sr-only">
-                    Skip to main content
-                </Link>
-                {headerVariants(props)}
+            <div className={classNames(headerStyles.padding || 'py-5 px-4')}>
+                <div className={classNames('mx-auto', mapMaxWidthStyles(headerWidth))}>
+                    <Link href="#main" className="sr-only">
+                        Skip to main content
+                    </Link>
+                    {headerVariants(props)}
+                </div>
             </div>
+            <div className={classNames('sb-divider', 'mx-auto', mapMaxWidthStyles(headerWidth))} />
         </header>
     );
 }
