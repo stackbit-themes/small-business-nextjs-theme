@@ -14,6 +14,7 @@ export default function FeaturedItemsSection(props) {
     const sectionHeight = styles.self?.height || 'auto';
     const sectionJustifyContent = styles.self?.justifyContent || 'center';
     const featuredItems = props.items || [];
+    const actions = props.actions || [];
     return (
         <div
             id={cssId}
@@ -54,9 +55,10 @@ export default function FeaturedItemsSection(props) {
                             {props.subtitle}
                         </p>
                     )}
+                    {featuredItemActions(props)}
                     {featuredItems.length > 0 && (
                         <div
-                            className={classNames('grid', 'gap-6', 'lg:gap-8', mapColStyles(props?.columns || 3), { 'mt-12': props.title || props.subtitle })}
+                            className={classNames('grid', 'gap-6', 'lg:gap-8', mapColStyles(props?.columns || 3), { 'mt-12 lg:mt-16': props.title || props.subtitle || actions.length > 0 })}
                             data-sb-field-path=".items"
                         >
                             {props.items.map((item, index) => (
@@ -64,7 +66,6 @@ export default function FeaturedItemsSection(props) {
                             ))}
                         </div>
                     )}
-                    {featuredItemActions(props)}
                 </div>
             </div>
         </div>
@@ -78,7 +79,7 @@ function featuredItemActions(props) {
     }
     const styles = props.styles || {};
     return (
-        <div className="mt-12 overflow-x-hidden">
+        <div className={classNames('overflow-x-hidden', { 'mt-8': props.title || props.subtitle })}>
             <div
                 className={classNames('flex', 'flex-wrap', 'items-center', '-mx-2', styles.actions ? mapStyles(styles.actions) : null)}
                 data-sb-field-path=".actions"

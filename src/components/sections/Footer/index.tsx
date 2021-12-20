@@ -17,7 +17,7 @@ export default function Footer(props) {
             className={classNames('sb-component', 'sb-component-footer', colors, footerStyles.padding || 'py-16 px-4')}
             data-sb-field-path={`${props.annotationPrefix}:footer`}
         >
-            <div className={classNames('mx-auto', mapMaxWidthStyles(footerWidth))}>
+            <div className={classNames('border-t', 'border-current', 'mx-auto', 'pt-16', mapMaxWidthStyles(footerWidth))}>
                 {(props.logo || props.title || props.text) && (
                     <div className="mb-12">
                         <Link href="/" className="sb-footer-logo flex items-center" data-sb-field-path=".title#span[1] .logo#img[1]">
@@ -60,8 +60,7 @@ export default function Footer(props) {
                         )}
                     </div>
                 )}
-                <div className="sb-divider" />
-                <div className="flex flex-col-reverse justify-between pt-6 lg:flex-row">
+                <div className="border-t-2 border-current flex flex-col-reverse justify-between pt-6 lg:flex-row">
                     {props.copyrightText && <p data-sb-field-path=".copyrightText">{props.copyrightText}</p>}
                     {legalLinks.length > 0 && (
                         <ul className="flex flex-col mb-6 space-y-2 lg:mb-0 sm:space-y-0 sm:space-x-5 sm:flex-row" data-sb-field-path=".legalLinks">

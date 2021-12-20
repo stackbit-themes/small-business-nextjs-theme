@@ -15,6 +15,16 @@ fieldGroups:
 fields:
   - name: colors
     default: colors-f
+  - type: enum
+    name: backgroundSize
+    group: styles
+    label: Background size
+    options:
+      - label: Full
+        value: full
+      - label: Inset
+        value: inset
+    default: full
   - type: string
     name: title
     label: Title

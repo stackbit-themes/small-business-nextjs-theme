@@ -5,6 +5,7 @@ sections:
   - type: HeroSection
     elementId: homepage-hero-1
     colors: colors-d
+    backgroundSize: inset
     title: 'We do fishing differently'
     subtitle: 'Fresh. Better. Faster'
     actions:
@@ -21,7 +22,7 @@ sections:
       url: /images/hero.png
       backgroundSize: cover
       backgroundPosition: center
-      opacity: 70
+      opacity: 100
     styles:
       self:
         height: auto
@@ -29,13 +30,13 @@ sections:
         margin:
           - mt-0
           - mb-0
-          - ml-0
-          - mr-0
+          - ml-4
+          - mr-4
         padding:
-          - pt-12
+          - pt-32
           - pb-96
-          - pr-4
-          - pl-4
+          - pr-12
+          - pl-12
         alignItems: center
         justifyContent: center
         flexDirection: row
@@ -50,7 +51,7 @@ sections:
   - type: QuoteSection
     colors: colors-d
     quote: |-
-      **“It’s great to see someone taking action while still maintaining a sustainbale fish supply to home cooks.”**
+      “It’s great to see someone taking action while still maintaining a sustainbale fish supply to home cooks.”
     name: Isabelle Parks
     title: Head chef at Parks
     styles:
@@ -72,9 +73,24 @@ sections:
   - colors: colors-d
     elementId: ''
     title: Seasonal adventures
+    actions:
+      - type: Link
+        label: See all adventures
+        url: 'https://www.stackbit.com/'
+        showIcon: true
+        icon: arrowRight
     items:
       - type: FeaturedItem
-        title: Sustainable fishing
+        title: Sunset Fishnet
+        text: >
+          We’re local, seasonal fisherman, supporting fishing restrictions. We fish what the sea has to offer, nothing more, and no cheating.
+        actions:
+          - type: Button
+            label: Join adventure
+            url: 'https://www.stackbit.com/'
+            showIcon: true
+            icon: arrowRight
+            style: primary
         styles:
           self:
             textAlign: left
@@ -82,12 +98,21 @@ sections:
             borderWidth: 1
             borderStyle: solid
             padding:
-              - pt-4
-              - pl-4
-              - pb-6
-              - pr-4
+              - pt-8
+              - pb-10
+              - pl-8
+              - pr-8
       - type: FeaturedItem
-        title: Cooking by the waters
+        title: Extreme Fly Fishing
+        text: >
+          We’re local, seasonal fisherman, supporting fishing restrictions. We fish what the sea has to offer, nothing more, and no cheating.
+        actions:
+          - type: Button
+            label: Join adventure
+            url: 'https://www.stackbit.com/'
+            showIcon: true
+            icon: arrowRight
+            style: primary
         styles:
           self:
             textAlign: left
@@ -95,24 +120,11 @@ sections:
             borderWidth: 1
             borderStyle: solid
             padding:
-              - pt-4
-              - pl-4
-              - pb-6
-              - pr-4
-      - type: FeaturedItem
-        title: As fresh as it gets
-        styles:
-          self:
-            textAlign: left
-            borderColor: border-dark
-            borderWidth: 1
-            borderStyle: solid
-            padding:
-              - pt-4
-              - pl-4
-              - pb-6
-              - pr-4
-    columns: 3
+              - pt-8
+              - pb-10
+              - pl-8
+              - pr-8
+    columns: 2
     enableHover: false
     styles:
       self:
@@ -134,9 +146,7 @@ sections:
         borderStyle: none
         borderColor: border-dark
       title:
-        textAlign: center
-      subtitle:
-        textAlign: center
+        textAlign: left
       actions:
         justifyContent: flex-start
     type: FeaturedItemsSection
