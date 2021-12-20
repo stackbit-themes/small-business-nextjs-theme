@@ -306,4 +306,26 @@
             @apply hover:bg-dark hover:text-light;
         }
     }
+    .colors-e {
+        @apply bg-complementary-alt text-on-complementary-alt;
+        .sb-input,
+        .sb-select,
+        .sb-textarea {
+            @apply text-on-complementary-alt placeholder-on-complementary-alt placeholder-opacity-75;
+        }
+        .sb-component-button-primary,
+        .sb-component-social-primary {
+            @apply bg-primary border-primary text-on-primary;
+        }
+        .sb-component-button-secondary,
+        .sb-component-social-secondary {
+            @apply border-on-complementary-alt text-on-complementary-alt;
+        }
+        .sb-card {
+            @apply bg-light text-on-light;
+        }
+        .sb-component-item-hover {
+            @apply hover:bg-dark hover:text-light;
+        }
+    }
 }

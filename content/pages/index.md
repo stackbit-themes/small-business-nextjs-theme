@@ -150,8 +150,48 @@ sections:
       actions:
         justifyContent: flex-start
     type: FeaturedItemsSection
+  - elementId: ''
+    colors: colors-c
+    variant: variant-c
+    actions:
+      - type: Link
+        label: See all posts
+        url: '/blog'
+        showIcon: true
+        icon: arrowRight
+    posts:
+      - content/pages/blog/post-two.md
+      - content/pages/blog/post-four.md
+      - content/pages/blog/post-three.md
+    styles:
+      self:
+        height: auto
+        width: wide
+        margin:
+          - mt-0
+          - mb-0
+          - ml-0
+          - mr-0
+        padding:
+          - pt-24
+          - pb-36
+          - pl-4
+          - pr-4
+        justifyContent: center
+        borderRadius: none
+        borderWidth: 0
+        borderStyle: none
+        borderColor: border-dark
+      title:
+        textAlign: left
+      subtitle:
+        textAlign: left
+      actions:
+        justifyContent: flex-start
+    type: FeaturedPostsSection
+    showDate: true
   - type: TextSection
-    colors: colors-d
+    colors: colors-e
     variant: variant-a
     text: |-
       ##[Follow us on Instagram](https://www.stackbit.com/)

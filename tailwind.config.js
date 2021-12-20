@@ -5,7 +5,7 @@ module.exports = {
     mode: 'jit',
     purge: {
         content: ['./src/**/*.{js,ts,jsx,tsx}', './content/**/*'],
-        safelist: ['colors-a', 'colors-b', 'colors-c', 'colors-d']
+        safelist: ['colors-a', 'colors-b', 'colors-c', 'colors-d', 'colors-e']
     },
     darkMode: false,
     theme: {
@@ -21,7 +21,9 @@ module.exports = {
                 secondary: themeStyle.secondary,
                 'on-secondary': themeStyle.onSecondary,
                 complementary: themeStyle.complementary,
-                'on-complementary': themeStyle.onComplementary
+                'on-complementary': themeStyle.onComplementary,
+                'complementary-alt': themeStyle.complementaryAlt,
+                'on-complementary-alt': themeStyle.onComplementaryAlt
             },
             spacing: {
                 '1/1': '100%',

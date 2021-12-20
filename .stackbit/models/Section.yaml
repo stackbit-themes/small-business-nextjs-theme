@@ -34,6 +34,11 @@ fields:
         textColor: '$onComplementary'
         backgroundColor: '$complementary'
         borderColor: '#ececec'
+      - label: Colors E
+        value: colors-e
+        textColor: '$onComplementaryAlt'
+        backgroundColor: '$complementaryAlt'
+        borderColor: '#ececec'
     default: colors-a
   - type: string
     name: elementId
