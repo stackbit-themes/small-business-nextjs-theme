@@ -28,12 +28,10 @@ sections:
         height: auto
         width: wide
         margin:
-          - mt-0
+          - mt-6
           - mb-0
-          - ml-4
-          - mr-4
         padding:
-          - pt-32
+          - pt-36
           - pb-96
           - pr-12
           - pl-12
@@ -59,8 +57,8 @@ sections:
         height: auto
         width: wide
         padding:
-          - pt-24
-          - pb-24
+          - pt-28
+          - pb-36
           - pr-4
           - pl-4
         justifyContent: center
@@ -70,98 +68,18 @@ sections:
         textAlign: center
       title:
         textAlign: center
-  - colors: colors-d
-    elementId: ''
+  - elementId: ''
+    colors: colors-c
+    variant: variant-c
     title: Seasonal adventures
     actions:
       - type: Link
         label: See all adventures
-        url: 'https://www.stackbit.com/'
-        showIcon: true
-        icon: arrowRight
-    items:
-      - type: FeaturedItem
-        title: Sunset Fishnet
-        text: >
-          We’re local, seasonal fisherman, supporting fishing restrictions. We fish what the sea has to offer, nothing more, and no cheating.
-        actions:
-          - type: Button
-            label: Join adventure
-            url: 'https://www.stackbit.com/'
-            showIcon: true
-            icon: arrowRight
-            style: primary
-        styles:
-          self:
-            textAlign: left
-            borderColor: border-dark
-            borderWidth: 1
-            borderStyle: solid
-            padding:
-              - pt-8
-              - pb-10
-              - pl-8
-              - pr-8
-      - type: FeaturedItem
-        title: Extreme Fly Fishing
-        text: >
-          We’re local, seasonal fisherman, supporting fishing restrictions. We fish what the sea has to offer, nothing more, and no cheating.
-        actions:
-          - type: Button
-            label: Join adventure
-            url: 'https://www.stackbit.com/'
-            showIcon: true
-            icon: arrowRight
-            style: primary
-        styles:
-          self:
-            textAlign: left
-            borderColor: border-dark
-            borderWidth: 1
-            borderStyle: solid
-            padding:
-              - pt-8
-              - pb-10
-              - pl-8
-              - pr-8
-    columns: 2
-    enableHover: false
-    styles:
-      self:
-        height: auto
-        width: wide
-        margin:
-          - mt-0
-          - mb-0
-          - ml-0
-          - mr-0
-        padding:
-          - pt-28
-          - pb-28
-          - pl-4
-          - pr-4
-        justifyContent: center
-        borderRadius: none
-        borderWidth: 0
-        borderStyle: none
-        borderColor: border-dark
-      title:
-        textAlign: left
-      actions:
-        justifyContent: flex-start
-    type: FeaturedItemsSection
-  - elementId: ''
-    colors: colors-c
-    variant: variant-c
-    actions:
-      - type: Link
-        label: See all posts
         url: '/blog'
         showIcon: true
         icon: arrowRight
     posts:
       - content/pages/blog/post-two.md
-      - content/pages/blog/post-four.md
       - content/pages/blog/post-three.md
     styles:
       self:
@@ -173,8 +91,8 @@ sections:
           - ml-0
           - mr-0
         padding:
-          - pt-24
-          - pb-36
+          - pt-28
+          - pb-48
           - pl-4
           - pr-4
         justifyContent: center
@@ -190,11 +108,14 @@ sections:
         justifyContent: flex-start
     type: FeaturedPostsSection
     showDate: true
+    showExcerpt: true
+    showReadMoreLink: true
+    readMoreLinkLabel: Join adventure
   - type: TextSection
     colors: colors-e
     variant: variant-a
     text: |-
-      ##[Follow us on Instagram](https://www.stackbit.com/)
+      ## [Follow us on Instagram](https://www.stackbit.com/)
     styles:
       self:
         height: auto
@@ -205,8 +126,8 @@ sections:
           - ml-0
           - mr-0
         padding:
-          - pt-24
-          - pb-24
+          - pt-28
+          - pb-36
           - pr-4
           - pl-4
         justifyContent: center
@@ -226,7 +147,7 @@ sections:
         icon: arrowRight
     backgroundImage:
       type: BackgroundImage
-      url: /images/hero.png
+      url: /images/hero-3.png
       backgroundSize: cover
       backgroundPosition: center
       opacity: 100
@@ -240,8 +161,8 @@ sections:
           - ml-0
           - mr-0
         padding:
-          - pt-48
-          - pb-48
+          - pt-36
+          - pb-72
           - pr-4
           - pl-4
         justifyContent: flex-start

@@ -1,12 +1,14 @@
 ---
 layout: PostFeedLayout
-title: Blog
+title: Upcoming adventures
 numOfPostsPerPage: 10
 postFeed:
   showDate: true
   showAuthor: false
-  showExcerpt: false
-  variant: variant-a
+  showExcerpt: true
+  showReadMoreLink: true
+  readMoreLinkLabel: Join adventure
+  variant: variant-c
   colors: colors-d
   styles:
     self:

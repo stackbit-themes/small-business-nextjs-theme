@@ -231,6 +231,9 @@
         .sb-component-social-secondary {
             @apply border-dark text-dark;
         }
+        .sb-card {
+            @apply bg-complementary text-on-light;
+        }
         .sb-component-item-hover {
             @apply hover:bg-primary hover:text-on-primary;
         }
@@ -250,6 +253,11 @@
         .sb-component-social-secondary {
             @apply border-on-dark text-on-dark;
         }
+
+        .sb-card {
+            @apply bg-light text-on-light;
+        }
+
         .sb-component-item-hover {
             @apply hover:bg-light hover:text-on-light;
         }
@@ -265,10 +273,17 @@
         .sb-component-social-primary {
             @apply bg-dark border-dark text-on-primary;
         }
-        .sb-component-button-secondary,
-        .sb-component-social-secondary {
-            @apply border-dark text-dark;
+        .sb-component-button-primary,
+        .sb-component-social-primary {
+            @apply bg-primary border-primary text-on-primary;
         }
+        .sb-card {
+            @apply bg-light text-on-secondary;
+        }
+        h2 {
+            @apply text-on-secondary;
+        }
+
         .sb-component-item-hover {
             @apply hover:bg-dark hover:text-light;
         }
@@ -289,7 +304,7 @@
             @apply border-on-complementary text-on-complementary;
         }
         .sb-card {
-            @apply bg-light text-on-light;
+            @apply bg-light text-on-complementary;
         }
         .sb-component-item-hover {
             @apply hover:bg-dark hover:text-light;
@@ -310,6 +325,10 @@
         .sb-component-social-secondary {
             @apply border-on-complementary-alt text-on-complementary-alt;
         }
+        .sb-card {
+            @apply bg-light text-complementary-alt;
+        }
+
         .sb-component-item-hover {
             @apply hover:bg-dark hover:text-light;
         }

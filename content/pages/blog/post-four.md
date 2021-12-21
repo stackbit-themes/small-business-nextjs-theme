@@ -13,7 +13,7 @@ featuredImage:
 bottomSections:
   - elementId: ''
     variant: variant-c
-    colors: colors-a
+    colors: colors-d
     title: Read next
     recentCount: 3
     styles:

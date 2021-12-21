@@ -2,7 +2,7 @@
     "type": "Config",
     "header": {
         "headerVariant": "variant-b",
-        "isSticky": false,
+        "isSticky": true,
         "primaryColors": "colors-d",
         "secondaryColors": "colors-d",
         "title": "Business",
@@ -23,14 +23,8 @@
             {
                 "type": "Link",
                 "label": "Adventures",
-                "url": "/adventures",
+                "url": "/blog",
                 "altText": ""
-            },
-            {
-                "type": "Link",
-                "label": "Blog",
-                "altText": "Blog",
-                "url": "/blog"
             }
         ],
         "secondaryLinks": [
