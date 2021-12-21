@@ -6,7 +6,7 @@
     "bio": "This feature is the thing you were missing in your workflow, thank god we have it for you to use.",
     "image": {
         "type": "ImageBlock",
-        "url": "/images/dianne-ameter.jpg",
+        "url": "/images/dianne-ameter.png",
         "altText": "Dianne Ameter photo"
     }
 }
