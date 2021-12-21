@@ -212,22 +212,24 @@ sections:
         justifyContent: center
       text:
         textAlign: center
-  - elementId: ''
-    colors: colors-d
+  - type: FeatureHighlightSection
+    colors: colors-b
+    backgroundSize: full
     title: Time to leave your desk. Let’s go flying
     text: >
       We’re local, seasonal fisherman, supporting fishing restrictions.
     actions:
       - type: Link
         label: Join adventure
-        url: /
+        url: 'https://www.stackbit.com/'
         showIcon: true
         icon: arrowRight
-        iconPosition: right
-    media:
-      type: ImageBlock
-      url: /images/hero-2.png
-      altText: Hero section image
+    backgroundImage:
+      type: BackgroundImage
+      url: /images/hero.png
+      backgroundSize: cover
+      backgroundPosition: center
+      opacity: 100
     styles:
       self:
         height: auto
@@ -238,13 +240,11 @@ sections:
           - ml-0
           - mr-0
         padding:
-          - pt-6
-          - pb-36
-          - pl-4
+          - pt-48
+          - pb-48
           - pr-4
-        alignItems: center
-        justifyContent: center
-        flexDirection: row-reverse
+          - pl-4
+        justifyContent: flex-start
       title:
         textAlign: left
       subtitle:
@@ -253,7 +253,6 @@ sections:
         textAlign: left
       actions:
         justifyContent: flex-start
-    type: FeatureHighlightSection
   - type: ContactSection
     colors: colors-d
     title: Join our club

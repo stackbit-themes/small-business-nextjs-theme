@@ -5,7 +5,7 @@ import classNames from 'classnames';
 import { getComponent } from '../../components-registry';
 import { mapStylesToClassNames as mapStyles } from '../../../utils/map-styles-to-class-names';
 import { getDataAttrs } from '../../../utils/get-data-attrs';
-import { Action } from '../../atoms';
+import { Action, BackgroundImage } from '../../atoms';
 
 export default function FeatureHighlightSection(props) {
     const cssId = props.elementId || null;
@@ -15,8 +15,6 @@ export default function FeatureHighlightSection(props) {
     const sectionWidth = sectionStyles.width || 'wide';
     const sectionHeight = sectionStyles.height || 'auto';
     const sectionJustifyContent = sectionStyles.justifyContent || 'center';
-    const sectionFlexDirection = sectionStyles.flexDirection || 'row';
-    const sectionAlignItems = sectionStyles.alignItems || 'center';
     return (
         <div
             id={cssId}
@@ -25,8 +23,7 @@ export default function FeatureHighlightSection(props) {
                 'sb-component',
                 'sb-component-section',
                 'sb-component-feature-highlight-section',
-                bgSize === 'inset' ? 'flex': null,
-                bgSize === 'inset' ? mapStyles({ justifyContent: sectionJustifyContent }) : null,
+                bgSize === 'inset' ? 'flex justify-center' : null,
                 sectionStyles.margin
             )}
         >
@@ -35,9 +32,10 @@ export default function FeatureHighlightSection(props) {
                     colors,
                     'flex',
                     'flex-col',
+                    'items-center',
                     'justify-center',
                     'relative',
-                    bgSize === 'inset' ? 'w-full': null,
+                    bgSize === 'inset' ? 'w-full' : null,
                     bgSize === 'inset' ? mapMaxWidthStyles(sectionWidth) : null,
                     mapMinHeightStyles(sectionHeight),
                     sectionStyles.padding || 'py-12 px-4',
@@ -50,66 +48,18 @@ export default function FeatureHighlightSection(props) {
                     borderWidth: sectionStyles.borderWidth ? `${sectionStyles.borderWidth}px` : null
                 }}
             >
-                <div
-                    className={classNames(
-                        'relative',
-                        'w-full',
-                        bgSize === 'full' ? 'flex': null,
-                        bgSize === 'full' ? mapStyles({ justifyContent: sectionJustifyContent }) : null
-                    )}
-                >
-                    <div
-                        className={classNames(
-                            'w-full',
-                            bgSize === 'full' ? mapMaxWidthStyles(sectionWidth) : null
-                        )}
-                    >
-                        <div
-                            className={classNames(
-                                'flex',
-                                mapFlexDirectionStyles(sectionFlexDirection),
-                                mapStyles({ alignItems: sectionAlignItems }),
-                                'space-y-8',
-                                {
-                                    'space-y-reverse': sectionFlexDirection === 'col-reverse' || sectionFlexDirection === 'row-reverse',
-                                    'lg:space-y-0': sectionFlexDirection === 'row' || sectionFlexDirection === 'row-reverse'
-                                }
-                            )}
-                        >
-                            <div className="flex-1 w-full">
-                                <div
-                                    className={classNames({
-                                        'lg:pr-1/4': props.media && sectionFlexDirection === 'row',
-                                        'lg:pl-1/4': props.media && sectionFlexDirection === 'row-reverse',
-                                    })}
-                                >
-                                    {featureHighlightBody(props)}
-                                    {featureHighlightActions(props)}
-                                </div>
-                            </div>
-                            {props.media && (
-                                <div className="flex-1 w-full">
-                                    {featureHighlightMedia(props.media)}
-                                </div>
-                            )}
+                {props.backgroundImage && <BackgroundImage {...props.backgroundImage} />}
+                <div className={classNames('relative', 'w-full', bgSize === 'full' ? mapMaxWidthStyles(sectionWidth) : null)}>
+                    <div className={classNames('w-full', 'flex', mapStyles({ justifyContent: sectionJustifyContent }))}>
+                        <div className={classNames('max-w-2xl', 'colors-a', 'px-6', 'py-10', 'sm:px-12', 'sm:py-14')}>
+                            {featureHighlightBody(props)}
+                            {featureHighlightActions(props)}
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     );
-}
-
-function featureHighlightMedia(media) {
-    const mediaType = media.type;
-    if (!mediaType) {
-        throw new Error(`hero section media does not have the 'type' property`);
-    }
-    const Media = getComponent(mediaType);
-    if (!Media) {
-        throw new Error(`no component matching the hero section media type: ${mediaType}`);
-    }
-    return <Media {...media} data-sb-field-path=".media" />;
 }
 
 function featureHighlightBody(props) {
@@ -182,20 +132,6 @@ function mapMaxWidthStyles(width) {
             return 'max-w-screen-xl';
         case 'full':
             return 'max-w-full';
-    }
-    return null;
-}
-
-function mapFlexDirectionStyles(flexDirection) {
-    switch (flexDirection) {
-        case 'row':
-            return ['flex-col', 'lg:flex-row'];
-        case 'row-reverse':
-            return ['flex-col-reverse', 'lg:flex-row-reverse'];
-        case 'col':
-            return ['flex-col'];
-        case 'col-reverse':
-            return ['flex-col-reverse'];
     }
     return null;
 }

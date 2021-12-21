@@ -60,26 +60,20 @@ fields:
         url: '/'
         style: secondary
   - type: model
-    name: media
-    label: Media
+    name: backgroundImage
+    group: styles
+    label: Background image
     models:
-      - ImageBlock
-      - VideoBlock
-    default:
-      type: ImageBlock
-      url: https://assets.stackbit.com/components/images/default/hero.png
-      altText: Hero section image
+      - BackgroundImage
   - type: style
     name: styles
     styles:
       self:
         height: ['auto', 'screen']
-        width: ['narrow', 'wide', 'full']
+        width: ['wide', 'full']
         margin: ['tw0:96']
         padding: ['tw0:96']
-        alignItems: ['flex-start', 'flex-end', 'center']
         justifyContent: ['flex-start', 'flex-end', 'center']
-        flexDirection: ['row', 'row-reverse', 'col', 'col-reverse']
         borderRadius: '*'
         borderWidth: ['0:8']
         borderStyle: '*'

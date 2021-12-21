@@ -25,7 +25,7 @@ export default function HeroSection(props) {
                 'sb-component',
                 'sb-component-section',
                 'sb-component-cta-section',
-                bgSize === 'inset' ? 'flex': null,
+                bgSize === 'inset' ? 'flex' : null,
                 bgSize === 'inset' ? mapStyles({ justifyContent: sectionJustifyContent }) : null,
                 sectionStyles.margin
             )}
@@ -37,7 +37,7 @@ export default function HeroSection(props) {
                     'flex-col',
                     'justify-center',
                     'relative',
-                    bgSize === 'inset' ? 'w-full': null,
+                    bgSize === 'inset' ? 'w-full' : null,
                     bgSize === 'inset' ? mapMaxWidthStyles(sectionWidth) : null,
                     mapMinHeightStyles(sectionHeight),
                     sectionStyles.padding || 'py-12 px-4',
@@ -55,16 +55,11 @@ export default function HeroSection(props) {
                     className={classNames(
                         'relative',
                         'w-full',
-                        bgSize === 'full' ? 'flex': null,
+                        bgSize === 'full' ? 'flex' : null,
                         bgSize === 'full' ? mapStyles({ justifyContent: sectionJustifyContent }) : null
                     )}
                 >
-                    <div
-                        className={classNames(
-                            'w-full',
-                            bgSize === 'full' ? mapMaxWidthStyles(sectionWidth) : null
-                        )}
-                    >
+                    <div className={classNames('w-full', bgSize === 'full' ? mapMaxWidthStyles(sectionWidth) : null)}>
                         <div
                             className={classNames(
                                 'flex',
@@ -82,11 +77,7 @@ export default function HeroSection(props) {
                                 {heroBody(props)}
                                 {heroActions(props)}
                             </div>
-                            {props.media && (
-                                <div className="flex-1 w-full">
-                                    {heroMedia(props.media)}
-                                </div>
-                            )}
+                            {props.media && <div className="flex-1 w-full">{heroMedia(props.media)}</div>}
                         </div>
                     </div>
                 </div>
