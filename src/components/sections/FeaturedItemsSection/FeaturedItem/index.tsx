@@ -23,10 +23,11 @@ export default function FeaturedItem(props) {
             style={{
                 borderWidth: itemBorderWidth ? `${itemBorderWidth}px` : undefined
             }}
-            data-sb-field-path={props['data-sb-field-path']}>
+            data-sb-field-path={props['data-sb-field-path']}
+        >
             {props.featuredImage && (
-                <div className="mb-6" data-sb-field-path=".featuredImage">
-                    <ImageBlock {...props.featuredImage} className="inline-block" />
+                <div className="mb-6">
+                    <ImageBlock {...props.featuredImage} className="inline-block" data-sb-field-path=".featuredImage" />
                 </div>
             )}
             {props.title && (

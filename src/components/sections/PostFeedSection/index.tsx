@@ -109,20 +109,21 @@ function postsVariantA(props) {
             className={classNames('grid', 'gap-x-6', 'gap-y-12', 'md:grid-cols-2', 'lg:gap-x-8', {
                 'mt-12': props.title || props.subtitle || (props.actions || []).length > 0
             })}
-            data-sb-field-path=".posts"
+            {...(props.annotatePosts ? { 'data-sb-field-path': '.posts' } : null)}
         >
             {posts.map((post, index) => (
-                <article key={index} className="overflow-hidden sb-card" data-sb-object-id={post.__metadata?.id}>
+                <article key={index} className="sb-card overflow-hidden" data-sb-object-id={post.__metadata?.id}>
                     <div className="flex flex-col min-h-full">
                         {post.featuredImage && (
-                            <Link href={getPageUrlPath(post)} className="block h-0 w-full pt-2/3 relative overflow-hidden" data-sb-field-path="featuredImage">
+                            <Link href={getPageUrlPath(post)} className="block h-0 w-full pt-2/3 relative overflow-hidden">
                                 <ImageBlock
                                     {...post.featuredImage}
                                     className="absolute left-0 top-0 h-full w-full object-cover transition-transform duration-500 hover:scale-105"
+                                    data-sb-field-path="featuredImage"
                                 />
                             </Link>
                         )}
-                        <div className="flex flex-col flex-grow px-4 pt-6 pb-8 sm:px-6">
+                        <div className="flex flex-col flex-grow px-4 pt-6 pb-10 sm:px-6">
                             <div className="flex-grow">
                                 <h3 className="text-3xl">
                                     <Link href={getPageUrlPath(post)} data-sb-field-path="title">
@@ -170,20 +171,21 @@ function postsVariantB(props) {
             className={classNames('grid', 'gap-x-6', 'gap-y-12', 'md:grid-cols-3', 'lg:gap-x-8', {
                 'mt-12': props.title || props.subtitle || (props.actions || []).length > 0
             })}
-            data-sb-field-path=".posts"
+            {...(props.annotatePosts ? { 'data-sb-field-path': '.posts' } : null)}
         >
             {posts.map((post, index) => (
-                <article key={index} className="overflow-hidden sb-card" data-sb-object-id={post.__metadata?.id}>
+                <article key={index} className="sb-card overflow-hidden" data-sb-object-id={post.__metadata?.id}>
                     <div className="flex flex-col min-h-full">
                         {post.featuredImage && (
-                            <Link href={getPageUrlPath(post)} className="block h-0 w-full pt-2/3 relative overflow-hidden" data-sb-field-path="featuredImage">
+                            <Link href={getPageUrlPath(post)} className="block h-0 w-full pt-2/3 relative overflow-hidden">
                                 <ImageBlock
                                     {...post.featuredImage}
                                     className="absolute left-0 top-0 h-full w-full object-cover transition-transform duration-500 hover:scale-105"
+                                    data-sb-field-path="featuredImage"
                                 />
                             </Link>
                         )}
-                        <div className="flex flex-col flex-grow px-4 pt-6 pb-8 sm:px-6">
+                        <div className="flex flex-col flex-grow px-4 pt-6 pb-10 sm:px-6">
                             <div className="flex-grow">
                                 <h3 className="text-2xl">
                                     <Link href={getPageUrlPath(post)} data-sb-field-path="title">
@@ -231,24 +233,25 @@ function postsVariantC(props) {
             className={classNames('grid', 'gap-6', 'md:grid-cols-6', 'lg:gap-8', {
                 'mt-12': props.title || props.subtitle || (props.actions || []).length > 0
             })}
-            data-sb-field-path=".posts"
+            {...(props.annotatePosts ? { 'data-sb-field-path': '.posts' } : null)}
         >
             {posts.map((post, index) => (
                 <article
                     key={index}
-                    className={classNames('overflow-hidden', 'sb-card', index % 5 === 0 || index % 5 === 1 ? 'md:col-span-3' : 'md:col-span-2')}
+                    className={classNames('sb-card', 'overflow-hidden', index % 5 === 0 || index % 5 === 1 ? 'md:col-span-3' : 'md:col-span-2')}
                     data-sb-object-id={post.__metadata?.id}
                 >
                     <div className="flex flex-col min-h-full">
                         {post.featuredImage && (
-                            <Link href={getPageUrlPath(post)} className="block h-0 w-full pt-2/3 relative overflow-hidden" data-sb-field-path="featuredImage">
+                            <Link href={getPageUrlPath(post)} className="block h-0 w-full pt-2/3 relative overflow-hidden">
                                 <ImageBlock
                                     {...post.featuredImage}
                                     className="absolute left-0 top-0 h-full w-full object-cover transition-transform duration-500 hover:scale-105"
+                                    data-sb-field-path="featuredImage"
                                 />
                             </Link>
                         )}
-                        <div className="flex flex-col flex-grow px-4 pt-6 pb-8 sm:px-6">
+                        <div className="flex flex-col flex-grow px-4 pt-6 pb-10 sm:px-6">
                             <div className="flex-grow">
                                 <h3 className="text-3xl">
                                     <Link href={getPageUrlPath(post)} data-sb-field-path="title">
@@ -296,26 +299,26 @@ function postsVariantD(props) {
             className={classNames('grid', 'gap-y-12', {
                 'mt-12': props.title || props.subtitle || (props.actions || []).length > 0
             })}
-            data-sb-field-path=".posts"
+            {...(props.annotatePosts ? { 'data-sb-field-path': '.posts' } : null)}
         >
             {posts.map((post, index) => (
-                <article key={index} data-sb-object-id={post.__metadata?.id} className="sb-card">
+                <article key={index} data-sb-object-id={post.__metadata?.id} className="sb-card overflow-hidden">
                     <div className="md:flex">
                         {post.featuredImage && (
                             <div className="md:w-2/5">
                                 <Link
                                     href={getPageUrlPath(post)}
                                     className="block h-0 w-full pt-2/3 relative overflow-hidden md:h-60 md:min-h-full md:pt-0 lg:h-72"
-                                    data-sb-field-path="featuredImage"
                                 >
                                     <ImageBlock
                                         {...post.featuredImage}
                                         className="absolute left-0 top-0 h-full w-full object-cover transition-transform duration-500 hover:scale-105"
+                                        data-sb-field-path="featuredImage"
                                     />
                                 </Link>
                             </div>
                         )}
-                        <div className="px-4 pt-6 pb-8 sm:px-6 md:w-3/5 md:self-center md:pt-8 md:pb-10">
+                        <div className="px-4 pt-6 pb-10 sm:px-6 md:w-3/5 md:self-center md:pt-8">
                             <h3 className="text-3xl">
                                 <Link href={getPageUrlPath(post)} data-sb-field-path="title">
                                     {post.title}
@@ -438,9 +441,9 @@ function mapMinHeightStyles(height) {
 function mapMaxWidthStyles(width) {
     switch (width) {
         case 'narrow':
-            return 'max-w-screen-md';
+            return 'max-w-4xl';
         case 'wide':
-            return 'max-w-screen-xl';
+            return 'max-w-7xl';
         case 'full':
             return 'max-w-full';
     }

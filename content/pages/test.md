@@ -5,7 +5,7 @@ sections:
   - type: HeroSection
     elementId: homepage-hero-1
     colors: colors-c
-    backgroundSize: inset
+    backgroundSize: full
     title: 'We do fishing differently'
     subtitle: 'Fresh. Better. Faster'
     actions:
@@ -35,7 +35,7 @@ sections:
           - pr-12
           - pl-12
         alignItems: center
-        justifyContent: flex-start
+        justifyContent: center
         flexDirection: row
       title:
         textAlign: left
@@ -78,8 +78,8 @@ sections:
           - pr-12
           - pl-12
         alignItems: center
-        justifyContent: flex-start
-        flexDirection: row
+        justifyContent: center
+        flexDirection: col
       title:
         textAlign: left
       subtitle:
@@ -130,8 +130,8 @@ sections:
       actions:
         justifyContent: flex-start
   - type: CtaSection
-    colors: colors-d
-    backgroundSize: full
+    colors: colors-c
+    backgroundSize: inset
     title: Follow us on instagram
     text: To get all the latest updates
     actions:
@@ -149,7 +149,7 @@ sections:
     styles:
       self:
         height: auto
-        width: wide
+        width: narrow
         margin:
           - mt-0
           - mb-0
@@ -209,11 +209,14 @@ sections:
         textAlign: center
       actions:
         justifyContent: center
-  - type: RecentPostsSection
+  - type: FeaturedPostsSection
     variant: variant-a
     colors: colors-a
     title: Recent posts, Variant A
-    recentCount: 3
+    posts:
+      - content/pages/blog/post-one.md
+      - content/pages/blog/post-two.md
+      - content/pages/blog/post-three.md
     showDate: true
     showAuthor: true
     showExcerpt: true
@@ -315,7 +318,7 @@ sections:
     styles:
       self:
         height: auto
-        width: wide
+        width: narrow
         margin:
           - mt-0
           - mb-0
@@ -333,4 +336,102 @@ sections:
         textAlign: center
       actions:
         justifyContent: center
+  - colors: colors-a
+    elementId: ''
+    title: Remote doesn’t mean alone. Here are so great features
+    subtitle: >-
+      These are all excellent features that will provide exactly the things
+      you’re looking for.
+    items:
+      - type: FeaturedItem
+        title: Faster
+        text: >
+          Learn how top tech companies have learned working remote using our
+          product.
+        featuredImage:
+          url: /images/faster.svg
+          altText: altText of the image
+          caption: Caption of the image
+          type: ImageBlock
+        styles:
+          self:
+            textAlign: left
+            borderColor: border-dark
+            borderWidth: 1
+            borderStyle: solid
+            padding:
+              - pt-4
+              - pl-4
+              - pb-6
+              - pr-4
+      - type: FeaturedItem
+        title: Smarter
+        text: >
+          Learn how top tech companies have learned working remote using our
+          product.
+        featuredImage:
+          url: /images/smarter.svg
+          altText: altText of the image
+          caption: Caption of the image
+          type: ImageBlock
+        styles:
+          self:
+            textAlign: left
+            borderColor: border-dark
+            borderWidth: 1
+            borderStyle: solid
+            padding:
+              - pt-4
+              - pl-4
+              - pb-6
+              - pr-4
+      - type: FeaturedItem
+        title: Focused
+        text: >
+          Learn how top tech companies have learned working remote using our
+          product.
+        featuredImage:
+          url: /images/focused.svg
+          altText: altText of the image
+          caption: Caption of the image
+          type: ImageBlock
+        styles:
+          self:
+            textAlign: left
+            borderColor: border-dark
+            borderWidth: 1
+            borderStyle: solid
+            padding:
+              - pt-4
+              - pl-4
+              - pb-6
+              - pr-4
+    columns: 3
+    enableHover: false
+    styles:
+      self:
+        height: auto
+        width: wide
+        margin:
+          - mt-0
+          - mb-0
+          - ml-0
+          - mr-0
+        padding:
+          - pt-28
+          - pb-28
+          - pl-4
+          - pr-4
+        justifyContent: center
+        borderRadius: none
+        borderWidth: 0
+        borderStyle: none
+        borderColor: border-dark
+      title:
+        textAlign: center
+      subtitle:
+        textAlign: center
+      actions:
+        justifyContent: flex-start
+    type: FeaturedItemsSection
 ---

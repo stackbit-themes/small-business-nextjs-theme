@@ -36,9 +36,7 @@ export default function TextSection(props) {
             }}
         >
             <div className={classNames('flex', 'w-full', mapStyles({ justifyContent: sectionJustifyContent }))}>
-                <div className={classNames('w-full', mapMaxWidthStyles(sectionWidth))}>
-                    {textBodyVariants(props)}
-                </div>
+                <div className={classNames('w-full', mapMaxWidthStyles(sectionWidth))}>{textBodyVariants(props)}</div>
             </div>
         </div>
     );
@@ -132,9 +130,9 @@ function mapMinHeightStyles(height) {
 function mapMaxWidthStyles(width) {
     switch (width) {
         case 'narrow':
-            return 'max-w-screen-md';
+            return 'max-w-4xl';
         case 'wide':
-            return 'max-w-screen-xl';
+            return 'max-w-7xl';
         case 'full':
             return 'max-w-full';
     }

@@ -135,7 +135,19 @@ function MobileMenu(props) {
                 <span className="sr-only">Open Menu</span>
                 <MenuIcon className="fill-current h-6 w-6" />
             </button>
-            <div className={classNames(secondaryColors, 'fixed', 'inset-0', 'px-4', 'sm:px-8', 'py-5', 'overflow-y-auto', 'z-20', isMenuOpen ? 'block' : 'hidden')}>
+            <div
+                className={classNames(
+                    secondaryColors,
+                    'fixed',
+                    'inset-0',
+                    'px-4',
+                    'sm:px-8',
+                    'py-5',
+                    'overflow-y-auto',
+                    'z-20',
+                    isMenuOpen ? 'block' : 'hidden'
+                )}
+            >
                 <div className="flex flex-col min-h-full">
                     <div className="flex items-center justify-between mb-10">
                         {(props.logo || (props.title && props.isTitleVisible)) && siteLogoLink(props)}
@@ -161,9 +173,13 @@ function MobileMenu(props) {
 
 function siteLogoLink(props) {
     return (
-        <Link href="/" aria-label={props.title} className="sb-header-logo flex items-center" data-sb-field-path=".title#span[1] .logo#img[1]">
-            {props.logo && <ImageBlock {...props.logo} className={classNames('max-h-12', { 'mr-2': props.isTitleVisible })} />}
-            {props.title && props.isTitleVisible && <span className="text-2xl uppercase font-medium">{props.title}</span>}
+        <Link href="/" aria-label={props.title} className="sb-header-logo flex items-center">
+            {props.logo && <ImageBlock {...props.logo} className={classNames('max-h-12', { 'mr-2': props.isTitleVisible })} data-sb-field-path=".logo" />}
+            {props.title && props.isTitleVisible && (
+                <span className="text-2xl uppercase font-medium" data-sb-field-path=".title">
+                    {props.title}
+                </span>
+            )}
         </Link>
     );
 }
@@ -179,7 +195,7 @@ function listOfLinks(links, inMobileMenu = false) {
 function mapMaxWidthStyles(width) {
     switch (width) {
         case 'narrow':
-            return 'max-w-screen-xl';
+            return 'max-w-7xl';
         case 'wide':
             return 'max-w-screen-2xl';
         case 'full':

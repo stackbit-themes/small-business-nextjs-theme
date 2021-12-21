@@ -193,11 +193,11 @@
         @apply cursor-pointer pl-8 relative;
     }
     .sb-checkbox + .sb-label:before {
-        @apply absolute left-0 top-1/2 transform -translate-y-1/2 border-2 border-current cursor-pointer text-center;
+        @apply absolute left-0 top-1/2 transform -translate-y-1/2 border-2 border-current cursor-pointer text-center font-sans;
         content: '';
         height: 1.5em;
         width: 1.5em;
-        line-height: 1.5em;
+        line-height: 1.25;
     }
     .sb-checkbox:checked + .sb-label:before {
         content: '\2713';

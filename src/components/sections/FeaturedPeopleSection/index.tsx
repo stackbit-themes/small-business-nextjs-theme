@@ -102,29 +102,27 @@ function peopleVariantA(props) {
     }
     return (
         <div
-            className={classNames('grid', 'gap-6', 'sm:grid-cols-2', 'lg:grid-cols-4', 'lg:gap-8', { 'mt-12': props.title || props.subtitle })}
+            className={classNames('grid', 'gap-x-8', 'gap-y-10', 'sm:grid-cols-2', 'lg:grid-cols-4', { 'mt-12': props.title || props.subtitle })}
             data-sb-field-path=".people"
         >
             {people.map((person, index) => (
                 <article key={index} data-sb-field-path={`.${index}`}>
                     {person.image && (
-                        <div className="h-0 w-full pt-1/1 relative" data-sb-field-path=".image">
-                            <ImageBlock {...person.image} className="absolute left-0 h-full object-cover top-0 w-full" />
+                        <div className="h-0 w-full pt-1/1 relative mb-4">
+                            <ImageBlock {...person.image} className="absolute left-0 h-full object-cover top-0 w-full" data-sb-field-path=".image" />
                         </div>
                     )}
-                    <div
-                        className={classNames('mb-4', {
-                            'pt-6': person.image
-                        })}
-                    >
-                        {(person.firstName || person.lastName) && (
-                            <h3>
-                                {person.firstName && <span data-sb-field-path=".firstName">{person.firstName}</span>}{' '}
-                                {person.lastName && <span data-sb-field-path=".lastName">{person.lastName}</span>}
-                            </h3>
-                        )}
-                        {person.role && <p data-sb-field-path=".role">{person.role}</p>}
-                    </div>
+                    {(person.firstName || person.lastName) && (
+                        <h3 className="text-2xl">
+                            {person.firstName && <span data-sb-field-path=".firstName">{person.firstName}</span>}{' '}
+                            {person.lastName && <span data-sb-field-path=".lastName">{person.lastName}</span>}
+                        </h3>
+                    )}
+                    {person.role && (
+                        <p className={classNames({ 'mt-1': person.firstName || person.lastName })} data-sb-field-path=".role">
+                            {person.role}
+                        </p>
+                    )}
                 </article>
             ))}
         </div>
@@ -137,34 +135,35 @@ function peopleVariantB(props) {
         return null;
     }
     return (
-        <div className={classNames('grid', 'gap-x-8', 'gap-y-10', 'lg:grid-cols-2', { 'mt-12': props.title || props.subtitle })} data-sb-field-path=".people">
+        <div
+            className={classNames('grid', 'gap-x-8', 'gap-y-10', 'lg:grid-cols-2', 'sm:gap-y-14', { 'mt-12': props.title || props.subtitle })}
+            data-sb-field-path=".people"
+        >
             {people.map((person, index) => (
                 <article key={index} className="sm:flex" data-sb-field-path={`.${index}`}>
                     {person.image && (
-                        <div className="w-full sm:flex-shrink-0 sm:h-full sm:w-1/3">
-                            <div className="block h-0 w-full pt-1/1 relative" data-sb-field-path=".image">
-                                <ImageBlock {...person.image} className="absolute left-0 h-full object-cover top-0 w-full" />
+                        <div className="w-full mb-4 sm:flex-shrink-0 sm:h-full sm:w-1/3 sm:mb-0 sm:mr-6">
+                            <div className="block h-0 w-full pt-1/1 relative">
+                                <ImageBlock {...person.image} className="absolute left-0 h-full object-cover top-0 w-full" data-sb-field-path=".image" />
                             </div>
                         </div>
                     )}
-                    <div
-                        className={classNames('mb-4', 'sm:flex-grow', {
-                            'pt-6 sm:pt-0 sm:pl-6': person.image
-                        })}
-                    >
+                    <div className="sm:flex-grow">
                         {(person.firstName || person.lastName) && (
-                            <h3>
+                            <h3 className="text-2xl">
                                 {person.firstName && <span data-sb-field-path=".firstName">{person.firstName}</span>}{' '}
                                 {person.lastName && <span data-sb-field-path=".lastName">{person.lastName}</span>}
                             </h3>
                         )}
-                        {person.role && <p data-sb-field-path=".role">{person.role}</p>}
+                        {person.role && (
+                            <p className={classNames({ 'mt-1': person.firstName || person.lastName })} data-sb-field-path=".role">
+                                {person.role}
+                            </p>
+                        )}
                         {person.bio && (
                             <Markdown
                                 options={{ forceBlock: true, forceWrapper: true }}
-                                className={classNames({
-                                    'mt-4': person.firstName || person.lastName || person.role
-                                })}
+                                className={classNames({ 'mt-4': person.firstName || person.lastName || person.role })}
                                 data-sb-field-path=".bio"
                             >
                                 {person.bio}
@@ -186,7 +185,7 @@ function peopleVariantC(props) {
     const peopleLeft = people.slice(0, middleIndex);
     const peopleRight = people.slice(middleIndex, people.length);
     return (
-        <div className={classNames('grid', 'gap-x-6', 'gap-y-12', 'sm:grid-cols-2', { 'mt-12': props.title || props.subtitle })} data-sb-field-path=".people">
+        <div className={classNames('grid', 'gap-x-8', 'gap-y-12', 'sm:grid-cols-2', { 'mt-12': props.title || props.subtitle })} data-sb-field-path=".people">
             {peopleLeft.length > 0 && <div className="sm:mt-32">{peopleListVariantC(peopleLeft)}</div>}
             {peopleRight.length > 0 && <div>{peopleListVariantC(peopleRight, middleIndex)}</div>}
         </div>
@@ -197,21 +196,28 @@ function peopleListVariantC(people, annotIndexStart = 0) {
     return people.map((person, index, arr) => (
         <article key={index} className={classNames(arr.length - 1 === index ? null : 'mb-12')} data-sb-field-path={`.${annotIndexStart + index}`}>
             {person.image && (
-                <div data-sb-field-path=".image">
-                    <ImageBlock {...person.image} className="w-full" />
+                <div className="mb-4">
+                    <ImageBlock {...person.image} className="w-full" data-sb-field-path=".image" />
                 </div>
             )}
-            <div className={classNames({ 'mt-4': person.image })}>
-                {(person.firstName || person.lastName || person.role) && (
-                    <h3 className={classNames({ 'mb-3': person.bio })}>
+            <div>
+                {(person.firstName || person.lastName) && (
+                    <h3 className="text-2xl">
                         {person.firstName && <span data-sb-field-path=".firstName">{person.firstName}</span>}{' '}
-                        {person.lastName && <span data-sb-field-path=".lastName">{person.lastName}</span>}{' '}
-                        {(person.firstName || person.lastName) && person.role && <span className="mx-1">|</span>}{' '}
-                        {person.role && <span data-sb-field-path=".role">{person.role}</span>}
+                        {person.lastName && <span data-sb-field-path=".lastName">{person.lastName}</span>}
                     </h3>
                 )}
+                {person.role && (
+                    <p className={classNames({ 'mt-1': person.firstName || person.lastName })} data-sb-field-path=".role">
+                        {person.role}
+                    </p>
+                )}
                 {person.bio && (
-                    <Markdown options={{ forceBlock: true, forceWrapper: true }} className="sb-markdown" data-sb-field-path=".bio">
+                    <Markdown
+                        options={{ forceBlock: true, forceWrapper: true }}
+                        className={classNames('sb-markdown', { 'mt-4': person.firstName || person.lastName || person.role })}
+                        data-sb-field-path=".bio"
+                    >
                         {person.bio}
                     </Markdown>
                 )}
@@ -233,9 +239,9 @@ function mapMinHeightStyles(height) {
 function mapMaxWidthStyles(width) {
     switch (width) {
         case 'narrow':
-            return 'max-w-screen-md';
+            return 'max-w-4xl';
         case 'wide':
-            return 'max-w-screen-xl';
+            return 'max-w-7xl';
         case 'full':
             return 'max-w-full';
     }

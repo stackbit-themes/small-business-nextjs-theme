@@ -4,7 +4,7 @@ layout: PageLayout
 sections:
   - type: TextSection
     colors: colors-d
-    variant: variant-a
+    variant: variant-b
     title: About our business
     text: |-
       For us fishing is a life style. The connection to the waters is what makes us friends, and what makes us a family and it what makes us a business.
@@ -77,7 +77,7 @@ sections:
     styles:
       self:
         height: auto
-        width: wide
+        width: narrow
         margin:
           - mt-0
           - mb-0

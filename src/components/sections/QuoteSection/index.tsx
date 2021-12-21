@@ -38,14 +38,7 @@ export default function QuoteSection(props) {
             }}
         >
             {props.backgroundImage && <BackgroundImage {...props.backgroundImage} />}
-            <div
-                className={classNames(
-                    'flex',
-                    'relative',
-                    'w-full',
-                    mapStyles({ justifyContent: sectionJustifyContent })
-                )}
-            >
+            <div className={classNames('flex', 'relative', 'w-full', mapStyles({ justifyContent: sectionJustifyContent }))}>
                 <div className={classNames('w-full', mapMaxWidthStyles(sectionWidth))}>{quoteContent(props)}</div>
             </div>
         </div>
@@ -68,10 +61,7 @@ function quoteContent(props) {
             {(props.name || props.title) && (
                 <footer className="mt-8 sm:mt-10">
                     {props.name && (
-                        <span
-                            className={classNames('block', 'text-lg', styles.name ? mapStyles(styles.name) : null)}
-                            data-sb-field-path=".name"
-                        >
+                        <span className={classNames('block', 'text-lg', styles.name ? mapStyles(styles.name) : null)} data-sb-field-path=".name">
                             {props.name}
                         </span>
                     )}
@@ -99,9 +89,9 @@ function mapMinHeightStyles(height) {
 function mapMaxWidthStyles(width) {
     switch (width) {
         case 'narrow':
-            return 'max-w-screen-md';
+            return 'max-w-4xl';
         case 'wide':
-            return 'max-w-screen-lg';
+            return 'max-w-7xl';
         case 'full':
             return 'max-w-full';
     }

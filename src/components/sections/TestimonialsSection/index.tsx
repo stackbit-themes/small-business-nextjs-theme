@@ -77,14 +77,10 @@ export default function TestimonialsSection(props) {
 function testimonialVariantA(testimonial, index) {
     const styles = testimonial.styles || {};
     return (
-        <blockquote
-            key={index}
-            className="flex flex-col md:items-center md:flex-row"
-            data-sb-field-path={`.${index}`}
-        >
+        <blockquote key={index} className="flex flex-col md:items-center md:flex-row" data-sb-field-path={`.${index}`}>
             {testimonial.image && (
-                <div className="flex-shrink-0 max-w-lg mb-8 md:mb-0 md:mr-8 md:w-2/5" data-sb-field-path=".image">
-                    <ImageBlock {...testimonial.image} className="w-full" />
+                <div className="flex-shrink-0 max-w-lg mb-8 md:mb-0 md:mr-8 md:w-2/5">
+                    <ImageBlock {...testimonial.image} className="w-full" data-sb-field-path=".image" />
                 </div>
             )}
             <div className="flex-grow">
@@ -105,7 +101,10 @@ function testimonialVariantA(testimonial, index) {
                             </div>
                         )}
                         {testimonial.title && (
-                            <div className={classNames(styles.title ? mapStyles(styles.title) : null, { 'mt-2': testimonial.name })} data-sb-field-path=".title">
+                            <div
+                                className={classNames(styles.title ? mapStyles(styles.title) : null, { 'mt-2': testimonial.name })}
+                                data-sb-field-path=".title"
+                            >
                                 {testimonial.title}
                             </div>
                         )}
@@ -119,10 +118,7 @@ function testimonialVariantA(testimonial, index) {
 function testimonialVariantB(testimonial, index) {
     const styles = testimonial.styles || {};
     return (
-        <blockquote
-            key={index}
-            data-sb-field-path={`.${index}`}
-        >
+        <blockquote key={index} data-sb-field-path={`.${index}`}>
             {testimonial.quote && (
                 <Markdown
                     options={{ forceBlock: true, forceWrapper: true }}
@@ -135,8 +131,8 @@ function testimonialVariantB(testimonial, index) {
             {(testimonial.name || testimonial.title || testimonial.image) && (
                 <footer className="flex items-center mt-12 md:mt-16">
                     {testimonial.image && (
-                        <div className="flex-shrink-0 mr-8 w-20 sm:w-28" data-sb-field-path=".image">
-                            <ImageBlock {...testimonial.image} className="w-full" />
+                        <div className="flex-shrink-0 mr-8 w-20 sm:w-28">
+                            <ImageBlock {...testimonial.image} className="w-full" data-sb-field-path=".image" />
                         </div>
                     )}
                     {(testimonial.name || testimonial.title) && (
@@ -147,7 +143,10 @@ function testimonialVariantB(testimonial, index) {
                                 </div>
                             )}
                             {testimonial.title && (
-                                <div className={classNames(styles.title ? mapStyles(styles.title) : null, { 'mt-2': testimonial.name })} data-sb-field-path=".title">
+                                <div
+                                    className={classNames(styles.title ? mapStyles(styles.title) : null, { 'mt-2': testimonial.name })}
+                                    data-sb-field-path=".title"
+                                >
                                     {testimonial.title}
                                 </div>
                             )}
@@ -162,11 +161,7 @@ function testimonialVariantB(testimonial, index) {
 function testimonialVariantC(testimonial, index) {
     const styles = testimonial.styles || {};
     return (
-        <blockquote
-            key={index}
-            className="text-center"
-            data-sb-field-path={`.${index}`}
-        >
+        <blockquote key={index} className="text-center" data-sb-field-path={`.${index}`}>
             {testimonial.quote && (
                 <Markdown
                     options={{ forceBlock: true, forceWrapper: true }}
@@ -179,8 +174,8 @@ function testimonialVariantC(testimonial, index) {
             {(testimonial.name || testimonial.title || testimonial.image) && (
                 <footer className="mt-12 md:mt-16">
                     {testimonial.image && (
-                        <div className={classNames('mx-auto', 'w-20', 'sm:w-28', { 'mb-6': testimonial.name || testimonial.title })} data-sb-field-path=".image">
-                            <ImageBlock {...testimonial.image} className="w-full" />
+                        <div className={classNames('mx-auto', 'w-20', 'sm:w-28', { 'mb-6': testimonial.name || testimonial.title })}>
+                            <ImageBlock {...testimonial.image} className="w-full" data-sb-field-path=".image" />
                         </div>
                     )}
                     {testimonial.name && (
@@ -210,9 +205,9 @@ function mapMinHeightStyles(height) {
 function mapMaxWidthStyles(width) {
     switch (width) {
         case 'narrow':
-            return 'max-w-screen-md';
+            return 'max-w-4xl';
         case 'wide':
-            return 'max-w-screen-xl';
+            return 'max-w-7xl';
         case 'full':
             return 'max-w-full';
     }

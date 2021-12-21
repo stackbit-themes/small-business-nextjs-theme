@@ -25,7 +25,7 @@ export default function ContactSection(props) {
                 'sb-component',
                 'sb-component-section',
                 'sb-component-contact-section',
-                bgSize === 'inset' ? 'flex': null,
+                bgSize === 'inset' ? 'flex' : null,
                 bgSize === 'inset' ? mapStyles({ justifyContent: sectionJustifyContent }) : null,
                 sectionStyles.margin
             )}
@@ -36,7 +36,7 @@ export default function ContactSection(props) {
                     'flex',
                     'flex-col',
                     'justify-center',
-                    bgSize === 'inset' ? 'w-full': null,
+                    bgSize === 'inset' ? 'w-full' : null,
                     bgSize === 'inset' ? mapMaxWidthStyles(sectionWidth) : null,
                     mapMinHeightStyles(sectionHeight),
                     sectionStyles.padding || 'py-12 px-4',
@@ -52,16 +52,11 @@ export default function ContactSection(props) {
                 <div
                     className={classNames(
                         'w-full',
-                        bgSize === 'full' ? 'flex': null,
+                        bgSize === 'full' ? 'flex' : null,
                         bgSize === 'full' ? mapStyles({ justifyContent: sectionJustifyContent }) : null
                     )}
                 >
-                    <div
-                        className={classNames(
-                            'w-full',
-                            bgSize === 'full' ? mapMaxWidthStyles(sectionWidth) : null
-                        )}
-                    >
+                    <div className={classNames('w-full', bgSize === 'full' ? mapMaxWidthStyles(sectionWidth) : null)}>
                         <div
                             className={classNames(
                                 'flex',
@@ -79,7 +74,7 @@ export default function ContactSection(props) {
                                 {contactBody(props)}
                                 {props.form && (
                                     <div className={classNames('sb-contact-section-form', { 'mt-12': props.title || props.text })}>
-                                        <FormBlock {...props.form} className="inline-block w-full max-w-screen-sm" data-sb-field-path=".form" />
+                                        <FormBlock {...props.form} className="inline-block w-full max-w-2xl" data-sb-field-path=".form" />
                                     </div>
                                 )}
                             </div>
@@ -141,9 +136,9 @@ function mapMinHeightStyles(height) {
 function mapMaxWidthStyles(width) {
     switch (width) {
         case 'narrow':
-            return 'max-w-screen-md';
+            return 'max-w-4xl';
         case 'wide':
-            return 'max-w-screen-xl';
+            return 'max-w-7xl';
         case 'full':
             return 'max-w-full';
     }

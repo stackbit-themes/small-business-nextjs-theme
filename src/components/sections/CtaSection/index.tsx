@@ -24,7 +24,7 @@ export default function CtaSection(props) {
                 'sb-component',
                 'sb-component-section',
                 'sb-component-cta-section',
-                bgSize === 'inset' ? 'flex': null,
+                bgSize === 'inset' ? 'flex' : null,
                 bgSize === 'inset' ? mapStyles({ justifyContent: sectionJustifyContent }) : null,
                 sectionStyles.margin
             )}
@@ -36,7 +36,7 @@ export default function CtaSection(props) {
                     'flex-col',
                     'justify-center',
                     'relative',
-                    bgSize === 'inset' ? 'w-full': null,
+                    bgSize === 'inset' ? 'w-full' : null,
                     bgSize === 'inset' ? mapMaxWidthStyles(sectionWidth) : null,
                     mapMinHeightStyles(sectionHeight),
                     sectionStyles.padding || 'py-12 px-4',
@@ -54,16 +54,11 @@ export default function CtaSection(props) {
                     className={classNames(
                         'relative',
                         'w-full',
-                        bgSize === 'full' ? 'flex': null,
+                        bgSize === 'full' ? 'flex' : null,
                         bgSize === 'full' ? mapStyles({ justifyContent: sectionJustifyContent }) : null
                     )}
                 >
-                    <div
-                        className={classNames(
-                            'w-full',
-                            bgSize === 'full' ? mapMaxWidthStyles(sectionWidth) : null
-                        )}
-                    >
+                    <div className={classNames('w-full', bgSize === 'full' ? mapMaxWidthStyles(sectionWidth) : null)}>
                         <div
                             className={classNames(
                                 'flex',
@@ -119,12 +114,11 @@ function ctaActions(props) {
     const actionsJustifyContent = props.styles?.actions?.justifyContent || 'center';
     return (
         <div className={classNames('w-full', { 'lg:w-auto': sectionFlexDirection === 'row' })}>
-            <div
-                className={classNames('flex', mapStyles({ justifyContent: actionsJustifyContent }))}
-                data-sb-field-path=".actions"
-            >
+            <div className={classNames('flex', mapStyles({ justifyContent: actionsJustifyContent }))} data-sb-field-path=".actions">
                 <div
-                    className={classNames('flex', 'flex-col', 'space-y-4', actionsJustifyContent === 'center' ? 'items-center' : 'items-start', { 'lg:items-center': sectionFlexDirection === 'row' && actionsJustifyContent !== 'center' })}
+                    className={classNames('flex', 'flex-col', 'space-y-4', actionsJustifyContent === 'center' ? 'items-center' : 'items-start', {
+                        'lg:items-center': sectionFlexDirection === 'row' && actionsJustifyContent !== 'center'
+                    })}
                     data-sb-field-path=".actions"
                 >
                     {actions.map((action, index) => (
@@ -147,9 +141,9 @@ function mapMinHeightStyles(height) {
 function mapMaxWidthStyles(width) {
     switch (width) {
         case 'narrow':
-            return 'max-w-screen-md';
+            return 'max-w-4xl';
         case 'wide':
-            return 'max-w-screen-xl';
+            return 'max-w-7xl';
         case 'full':
             return 'max-w-full';
     }

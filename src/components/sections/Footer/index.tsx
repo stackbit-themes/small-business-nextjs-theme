@@ -20,12 +20,22 @@ export default function Footer(props) {
             <div className={classNames('border-t', 'border-current', 'mx-auto', 'pt-16', mapMaxWidthStyles(footerWidth))}>
                 {(props.logo || props.title || props.text) && (
                     <div className="mb-12">
-                        <Link href="/" className="sb-footer-logo flex items-center" data-sb-field-path=".title#span[1] .logo#img[1]">
-                            {props.logo && <ImageBlock {...props.logo} className={classNames('max-h-12', { 'mr-2': props.title })} />}
-                            {props.title && <span className="text-3xl font-medium">{props.title}</span>}
+                        <Link href="/" className="sb-footer-logo flex items-center">
+                            {props.logo && (
+                                <ImageBlock {...props.logo} className={classNames('max-h-12', { 'mr-2': props.title })} data-sb-field-path=".logo" />
+                            )}
+                            {props.title && (
+                                <span className="text-3xl font-medium" data-sb-field-path=".title">
+                                    {props.title}
+                                </span>
+                            )}
                         </Link>
                         {props.text && (
-                            <Markdown options={{ forceBlock: true, forceWrapper: true }} className={classNames('sb-markdown', 'max-w-xl', { 'mt-8': props.title || props.logo })} data-sb-field-path=".text">
+                            <Markdown
+                                options={{ forceBlock: true, forceWrapper: true }}
+                                className={classNames('sb-markdown', 'max-w-xl', { 'mt-8': props.title || props.logo })}
+                                data-sb-field-path=".text"
+                            >
                                 {props.text}
                             </Markdown>
                         )}
@@ -125,7 +135,7 @@ function Contacts(props) {
 function mapMaxWidthStyles(width) {
     switch (width) {
         case 'narrow':
-            return 'max-w-screen-xl';
+            return 'max-w-7xl';
         case 'wide':
             return 'max-w-screen-2xl';
         case 'full':
