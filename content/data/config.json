@@ -52,6 +52,7 @@
         }
     },
     "footer": {
+        "variant": "variant-b",
         "colors": "colors-d",
         "title": "Say hello",
         "contacts": {
@@ -59,7 +60,7 @@
             "phoneAltText": "Our phone",
             "email": "info@lorem.mail",
             "emailAltText": "Our email",
-            "address": "312 Lovely Street, NY",
+            "address": "312 Lovely Street, Brooklyn, NY, 123456",
             "addressAltText": "Our address"
         },
         "copyrightText": "Powered by Stackbit",

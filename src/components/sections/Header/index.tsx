@@ -9,7 +9,7 @@ import CloseIcon from '../../svgs/close';
 import MenuIcon from '../../svgs/menu';
 
 export default function Header(props) {
-    const primaryColors = props.primaryColors || 'colors-a';
+    const primaryColors = props.primaryColors || 'colors-d';
     const headerStyles = props.styles?.self || {};
     const headerWidth = headerStyles.width || 'narrow';
     return (
@@ -112,7 +112,7 @@ function headerVariantC(props) {
 }
 
 function MobileMenu(props) {
-    const secondaryColors = props.secondaryColors || 'colors-a';
+    const secondaryColors = props.secondaryColors || 'colors-d';
     const primaryLinks = props.primaryLinks || [];
     const secondaryLinks = props.secondaryLinks || [];
     const [isMenuOpen, setIsMenuOpen] = useState(false);

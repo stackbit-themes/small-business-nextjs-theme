@@ -57,7 +57,7 @@ fields:
         textColor: '$onComplementaryAlt'
         backgroundColor: '$complementaryAlt'
         borderColor: '#ececec'
-    default: colors-a
+    default: colors-d
   - type: enum
     name: secondaryColors
     label: Secondary colors (mobile menu)
@@ -89,7 +89,7 @@ fields:
         textColor: '$onComplementaryAlt'
         backgroundColor: '$complementaryAlt'
         borderColor: '#ececec'
-    default: colors-a
+    default: colors-d
   - type: string
     name: title
     label: Title

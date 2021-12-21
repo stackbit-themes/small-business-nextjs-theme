@@ -10,6 +10,16 @@ fieldGroups:
     label: Settings
 fields:
   - type: enum
+    name: variant
+    group: styles
+    label: Footer arrangement
+    options:
+      - label: Two columns
+        value: variant-a
+      - label: One column, centered
+        value: variant-b
+    default: variant-a
+  - type: enum
     name: colors
     label: Colors
     group: styles
@@ -40,7 +50,7 @@ fields:
         textColor: '$onComplementaryAlt'
         backgroundColor: '$complementaryAlt'
         borderColor: '#ececec'
-    default: colors-a
+    default: colors-d
   - type: model
     name: logo
     label: Logo
