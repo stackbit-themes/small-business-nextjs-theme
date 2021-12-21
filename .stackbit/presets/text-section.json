@@ -2,13 +2,39 @@
     "model": "TextSection",
     "presets": [
         {
-            "label": "Text light",
-            "thumbnail": "images/text-light.png",
+            "label": "Text light left",
+            "thumbnail": "images/text-light-left.png",
             "data": {
-                "colors": "colors-a",
+                "colors": "colors-d",
                 "title": "The Section Title",
                 "subtitle": "",
-                "text": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam. Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Sed ut perspiciatis undeomnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam. Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.",
+                "styles": {
+                    "self": {
+                        "height": "auto",
+                        "width": "narrow",
+                        "margin": ["mt-0", "mb-0", "ml-0", "mr-0"],
+                        "padding": ["pt-28", "pb-28", "pl-4", "pr-4"],
+                        "justifyContent": "center"
+                    },
+                    "title": {
+                        "textAlign": "left"
+                    },
+                    "subtitle": {
+                        "textAlign": "left"
+                    },
+                    "text": {
+                        "textAlign": "left"
+                    }
+                }
+            }
+        },
+        {
+            "label": "Text dark center",
+            "thumbnail": "images/text-dark-center.png",
+            "data": {
+                "colors": "colors-e",
+                "title": "The Section Title",
+                "subtitle": "The section subtitle",
                 "styles": {
                     "self": {
                         "height": "auto",
@@ -30,13 +56,13 @@
             }
         },
         {
-            "label": "Text dark",
-            "thumbnail": "images/text-dark.png",
+            "label": "Text light left",
+            "thumbnail": "images/text-light-left-b.png",
             "data": {
-                "colors": "colors-f",
+                "colors": "colors-d",
+                "variant": "variant-b",
                 "title": "The Section Title",
                 "subtitle": "The section subtitle",
-                "text": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam. Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Sed ut perspiciatis undeomnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam. Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.",
                 "styles": {
                     "self": {
                         "height": "auto",
@@ -46,13 +72,13 @@
                         "justifyContent": "center"
                     },
                     "title": {
-                        "textAlign": "center"
+                        "textAlign": "left"
                     },
                     "subtitle": {
-                        "textAlign": "center"
+                        "textAlign": "left"
                     },
                     "text": {
-                        "textAlign": "center"
+                        "textAlign": "left"
                     }
                 }
             }

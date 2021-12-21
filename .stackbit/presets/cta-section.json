@@ -3,14 +3,16 @@
     "presets": [
         {
             "label": "CTA light - button bottom",
-            "thumbnail": "images/cta-light-bottom.png",
+            "thumbnail": "images/cta-light-btn-bottom.png",
             "data": {
-                "colors": "colors-a",
+                "colors": "colors-d",
                 "backgroundImage": null,
                 "actions": [
                     {
                         "type": "Button",
                         "label": "Try it now",
+                        "showIcon": true,
+                        "icon": "arrowRight",
                         "url": "/",
                         "style": "primary"
                     }
@@ -20,7 +22,7 @@
                         "height": "auto",
                         "width": "narrow",
                         "margin": ["mt-0", "mb-0", "ml-0", "mr-0"],
-                        "padding": ["pt-24", "pb-24", "pl-4", "pr-4"],
+                        "padding": ["pt-28", "pb-28", "pl-4", "pr-4"],
                         "alignItems": "center",
                         "justifyContent": "center",
                         "flexDirection": "col"
@@ -38,25 +40,19 @@
             }
         },
         {
-            "label": "CTA dark - button bottom",
-            "thumbnail": "images/cta-dark-bottom.png",
+            "label": "CTA secondary - button bottom",
+            "thumbnail": "images/cta-secondary-btn-bottom.png",
             "data": {
-                "colors": "colors-f",
+                "colors": "colors-c",
                 "backgroundImage": null,
                 "actions": [
                     {
                         "type": "Button",
                         "label": "Try it now",
-                        "url": "/",
-                        "style": "primary"
-                    },
-                    {
-                        "type": "Button",
-                        "label": "Learn More",
                         "showIcon": true,
                         "icon": "arrowRight",
                         "url": "/",
-                        "style": "link"
+                        "style": "primary"
                     }
                 ],
                 "styles": {
@@ -64,35 +60,44 @@
                         "height": "auto",
                         "width": "narrow",
                         "margin": ["mt-0", "mb-0", "ml-0", "mr-0"],
-                        "padding": ["pt-24", "pb-24", "pl-4", "pr-4"],
+                        "padding": ["pt-28", "pb-28", "pl-4", "pr-4"],
                         "alignItems": "center",
                         "justifyContent": "center",
                         "flexDirection": "col"
                     },
                     "title": {
-                        "textAlign": "left"
+                        "textAlign": "center"
                     },
                     "text": {
-                        "textAlign": "left"
+                        "textAlign": "center"
                     },
                     "actions": {
-                        "justifyContent": "flex-start"
+                        "justifyContent": "center"
                     }
                 }
             }
         },
         {
             "label": "CTA dark - button right",
-            "thumbnail": "images/cta-dark-right.png",
+            "thumbnail": "images/cta-dark-btn-right.png",
             "data": {
-                "colors": "colors-f",
+                "colors": "colors-e",
                 "backgroundImage": null,
                 "actions": [
                     {
                         "type": "Button",
                         "label": "Try it now",
                         "url": "/",
+                        "showIcon": true,
+                        "icon": "arrowRight",
                         "style": "primary"
+                    },
+                    {
+                        "type": "Link",
+                        "label": "Learn more",
+                        "showIcon": true,
+                        "icon": "arrowRight",
+                        "url": "/"
                     }
                 ],
                 "styles": {
@@ -100,7 +105,7 @@
                         "height": "auto",
                         "width": "narrow",
                         "margin": ["mt-0", "mb-0", "ml-0", "mr-0"],
-                        "padding": ["pt-24", "pb-24", "pl-4", "pr-4"],
+                        "padding": ["pt-28", "pb-28", "pl-4", "pr-4"],
                         "alignItems": "center",
                         "justifyContent": "center",
                         "flexDirection": "row"
