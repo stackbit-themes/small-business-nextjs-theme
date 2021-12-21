@@ -114,7 +114,7 @@ function ctaActions(props) {
     const actionsJustifyContent = props.styles?.actions?.justifyContent || 'center';
     return (
         <div className={classNames('w-full', { 'lg:w-auto': sectionFlexDirection === 'row' })}>
-            <div className={classNames('flex', mapStyles({ justifyContent: actionsJustifyContent }))} data-sb-field-path=".actions">
+            <div className={classNames('flex', mapStyles({ justifyContent: actionsJustifyContent }))}>
                 <div
                     className={classNames('flex', 'flex-col', 'space-y-4', actionsJustifyContent === 'center' ? 'items-center' : 'items-start', {
                         'lg:items-center': sectionFlexDirection === 'row' && actionsJustifyContent !== 'center'
