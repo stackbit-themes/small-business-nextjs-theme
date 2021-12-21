@@ -210,11 +210,6 @@
         background-repeat: no-repeat;
     }
 
-    /* Cards */
-    .sb-card {
-        @apply border border-current;
-    }
-
     .text-center + .sb-contact-section-form,
     .sb-contact-section-form:only-child {
         text-align: center;
@@ -255,9 +250,6 @@
         .sb-component-social-secondary {
             @apply border-on-dark text-on-dark;
         }
-        .sb-card {
-            @apply bg-light text-on-light;
-        }
         .sb-component-item-hover {
             @apply hover:bg-light hover:text-on-light;
         }
@@ -276,9 +268,6 @@
         .sb-component-button-secondary,
         .sb-component-social-secondary {
             @apply border-dark text-dark;
-        }
-        .sb-card {
-            @apply bg-light text-on-light;
         }
         .sb-component-item-hover {
             @apply hover:bg-dark hover:text-light;
@@ -320,9 +309,6 @@
         .sb-component-button-secondary,
         .sb-component-social-secondary {
             @apply border-on-complementary-alt text-on-complementary-alt;
-        }
-        .sb-card {
-            @apply bg-light text-on-light;
         }
         .sb-component-item-hover {
             @apply hover:bg-dark hover:text-light;
