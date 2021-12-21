@@ -164,7 +164,7 @@ function siteLogoLink(props) {
     return (
         <Link href="/" aria-label={props.title} className="sb-header-logo flex items-center" data-sb-field-path=".title#span[1] .logo#img[1]">
             {props.logo && <ImageBlock {...props.logo} className={classNames('max-h-12', { 'mr-2': props.isTitleVisible })} />}
-            {props.title && props.isTitleVisible && <span className="text-2xl tracking-wide">{props.title}</span>}
+            {props.title && props.isTitleVisible && <span className="text-2xl uppercase font-medium">{props.title}</span>}
         </Link>
     );
 }

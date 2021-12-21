@@ -179,7 +179,7 @@
     .sb-input,
     .sb-select,
     .sb-textarea {
-        @apply bg-transparent border border-current p-3 w-full focus:outline-none;
+        @apply bg-transparent border-2 border-current p-3 w-full focus:outline-none;
     }
     option {
         color: initial;
@@ -193,7 +193,7 @@
         @apply cursor-pointer pl-8 relative;
     }
     .sb-checkbox + .sb-label:before {
-        @apply absolute left-0 top-1/2 transform -translate-y-1/2 border border-current cursor-pointer text-center;
+        @apply absolute left-0 top-1/2 transform -translate-y-1/2 border-2 border-current cursor-pointer text-center;
         content: '';
         height: 1.5em;
         width: 1.5em;
