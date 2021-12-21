@@ -271,11 +271,11 @@
         }
         .sb-component-button-primary,
         .sb-component-social-primary {
-            @apply bg-dark border-dark text-on-primary;
-        }
-        .sb-component-button-primary,
-        .sb-component-social-primary {
             @apply bg-primary border-primary text-on-primary;
+        }
+        .sb-component-button-secondary,
+        .sb-component-social-secondary {
+            @apply border-dark text-dark;
         }
         .sb-card {
             @apply bg-light text-on-secondary;

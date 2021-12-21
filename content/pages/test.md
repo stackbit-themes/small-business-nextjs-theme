@@ -2,6 +2,65 @@
 title: Testing Sections
 layout: PageLayout
 sections:
+  - type: MediaGallerySection
+    colors: colors-a
+    images:
+      - type: ImageBlock
+        url: /images/bg.jpg
+        altText: Google Play
+        caption: Google Play
+      - type: ImageBlock
+        url: /images/hero.png
+        altText: PlayStation
+        caption: PlayStation
+      - type: ImageBlock
+        url: /images/hero-2.png
+        altText: Apple
+        caption: Apple
+      - type: ImageBlock
+        url: /images/bg.jpg
+        altText: Gatsby
+        caption: Gatsby
+      - type: ImageBlock
+        url: /images/hero-2.png
+        altText: Xbox
+        caption: Xbox
+      - type: ImageBlock
+        url: /images/bg.jpg
+        altText: Skype
+        caption: Skype
+      - type: ImageBlock
+        url: /images/hero.png
+        altText: ZCOOL
+        caption: ZCOOL
+    spacing: 16
+    columns: 4
+    aspectRatio: '16:9'
+    showCaption: false
+    enableHover: false
+    styles:
+      self:
+        width: full
+        height: auto
+        margin:
+          - mt-0
+          - mb-0
+          - ml-0
+          - mr-0
+        padding:
+          - pt-4
+          - pb-4
+          - pl-4
+          - pr-4
+        justifyContent: center
+        borderRadius: none
+        borderWidth: 0
+        borderStyle: none
+        borderColor: border-dark
+      title:
+        textAlign: center
+      subtitle:
+        textAlign: center
   - type: HeroSection
     elementId: homepage-hero-1
     colors: colors-c

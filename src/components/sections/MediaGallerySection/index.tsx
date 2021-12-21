@@ -52,7 +52,6 @@ export type MediaGallerySectionProps = BaseSectionComponentProps & {
     spacing?: number;
     columns?: number;
     aspectRatio?: string;
-    imageSizePx?: number;
     showCaption: boolean;
     enableHover: boolean;
 };
@@ -88,18 +87,9 @@ export default function MediaGallerySection(props: MediaGallerySectionProps) {
             }}
         >
             <div className={classNames('flex', 'w-full', mapStyles({ justifyContent: sectionJustifyContent }))}>
-                <div
-                    className={classNames(
-                        'flex',
-                        'w-full',
-                        mapMaxWidthStyles(sectionWidth),
-                        mapStyles({ justifyContent: sectionJustifyContent })
-                    )}
-                >
-                    <div className="inline-block max-w-full">
-                        <MediaGalleryHeader {...props} />
-                        <MediaGalleryImageGrid {...props} />
-                    </div>
+                <div className={classNames('w-full', mapMaxWidthStyles(sectionWidth))}>
+                    <MediaGalleryHeader {...props} />
+                    <MediaGalleryImageGrid {...props} />
                 </div>
             </div>
         </div>
@@ -152,28 +142,27 @@ function MediaGalleryImageGrid(props: MediaGallerySectionProps) {
     if (images.length === 0) {
         return null;
     }
-
     const columns = props.columns || 4;
     const aspectRatio = props.aspectRatio || '1:1';
-    const numGaps = columns - 1; // 1 image, 0 gaps, 2 images, 1 gap, etc etc
-    const spacing = props.spacing || 0;
-    const imageSizePx = props.imageSizePx || 300;
-    // Give enough width for the desired image width * columns, plus the gaps, and the grid will auto-resize (resizing the images along with it)
-    const widthString = `calc((${imageSizePx}px * ${columns}) + (${spacing}rem * ${numGaps}))`; // TODO - this is probably better done through flex
-
+    const spacing = props.spacing || props.spacing === 0 ? props.spacing : 16;
     return (
         <div
-            className={classNames('grid', 'place-items-center', { 'mt-12': props.title || props.subtitle })}
+            className={classNames('grid', 'place-items-center', {
+                'mt-12': props.title || props.subtitle,
+                'grid-cols-2': columns === 2,
+                'grid-cols-2 sm:grid-cols-3': columns === 3,
+                'grid-cols-2 sm:grid-cols-4': columns === 4,
+                'grid-cols-2 sm:grid-cols-3 md:grid-cols-5': columns === 5,
+                'grid-cols-2 sm:grid-cols-4 md:grid-cols-6': columns === 6,
+                'grid-cols-2 sm:grid-cols-4 md:grid-cols-7': columns === 7
+            })}
             data-sb-field-path=".images"
             style={{
-                gridTemplateColumns: `repeat(${columns}, minmax(0, 1fr))`,
-                gap: spacing ? `${spacing}rem` : undefined,
-                width: imageSizePx ? widthString : '100%',
-                maxWidth: '100%'
+                gap: spacing ? `${spacing}px` : undefined
             }}
         >
             {images.map((image, index) => (
-                <div
+                <figure
                     key={`image-${index}`}
                     data-sb-field-path={`.${index}`}
                     className={classNames('overflow-hidden', 'relative', 'w-full', {
@@ -187,9 +176,11 @@ function MediaGalleryImageGrid(props: MediaGallerySectionProps) {
                 >
                     <MediaGalleryImage image={image} enableHover={props.enableHover} aspectRatio={aspectRatio} />
                     {props.showCaption && image.caption && (
-                        <div className="absolute bg-white bg-opacity-70 left-0 mx-2 bottom-2 p-1.5 text-xs pointer-events-none">{image.caption}</div>
+                        <figcaption className="absolute bg-white bg-opacity-70 left-0 mx-2 bottom-2 p-1.5 text-xs pointer-events-none">
+                            {image.caption}
+                        </figcaption>
                     )}
-                </div>
+                </figure>
             ))}
         </div>
     );
@@ -206,9 +197,9 @@ function mapMinHeightStyles(height) {
 function mapMaxWidthStyles(width) {
     switch (width) {
         case 'narrow':
-            return 'max-w-screen-md';
+            return 'max-w-4xl';
         case 'wide':
-            return 'max-w-screen-lg';
+            return 'max-w-7xl';
         case 'full':
             return 'max-w-full';
     }
