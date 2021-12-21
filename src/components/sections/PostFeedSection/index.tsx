@@ -136,17 +136,17 @@ function postsVariantA(props) {
                                     </p>
                                 )}
                             </div>
-                            {(props.showDate || (props.showReadMoreLink && props.readMoreLinkLabel)) && (
+                            {(props.showDate || props.showReadMoreLink) && (
                                 <div className="mt-12 space-y-6">
                                     {props.showDate && <PostDate post={post} className="mb-2" />}
-                                    {props.showReadMoreLink && props.readMoreLinkLabel && (
+                                    {props.showReadMoreLink && (
                                         <div>
                                             <Link
                                                 href={getPageUrlPath(post)}
                                                 className="sb-component sb-component-block sb-component-button sb-component-button-primary"
                                             >
-                                                <span>{props.readMoreLinkLabel}</span>
-                                                <ArrowRightIcon className="fill-current h-5 w-5 ml-3" />
+                                                {props.readMoreLinkLabel && <span className="mr-3">{props.readMoreLinkLabel}</span>}
+                                                <ArrowRightIcon className="fill-current h-5 w-5" />
                                             </Link>
                                         </div>
                                     )}
@@ -197,17 +197,17 @@ function postsVariantB(props) {
                                     </p>
                                 )}
                             </div>
-                            {(props.showDate || (props.showReadMoreLink && props.readMoreLinkLabel)) && (
+                            {(props.showDate || props.showReadMoreLink) && (
                                 <div className="mt-12 space-y-6">
                                     {props.showDate && <PostDate post={post} className="mb-2" />}
-                                    {props.showReadMoreLink && props.readMoreLinkLabel && (
+                                    {props.showReadMoreLink && (
                                         <div>
                                             <Link
                                                 href={getPageUrlPath(post)}
                                                 className="sb-component sb-component-block sb-component-button sb-component-button-primary"
                                             >
-                                                <span>{props.readMoreLinkLabel}</span>
-                                                <ArrowRightIcon className="fill-current h-5 w-5 ml-3" />
+                                                {props.readMoreLinkLabel && <span className="mr-3">{props.readMoreLinkLabel}</span>}
+                                                <ArrowRightIcon className="fill-current h-5 w-5" />
                                             </Link>
                                         </div>
                                     )}
@@ -262,17 +262,17 @@ function postsVariantC(props) {
                                     </p>
                                 )}
                             </div>
-                            {(props.showDate || (props.showReadMoreLink && props.readMoreLinkLabel)) && (
+                            {(props.showDate || props.showReadMoreLink) && (
                                 <div className="mt-12 space-y-6">
                                     {props.showDate && <PostDate post={post} className="mb-2" />}
-                                    {props.showReadMoreLink && props.readMoreLinkLabel && (
+                                    {props.showReadMoreLink && (
                                         <div>
                                             <Link
                                                 href={getPageUrlPath(post)}
                                                 className="sb-component sb-component-block sb-component-button sb-component-button-primary"
                                             >
-                                                <span>{props.readMoreLinkLabel}</span>
-                                                <ArrowRightIcon className="fill-current h-5 w-5 ml-3" />
+                                                {props.readMoreLinkLabel && <span className="mr-3">{props.readMoreLinkLabel}</span>}
+                                                <ArrowRightIcon className="fill-current h-5 w-5" />
                                             </Link>
                                         </div>
                                     )}
