@@ -6,22 +6,21 @@ sections:
     elementId: homepage-hero-1
     colors: colors-d
     backgroundSize: inset
-    title: 'We do fishing differently'
-    subtitle: 'Fresh. Better. Faster'
+    title: We do fishing differently
+    subtitle: Fresh. Better. Faster
     actions:
       - type: Button
         label: Get Started
         url: 'https://www.stackbit.com/'
         style: primary
-      - type: Button
-        label: Get Started
-        url: 'https://www.stackbit.com/'
-        style: secondary
+        iconPosition: right
+        icon: arrowRight
+        showIcon: true
     backgroundImage:
       type: BackgroundImage
       url: /images/hero.png
       backgroundSize: cover
-      backgroundPosition: center
+      backgroundPosition: top
       opacity: 100
     styles:
       self:

@@ -25,7 +25,6 @@ export default function Header(props) {
                     {headerVariants(props)}
                 </div>
             </div>
-            <div className={classNames('sb-divider', 'mx-auto', mapMaxWidthStyles(headerWidth))} />
         </header>
     );
 }

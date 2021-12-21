@@ -62,8 +62,8 @@
         "case": "none",
         "letterSpacing": "normal",
         "borderRadius": "none",
-        "horizontalPadding": 16,
-        "verticalPadding": 14,
+        "horizontalPadding": 20,
+        "verticalPadding": 10,
         "shadow": "none"
     },
     "buttonSecondary": {
@@ -72,8 +72,8 @@
         "letterSpacing": "normal",
         "borderRadius": "none",
         "borderStyle": "solid",
-        "horizontalPadding": 16,
-        "verticalPadding": 14,
+        "horizontalPadding": 20,
+        "verticalPadding": 10,
         "shadow": "none"
     },
     "link": {
