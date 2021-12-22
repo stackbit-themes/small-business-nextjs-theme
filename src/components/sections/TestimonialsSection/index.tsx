@@ -96,12 +96,12 @@ function testimonialVariantA(testimonial, index) {
                 {(testimonial.name || testimonial.title) && (
                     <footer className="mt-8 md:mt-12">
                         {testimonial.name && (
-                            <div className={classNames(styles.name ? mapStyles(styles.name) : null)} data-sb-field-path=".name">
+                            <div className={classNames('text-lg', styles.name ? mapStyles(styles.name) : null)} data-sb-field-path=".name">
                                 {testimonial.name}
                             </div>
                         )}
                         {testimonial.title && (
-                            <div className={classNames(styles.title ? mapStyles(styles.title) : null)} data-sb-field-path=".title">
+                            <div className={classNames('text-lg', styles.title ? mapStyles(styles.title) : null)} data-sb-field-path=".title">
                                 {testimonial.title}
                             </div>
                         )}
@@ -135,12 +135,12 @@ function testimonialVariantB(testimonial, index) {
                     {(testimonial.name || testimonial.title) && (
                         <div className="flex-grow mt-4">
                             {testimonial.name && (
-                                <div className={classNames(styles.name ? mapStyles(styles.name) : null)} data-sb-field-path=".name">
+                                <div className={classNames('text-lg', styles.name ? mapStyles(styles.name) : null)} data-sb-field-path=".name">
                                     {testimonial.name}
                                 </div>
                             )}
                             {testimonial.title && (
-                                <div className={classNames(styles.title ? mapStyles(styles.title) : null)} data-sb-field-path=".title">
+                                <div className={classNames('text-lg', styles.title ? mapStyles(styles.title) : null)} data-sb-field-path=".title">
                                     {testimonial.title}
                                 </div>
                             )}
@@ -173,12 +173,12 @@ function testimonialVariantC(testimonial, index) {
                         </div>
                     )}
                     {testimonial.name && (
-                        <div className={classNames(styles.name ? mapStyles(styles.name) : null)} data-sb-field-path=".name">
+                        <div className={classNames('text-lg', styles.name ? mapStyles(styles.name) : null)} data-sb-field-path=".name">
                             {testimonial.name}
                         </div>
                     )}
                     {testimonial.title && (
-                        <div className={classNames(styles.title ? mapStyles(styles.title) : null)} data-sb-field-path=".title">
+                        <div className={classNames('text-lg', styles.title ? mapStyles(styles.title) : null)} data-sb-field-path=".title">
                             {testimonial.title}
                         </div>
                     )}
