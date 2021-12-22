@@ -65,7 +65,7 @@ function postMedia(media) {
     if (!Media) {
         throw new Error(`no component matching the hero section media type: ${mediaType}`);
     }
-    return <Media {...media} className={classNames({ 'w-full': mediaType === 'ImageBlock' })} data-sb-field-path=".media" />;
+    return <Media {...media} className={classNames({ 'w-full': mediaType === 'ImageBlock' })} data-sb-field-path="media" />;
 }
 
 function PostAttribution({ post }) {
