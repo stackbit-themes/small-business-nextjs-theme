@@ -5,7 +5,7 @@
             "label": "Quote light - no bg image, text center",
             "thumbnail": "images/quote-light-center.png",
             "data": {
-                "colors": "colors-a",
+                "colors": "colors-d",
                 "backgroundImage": null,
                 "styles": {
                     "self": {
@@ -19,7 +19,7 @@
                         "textAlign": "center"
                     },
                     "name": {
-                        "fontWeight": 400,
+                        "fontWeight": 500,
                         "fontStyle": "normal",
                         "textAlign": "center"
                     },
@@ -33,9 +33,9 @@
         },
         {
             "label": "Quote dark - with bg image, text left",
-            "thumbnail": "images/quote-dark-left.png",
+            "thumbnail": "images/quote-dark-bg-image-left.png",
             "data": {
-                "colors": "colors-c",
+                "colors": "colors-b",
                 "backgroundImage": {
                     "url": "/images/bg.jpg",
                     "opacity": 70
@@ -52,7 +52,7 @@
                         "textAlign": "left"
                     },
                     "name": {
-                        "fontWeight": 400,
+                        "fontWeight": 500,
                         "fontStyle": "normal",
                         "textAlign": "left"
                     },
@@ -65,8 +65,8 @@
             }
         },
         {
-            "label": "Quote dark - no bg image, text center",
-            "thumbnail": "images/quote-dark-center.png",
+            "label": "Quote secondary - no bg image, text center",
+            "thumbnail": "images/quote-secondary-center.png",
             "data": {
                 "colors": "colors-c",
                 "backgroundImage": null,
@@ -82,7 +82,7 @@
                         "textAlign": "center"
                     },
                     "name": {
-                        "fontWeight": 400,
+                        "fontWeight": 500,
                         "fontStyle": "normal",
                         "textAlign": "center"
                     },

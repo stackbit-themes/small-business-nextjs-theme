@@ -5,7 +5,7 @@
             "label": "Contact light - no media",
             "thumbnail": "images/contact-light-no-media.png",
             "data": {
-                "colors": "colors-h",
+                "colors": "colors-d",
                 "title": "Contact us",
                 "text": "We look forward to hearing from you.",
                 "form": {
@@ -17,7 +17,6 @@
                         {
                             "type": "TextFormControl",
                             "name": "name",
-                            "label": "Name",
                             "placeholder": "Your name",
                             "isRequired": "true",
                             "width": "1/2"
@@ -25,7 +24,6 @@
                         {
                             "type": "EmailFormControl",
                             "name": "email",
-                            "label": "Email",
                             "placeholder": "Your email",
                             "isRequired": "true",
                             "width": "1/2"
@@ -33,7 +31,6 @@
                         {
                             "type": "TextFormControl",
                             "name": "address",
-                            "label": "Home address",
                             "placeholder": "Your home address",
                             "isRequired": "false",
                             "width": "full"
@@ -54,16 +51,16 @@
                         "height": "auto",
                         "width": "narrow",
                         "margin": ["mt-0", "mb-0", "ml-0", "mr-0"],
-                        "padding": ["pt-12", "pb-12", "pl-4", "pr-4"],
+                        "padding": ["pt-28", "pb-36", "pl-4", "pr-4"],
                         "alignItems": "center",
                         "justifyContent": "center",
                         "flexDirection": "row"
                     },
                     "title": {
-                        "textAlign": "left"
+                        "textAlign": "center"
                     },
                     "text": {
-                        "textAlign": "left"
+                        "textAlign": "center"
                     }
                 }
             }
@@ -72,7 +69,7 @@
             "label": "Contact light - image right",
             "thumbnail": "images/contact-light-image-right.png",
             "data": {
-                "colors": "colors-h",
+                "colors": "colors-d",
                 "title": "Contact us",
                 "text": "We look forward to hearing from you.",
                 "form": {
@@ -117,7 +114,7 @@
                 },
                 "media": {
                     "type": "ImageBlock",
-                    "url": "/images/careers.jpg",
+                    "url": "/images/hero-2.png",
                     "altText": "Contact form image"
                 },
                 "styles": {
@@ -125,7 +122,7 @@
                         "height": "auto",
                         "width": "wide",
                         "margin": ["mt-0", "mb-0", "ml-0", "mr-0"],
-                        "padding": ["pt-12", "pb-12", "pl-4", "pr-4"],
+                        "padding": ["pt-28", "pb-36", "pl-4", "pr-4"],
                         "alignItems": "center",
                         "justifyContent": "center",
                         "flexDirection": "row"
@@ -141,9 +138,9 @@
         },
         {
             "label": "Contact dark - no media",
-            "thumbnail": "images/contact-dark-no-media.png",
+            "thumbnail": "images/contact-secondary-no-media.png",
             "data": {
-                "colors": "colors-f",
+                "colors": "colors-c",
                 "title": "Get early access",
                 "text": "Sign up your team today to be the first to try out our new product to increase your team's productivity.",
                 "form": {
@@ -168,7 +165,7 @@
                         "height": "auto",
                         "width": "narrow",
                         "margin": ["mt-0", "mb-0", "ml-0", "mr-0"],
-                        "padding": ["pt-12", "pb-12", "pl-4", "pr-4"],
+                        "padding": ["pt-28", "pb-36", "pl-4", "pr-4"],
                         "alignItems": "center",
                         "justifyContent": "center",
                         "flexDirection": "row"
