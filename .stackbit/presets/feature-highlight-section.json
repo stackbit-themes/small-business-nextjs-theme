@@ -2,35 +2,37 @@
     "model": "FeatureHighlightSection",
     "presets": [
         {
-            "label": "Feature light - image right",
-            "thumbnail": "images/feature-light-image-right.png",
+            "label": "Feature secondary - left",
+            "thumbnail": "images/feature-secondary-left.png",
             "data": {
-                "colors": "colors-a",
-                "title": "A great feature, we’re proud of",
+                "colors": "colors-c",
+                "title": "Time to leave your desk. Let’s go flying",
                 "subtitle": "",
-                "text": "Share WIP, comment on each other’s work, approve what’s ready to go, ship together",
+                "text": "We’re local, seasonal fisherman, supporting fishing restrictions.",
                 "actions": [
                     {
                         "type": "Button",
-                        "label": "Sign Up",
-                        "url": "/",
-                        "style": "primary"
+                        "label": "Join adventure",
+                        "showIcon": true,
+                        "icon": "arrowRight",
+                        "style": "secondary",
+                        "url": "/"
                     }
                 ],
-                "media": {
+                "backgroundImage": {
                     "type": "ImageBlock",
-                    "url": "/images/hero-1.png",
-                    "altText": "Hero image"
+                    "url": "/images/hero-3.png",
+                    "backgroundSize": "cover",
+                    "backgroundPosition": "center",
+                    "opacity": 100
                 },
                 "styles": {
                     "self": {
                         "height": "auto",
                         "width": "wide",
                         "margin": ["mt-0", "mb-0", "ml-0", "mr-0"],
-                        "padding": ["pt-12", "pb-12", "pl-4", "pr-4"],
-                        "alignItems": "center",
-                        "justifyContent": "center",
-                        "flexDirection": "row"
+                        "padding": ["pt-36", "pb-72", "pl-4", "pr-4"],
+                        "justifyContent": "flex-start"
                     },
                     "title": {
                         "textAlign": "left"
@@ -48,47 +50,49 @@
             }
         },
         {
-            "label": "Feature light - image left",
-            "thumbnail": "images/feature-light-image-left.png",
+            "label": "Feature light - center",
+            "thumbnail": "images/feature-light-center.png",
             "data": {
-                "colors": "colors-a",
-                "title": "A great feature, we’re proud of",
+                "colors": "colors-d",
+                "title": "Time to leave your desk. Let’s go flying",
                 "subtitle": "",
-                "text": "Share WIP, comment on each other’s work, approve what’s ready to go, ship together",
+                "text": "We’re local, seasonal fisherman, supporting fishing restrictions.",
                 "actions": [
                     {
                         "type": "Button",
-                        "label": "Sign Up",
-                        "url": "/",
-                        "style": "primary"
+                        "label": "Get started",
+                        "showIcon": true,
+                        "icon": "arrowRight",
+                        "style": "primary",
+                        "url": "/"
                     }
                 ],
-                "media": {
+                "backgroundImage": {
                     "type": "ImageBlock",
-                    "url": "/images/hero-2.png",
-                    "altText": "Hero image"
+                    "url": "/images/hero-4.jpg",
+                    "backgroundSize": "cover",
+                    "backgroundPosition": "center",
+                    "opacity": 100
                 },
                 "styles": {
                     "self": {
                         "height": "auto",
                         "width": "wide",
                         "margin": ["mt-0", "mb-0", "ml-0", "mr-0"],
-                        "padding": ["pt-12", "pb-12", "pl-4", "pr-4"],
-                        "alignItems": "center",
-                        "justifyContent": "center",
-                        "flexDirection": "row-reverse"
+                        "padding": ["pt-36", "pb-72", "pl-4", "pr-4"],
+                        "justifyContent": "center"
                     },
                     "title": {
-                        "textAlign": "left"
+                        "textAlign": "center"
                     },
                     "subtitle": {
-                        "textAlign": "left"
+                        "textAlign": "center"
                     },
                     "text": {
-                        "textAlign": "left"
+                        "textAlign": "center"
                     },
                     "actions": {
-                        "justifyContent": "flex-start"
+                        "justifyContent": "center"
                     }
                 }
             }
