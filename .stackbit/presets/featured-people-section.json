@@ -6,7 +6,7 @@
             "thumbnail": "images/feat-people-light-2-col-alt.png",
             "data": {
                 "variant": "variant-c",
-                "colors": "colors-h",
+                "colors": "colors-d",
                 "title": "About us",
                 "subtitle": "Featured people section example",
                 "actions": [],
@@ -35,11 +35,11 @@
             }
         },
         {
-            "label": "Featured people dark - 4 columns",
-            "thumbnail": "images/feat-people-dark-4-col.png",
+            "label": "Featured people secondary - 4 columns",
+            "thumbnail": "images/feat-secondary-dark-4-col.png",
             "data": {
                 "variant": "variant-a",
-                "colors": "colors-f",
+                "colors": "colors-e",
                 "title": "About us",
                 "subtitle": "Featured people section example",
                 "actions": [],
@@ -68,7 +68,7 @@
             "thumbnail": "images/feat-people-dark-2-col.png",
             "data": {
                 "variant": "variant-b",
-                "colors": "colors-f",
+                "colors": "colors-e",
                 "title": "About us",
                 "subtitle": "Featured people section example",
                 "actions": [],
