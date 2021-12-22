@@ -5,21 +5,24 @@
             "label": "Hero light - image right",
             "thumbnail": "images/hero-light-image-right.png",
             "data": {
-                "colors": "colors-a",
-                "title": "Love where you work",
-                "subtitle": "",
-                "text": "One platform, one community, getting to the bottom line of everything employment.  Figure out your benefits, practice for interviews, get mentored, help peers, get helped in return.",
+                "colors": "colors-d",
+                "backgroundImage": null,
+                "title": "We do fishing differently",
+                "subtitle": "Fresh. Better. Faster.",
+                "text": "",
                 "actions": [
                     {
                         "type": "Button",
-                        "label": "Sign Up",
-                        "url": "/",
-                        "style": "primary"
+                        "label": "Join adventure",
+                        "showIcon": true,
+                        "icon": "arrowRight",
+                        "style": "primary",
+                        "url": "/"
                     }
                 ],
                 "media": {
                     "type": "ImageBlock",
-                    "url": "/images/hero.jpg",
+                    "url": "/images/hero-2.png",
                     "altText": "Hero image"
                 },
                 "styles": {
@@ -27,7 +30,7 @@
                         "height": "auto",
                         "width": "wide",
                         "margin": ["mt-0", "mb-0", "ml-0", "mr-0"],
-                        "padding": ["pt-12", "pb-12", "pl-4", "pr-4"],
+                        "padding": ["pt-36", "pb-48", "pl-4", "pr-4"],
                         "alignItems": "center",
                         "justifyContent": "center",
                         "flexDirection": "row"
@@ -51,26 +54,24 @@
             "label": "Hero light - image left",
             "thumbnail": "images/hero-light-image-left.png",
             "data": {
-                "colors": "colors-h",
-                "title": "Love where you work",
-                "subtitle": "",
-                "text": "One platform, one community, getting to the bottom line of everything employment.  Figure out your benefits, practice for interviews, get mentored, help peers, get helped in return.",
+                "colors": "colors-d",
+                "backgroundImage": null,
+                "title": "We do fishing differently",
+                "subtitle": "Fresh. Better. Faster.",
+                "text": "We’re local, seasonal fisherman, supporting fishing restrictions.",
                 "actions": [
                     {
                         "type": "Button",
-                        "label": "Sign Up",
-                        "url": "/",
-                        "style": "primary"
-                    },
-                    {
-                        "type": "Link",
-                        "label": "Learn More",
+                        "label": "Join adventure",
+                        "showIcon": true,
+                        "icon": "arrowRight",
+                        "style": "primary",
                         "url": "/"
                     }
                 ],
                 "media": {
                     "type": "ImageBlock",
-                    "url": "/images/hero.jpg",
+                    "url": "/images/hero-2.png",
                     "altText": "Hero image"
                 },
                 "styles": {
@@ -78,7 +79,7 @@
                         "height": "auto",
                         "width": "wide",
                         "margin": ["mt-0", "mb-0", "ml-0", "mr-0"],
-                        "padding": ["pt-12", "pb-12", "pl-4", "pr-4"],
+                        "padding": ["pt-36", "pb-48", "pl-4", "pr-4"],
                         "alignItems": "center",
                         "justifyContent": "center",
                         "flexDirection": "row-reverse"
@@ -99,41 +100,41 @@
             }
         },
         {
-            "label": "Hero light - image bottom",
-            "thumbnail": "images/hero-light-image-bottom.png",
+            "label": "Hero light - bg image",
+            "thumbnail": "images/hero-light-bg-image.png",
             "data": {
-                "colors": "colors-h",
-                "title": "Love where you work",
-                "subtitle": "",
-                "text": "One platform, one community, getting to the bottom line of everything employment.  Figure out your benefits, practice for interviews, get mentored, help peers, get helped in return.",
+                "colors": "colors-d",
+                "backgroundSize": "inset",
+                "backgroundImage": {
+                    "type": "ImageBlock",
+                    "url": "/images/hero.jpg",
+                    "backgroundSize": "cover",
+                    "backgroundPosition": "center",
+                    "opacity": 100
+                },
+                "title": "We do fishing differently",
+                "subtitle": "Fresh. Better. Faster.",
+                "text": "",
                 "actions": [
                     {
                         "type": "Button",
-                        "label": "Sign Up",
-                        "url": "/",
-                        "style": "primary"
-                    },
-                    {
-                        "type": "Button",
-                        "label": "Learn More",
-                        "url": "/",
-                        "style": "secondary"
+                        "label": "Join adventure",
+                        "showIcon": true,
+                        "icon": "arrowRight",
+                        "style": "primary",
+                        "url": "/"
                     }
                 ],
-                "media": {
-                    "type": "ImageBlock",
-                    "url": "/images/hero-3.jpg",
-                    "altText": "Hero image"
-                },
+                "media": null,
                 "styles": {
                     "self": {
                         "height": "auto",
                         "width": "wide",
                         "margin": ["mt-0", "mb-0", "ml-0", "mr-0"],
-                        "padding": ["pt-12", "pb-12", "pl-4", "pr-4"],
+                        "padding": ["pt-36", "pb-96", "pl-4", "pr-4"],
                         "alignItems": "center",
                         "justifyContent": "center",
-                        "flexDirection": "col"
+                        "flexDirection": "row"
                     },
                     "title": {
                         "textAlign": "left"
