@@ -229,7 +229,7 @@
         }
         .sb-component-button-secondary,
         .sb-component-social-secondary {
-            @apply border-dark text-dark;
+            @apply border-on-light text-on-light;
         }
         .sb-card {
             @apply bg-complementary text-on-light;
@@ -273,7 +273,7 @@
         }
         .sb-component-button-secondary,
         .sb-component-social-secondary {
-            @apply border-dark text-dark;
+            @apply border-on-secondary text-on-secondary;
         }
         .sb-card {
             @apply bg-light text-on-secondary;
