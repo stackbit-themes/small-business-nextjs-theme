@@ -31,7 +31,7 @@
             {
                 "type": "Button",
                 "label": "Contact us",
-                "url": "/",
+                "url": "mailto:info@lorem.mail",
                 "altText": "Contact us",
                 "style": "secondary",
                 "showIcon": true,
@@ -42,12 +42,7 @@
         "styles": {
             "self": {
                 "width": "narrow",
-                "padding": [
-                    "pt-5",
-                    "pb-5",
-                    "pr-4",
-                    "pl-4"
-                ]
+                "padding": ["pt-5", "pb-5", "pr-4", "pl-4"]
             }
         }
     },
@@ -80,13 +75,13 @@
             {
                 "type": "Link",
                 "label": "Adventures",
-                "url": "/adventures",
+                "url": "/blog",
                 "altText": ""
             },
             {
                 "type": "Link",
-                "label": "Blog",
-                "url": "/blog",
+                "label": "Contact us",
+                "url": "mailto:info@lorem.mail",
                 "altText": ""
             }
         ],
@@ -128,12 +123,7 @@
         "styles": {
             "self": {
                 "width": "narrow",
-                "padding": [
-                    "pt-16",
-                    "pb-16",
-                    "pr-4",
-                    "pl-4"
-                ]
+                "padding": ["pt-16", "pb-16", "pr-4", "pl-4"]
             }
         }
     }

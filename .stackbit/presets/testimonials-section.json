@@ -11,7 +11,7 @@
                 "subtitle": "",
                 "testimonials": [
                     {
-                        "quote": "\"It’s great to see someone taking action while still maintaining a sustainable fish supply to home cooks.\"\n",
+                        "quote": "\"It’s great to see someone taking action while still maintaining a sustainable fish supply to home cooks.\"",
                         "name": "Isabelle Parks",
                         "title": "Head chef at Parks",
                         "image": {
@@ -48,12 +48,12 @@
                 "subtitle": "",
                 "testimonials": [
                     {
-                        "quote": "\"It’s great to see someone taking action while still maintaining a sustainable fish supply to home cooks.\"\n",
+                        "quote": "\"It’s great to see someone taking action while still maintaining a sustainable fish supply to home cooks.\"",
                         "name": "Isabelle Parks",
                         "title": "Head chef at Parks",
                         "image": {
                             "type": "ImageBlock",
-                            "url": "/images/hero.png",
+                            "url": "/images/hero.jpg",
                             "altText": "Men fishing"
                         }
                     }
@@ -85,7 +85,7 @@
                 "subtitle": "",
                 "testimonials": [
                     {
-                        "quote": "\"It’s great to see someone taking action while still maintaining a sustainable fish supply to home cooks.\"\n",
+                        "quote": "\"It’s great to see someone taking action while still maintaining a sustainable fish supply to home cooks.\"",
                         "name": "Isabelle Parks",
                         "title": "Head chef at Parks",
                         "image": null

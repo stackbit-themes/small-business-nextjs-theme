@@ -38,7 +38,7 @@ fields:
             style: secondary
         media:
           type: ImageBlock
-          url: https://assets.stackbit.com/components/images/default/hero.png
+          url: /images/hero.jpg
           altText: Image alt text
         styles:
           self:

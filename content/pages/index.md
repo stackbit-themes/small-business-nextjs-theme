@@ -7,7 +7,7 @@ sections:
     colors: colors-d
     backgroundSize: inset
     title: We do fishing differently
-    subtitle: Fresh. Better. Faster
+    subtitle: Fresh. Better. Faster.
     actions:
       - type: Button
         label: Get Started
@@ -18,7 +18,7 @@ sections:
         showIcon: true
     backgroundImage:
       type: BackgroundImage
-      url: /images/hero.png
+      url: /images/hero.jpg
       backgroundSize: cover
       backgroundPosition: top
       opacity: 100
@@ -69,7 +69,7 @@ sections:
         textAlign: center
   - elementId: ''
     colors: colors-c
-    variant: variant-c
+    variant: variant-a
     title: Seasonal adventures
     actions:
       - type: Link
@@ -229,8 +229,8 @@ sections:
         margin:
           - mt-0
           - mb-0
-          - ml-4
-          - mr-4
+          - ml-0
+          - mr-0
         padding:
           - pt-24
           - pb-24

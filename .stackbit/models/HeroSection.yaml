@@ -68,7 +68,7 @@ fields:
       - VideoBlock
     default:
       type: ImageBlock
-      url: https://assets.stackbit.com/components/images/default/hero.png
+      url: /images/hero.jpg
       altText: Hero section image
   - type: model
     name: backgroundImage
