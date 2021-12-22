@@ -253,11 +253,9 @@
         .sb-component-social-secondary {
             @apply border-on-dark text-on-dark;
         }
-
         .sb-card {
             @apply bg-light text-on-light;
         }
-
         .sb-component-item-hover {
             @apply hover:bg-light hover:text-on-light;
         }
@@ -283,7 +281,6 @@
         h2 {
             @apply text-on-secondary;
         }
-
         .sb-component-item-hover {
             @apply hover:bg-dark hover:text-light;
         }
@@ -328,7 +325,6 @@
         .sb-card {
             @apply bg-light text-complementary-alt;
         }
-
         .sb-component-item-hover {
             @apply hover:bg-dark hover:text-light;
         }

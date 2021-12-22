@@ -133,17 +133,18 @@ sections:
       text:
         textAlign: center
   - type: FeatureHighlightSection
-    colors: colors-b
+    colors: colors-d
     backgroundSize: full
     title: Time to leave your desk. Let’s go flying
     text: >
       We’re local, seasonal fisherman, supporting fishing restrictions.
     actions:
-      - type: Link
+      - type: Button
         label: Join adventure
         url: 'https://www.stackbit.com/'
         showIcon: true
         icon: arrowRight
+        style: secondary
     backgroundImage:
       type: BackgroundImage
       url: /images/hero-3.png
