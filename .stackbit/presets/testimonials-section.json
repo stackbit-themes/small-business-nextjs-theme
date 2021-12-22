@@ -12,11 +12,11 @@
                 "testimonials": [
                     {
                         "quote": "\"It’s great to see someone taking action while still maintaining a sustainable fish supply to home cooks.\"",
-                        "name": "Isabelle Parks",
+                        "name": "Oliver Mills",
                         "title": "Head chef at Parks",
                         "image": {
                             "type": "ImageBlock",
-                            "url": "/images/hero-2.png",
+                            "url": "/images/gallery-2.jpg",
                             "altText": "A man fishing"
                         }
                     }
@@ -49,12 +49,12 @@
                 "testimonials": [
                     {
                         "quote": "\"It’s great to see someone taking action while still maintaining a sustainable fish supply to home cooks.\"",
-                        "name": "Isabelle Parks",
+                        "name": "John Doe",
                         "title": "Head chef at Parks",
                         "image": {
                             "type": "ImageBlock",
-                            "url": "/images/hero.jpg",
-                            "altText": "Men fishing"
+                            "url": "/images/fisherman.jpg",
+                            "altText": "John Doe"
                         }
                     }
                 ],

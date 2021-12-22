@@ -3,7 +3,7 @@
     "presets": [
         {
             "label": "Empty page",
-            "thumbnail": "images/hero/jpg",
+            "thumbnail": "images/page-empty.png",
             "data": {
                 "title": "Empty page",
                 "sections": [
