@@ -11,7 +11,7 @@ import getPageUrlPath from '../../../utils/get-page-url-path';
 
 export default function PostFeedSection(props) {
     const cssId = props.elementId || null;
-    const colors = props.colors || 'colors-a';
+    const colors = props.colors || 'colors-d';
     const styles = props.styles || {};
     const sectionWidth = styles.self?.width || 'wide';
     const sectionHeight = styles.self?.height || 'auto';

@@ -9,6 +9,10 @@ excerpt: >-
 featuredImage:
   type: ImageBlock
   url: /images/post-3.jpg
+  altText: Post Thumbnail Image
+media:
+  type: ImageBlock
+  url: /images/post-3.jpg
   altText: Post Image
 bottomSections:
   - elementId: ''

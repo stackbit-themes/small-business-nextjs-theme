@@ -9,7 +9,11 @@ excerpt: >-
 featuredImage:
   type: ImageBlock
   url: /images/post-1.jpg
-  altText: Post Image
+  altText: Post thumbnail image
+media:
+  type: VideoBlock
+  url: https://youtu.be/4MRC3ntFbMM
+  aspectRatio: '16:9'
 bottomSections:
   - elementId: ''
     variant: variant-c

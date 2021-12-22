@@ -20,15 +20,18 @@ export default function PostLayout(props) {
         <BaseLayout page={page} site={site}>
             <main id="main" className="sb-layout sb-post-layout">
                 <article className={classNames(colors, 'px-4', 'sm:px-8', 'py-14', 'lg:py-20')}>
-                    <div className="max-w-screen-2xl mx-auto">
-                        <header className="max-w-screen-md mx-auto mb-12 text-center">
-                            <div className="text-lg mb-4">
-                                <time dateTime={dateTimeAttr} data-sb-field-path="date">
-                                    {formattedDate}
-                                </time>
-                            </div>
+                    <div className="max-w-7xl mx-auto">
+                        {page.media && <div className="w-full mb-8 sm:mb-12">{postMedia(page.media)}</div>}
+                        <header className="max-w-4xl mx-auto mb-12 text-left">
                             {page.title && <h1 data-sb-field-path="title">{page.title}</h1>}
-                            <PostAttribution post={page} />
+                            <div className="text-lg mt-6">
+                                <span>
+                                    <time dateTime={dateTimeAttr} data-sb-field-path="date">
+                                        {formattedDate}
+                                    </time>
+                                </span>
+                                <PostAttribution post={page} />
+                            </div>
                         </header>
                         {page.markdown_content && (
                             <Markdown options={{ forceBlock: true }} className="sb-markdown max-w-screen-md mx-auto" data-sb-field-path="markdown_content">
@@ -53,6 +56,18 @@ export default function PostLayout(props) {
     );
 }
 
+function postMedia(media) {
+    const mediaType = media.type;
+    if (!mediaType) {
+        throw new Error(`hero section media does not have the 'type' property`);
+    }
+    const Media = getComponent(mediaType);
+    if (!Media) {
+        throw new Error(`no component matching the hero section media type: ${mediaType}`);
+    }
+    return <Media {...media} className={classNames({ 'w-full': mediaType === 'ImageBlock' })} data-sb-field-path=".media" />;
+}
+
 function PostAttribution({ post }) {
     if (!post.author && !post.category) {
         return null;
@@ -60,10 +75,10 @@ function PostAttribution({ post }) {
     const author = post.author ? postAuthor(post.author) : null;
     const category = post.category ? postCategory(post.category) : null;
     return (
-        <div className="mt-6 text-lg">
+        <span>
             {author && (
                 <>
-                    {'By '}
+                    {', by '}
                     {author}
                 </>
             )}
@@ -73,7 +88,7 @@ function PostAttribution({ post }) {
                     {category}
                 </>
             )}
-        </div>
+        </span>
     );
 }
 

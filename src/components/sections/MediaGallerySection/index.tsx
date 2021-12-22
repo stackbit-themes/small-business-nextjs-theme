@@ -58,7 +58,7 @@ export type MediaGallerySectionProps = BaseSectionComponentProps & {
 
 export default function MediaGallerySection(props: MediaGallerySectionProps) {
     const cssId = props.elementId || null;
-    const colors = props.colors || 'colors-a';
+    const colors = props.colors || 'colors-d';
     const sectionStyles = props.styles?.self;
     const sectionWidth = sectionStyles?.width || 'wide';
     const sectionHeight = sectionStyles?.height || 'auto';

@@ -10,7 +10,7 @@ export default function PostFeedLayout(props) {
     const { page, site } = props;
     const BaseLayout = getBaseLayoutComponent(page.baseLayout, site.baseLayout);
     const { title, topSections = [], bottomSections = [], pageIndex, baseUrlPath, numOfPages, items, postFeed } = page;
-    const postFeedColors = postFeed?.colors || 'colors-a';
+    const postFeedColors = postFeed?.colors || 'colors-d';
     const postFeedWidth = postFeed?.styles?.self?.width || 'wide';
     const postFeedJustifyContent = postFeed?.styles?.self?.justifyContent || 'center';
     const PostFeedSection = getComponent('PostFeedSection');
@@ -21,7 +21,10 @@ export default function PostFeedLayout(props) {
             <main id="main" className="layout page-layout">
                 {title && (
                     <div className={classNames('flex', 'py-12', 'lg:py-14', 'px-4', postFeedColors, mapStyles({ justifyContent: postFeedJustifyContent }))}>
-                        <h1 className={classNames('w-full', mapMaxWidthStyles(postFeedWidth), page?.styles?.title ? mapStyles(page?.styles?.title) : null)} data-sb-field-path="title">
+                        <h1
+                            className={classNames('w-full', mapMaxWidthStyles(postFeedWidth), page?.styles?.title ? mapStyles(page?.styles?.title) : null)}
+                            data-sb-field-path="title"
+                        >
                             {title}
                         </h1>
                     </div>
@@ -136,9 +139,9 @@ function urlPathForPageAtIndex(pageIndex, baseUrlPath) {
 function mapMaxWidthStyles(width) {
     switch (width) {
         case 'narrow':
-            return 'max-w-screen-md';
+            return 'max-w-4xl';
         case 'wide':
-            return 'max-w-screen-xl';
+            return 'max-w-7xl';
         case 'full':
             return 'max-w-full';
     }

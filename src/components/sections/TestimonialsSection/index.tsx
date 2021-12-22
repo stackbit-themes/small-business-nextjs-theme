@@ -9,7 +9,7 @@ import ImageBlock from '../../molecules/ImageBlock';
 export default function TestimonialsSection(props) {
     const cssId = props.elementId || null;
     const variant = props.variant || 'variant-a';
-    const colors = props.colors || 'colors-a';
+    const colors = props.colors || 'colors-d';
     const styles = props.styles || {};
     const sectionWidth = styles.self?.width || 'wide';
     const sectionHeight = styles.self?.height || 'auto';

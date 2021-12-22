@@ -8,7 +8,7 @@ import { Action, BackgroundImage } from '../../atoms';
 
 export default function CtaSection(props) {
     const cssId = props.elementId || null;
-    const colors = props.colors || 'colors-a';
+    const colors = props.colors || 'colors-d';
     const bgSize = props.backgroundSize || 'full';
     const sectionStyles = props.styles?.self || {};
     const sectionWidth = sectionStyles.width || 'wide';

@@ -9,7 +9,7 @@ import { Action, BackgroundImage } from '../../atoms';
 
 export default function FeatureHighlightSection(props) {
     const cssId = props.elementId || null;
-    const colors = props.colors || 'colors-a';
+    const colors = props.colors || 'colors-d';
     const bgSize = props.backgroundSize || 'full';
     const sectionStyles = props.styles?.self || {};
     const sectionWidth = sectionStyles.width || 'wide';
@@ -126,10 +126,8 @@ function mapMinHeightStyles(height) {
 
 function mapMaxWidthStyles(width) {
     switch (width) {
-        case 'narrow':
-            return 'max-w-screen-md';
         case 'wide':
-            return 'max-w-screen-xl';
+            return 'max-w-7xl';
         case 'full':
             return 'max-w-full';
     }
