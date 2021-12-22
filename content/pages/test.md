@@ -4,7 +4,7 @@ layout: PageLayout
 sections:
   - type: TestimonialsSection
     colors: colors-a
-    variant: variant-c
+    variant: variant-b
     testimonials:
       - quote: >
           Such a great experience to be using this product. It really helped
@@ -13,7 +13,7 @@ sections:
         title: Happy customer
         image:
           type: ImageBlock
-          url: /images/hero-2.png
+          url: /images/hero.png
           altText: Photo of Carla Rogers
     styles:
       self:

@@ -126,14 +126,14 @@ function testimonialVariantB(testimonial, index) {
                 </Markdown>
             )}
             {(testimonial.name || testimonial.title || testimonial.image) && (
-                <footer className="flex mt-12 md:mt-16">
+                <footer className="flex flex-wrap mt-8 md:mt-16">
                     {testimonial.image && (
-                        <div className="flex-shrink-0 mr-8 w-20 sm:w-28">
+                        <div className="flex-shrink-0 mt-4 mr-6 sm:mr-8 w-36 sm:w-72">
                             <ImageBlock {...testimonial.image} className="w-full" data-sb-field-path=".image" />
                         </div>
                     )}
                     {(testimonial.name || testimonial.title) && (
-                        <div className="flex-grow">
+                        <div className="flex-grow mt-4">
                             {testimonial.name && (
                                 <div className={classNames(styles.name ? mapStyles(styles.name) : null)} data-sb-field-path=".name">
                                     {testimonial.name}

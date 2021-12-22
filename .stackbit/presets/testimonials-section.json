@@ -5,19 +5,19 @@
             "label": "Testimonials light - with big image, text left",
             "thumbnail": "images/testimonials-light-big-image.png",
             "data": {
-                "colors": "colors-a",
+                "colors": "colors-d",
                 "variant": "variant-a",
                 "title": "",
                 "subtitle": "",
                 "testimonials": [
                     {
-                        "quote": "\"Such a great experience to be using this product. It really helped with what I needed help with.\"\n",
-                        "name": "Carla Rogers",
-                        "title": "Happy customer",
+                        "quote": "\"It’s great to see someone taking action while still maintaining a sustainable fish supply to home cooks.\"\n",
+                        "name": "Isabelle Parks",
+                        "title": "Head chef at Parks",
                         "image": {
                             "type": "ImageBlock",
-                            "url": "/images/carla.jpg",
-                            "altText": "Photo of Carla Rogers"
+                            "url": "/images/hero-2.png",
+                            "altText": "A man fishing"
                         }
                     }
                 ],
@@ -39,22 +39,22 @@
             }
         },
         {
-            "label": "Testimonials light - with small image, text left",
-            "thumbnail": "images/testimonials-light-small-image.png",
+            "label": "Testimonials dark - with small image, text left",
+            "thumbnail": "images/testimonials-dark-small-image.png",
             "data": {
-                "colors": "colors-a",
+                "colors": "colors-e",
                 "variant": "variant-b",
                 "title": "",
                 "subtitle": "",
                 "testimonials": [
                     {
-                        "quote": "\"Such a great experience to be using this product. It really helped with what I needed help with.\"\n",
-                        "name": "Carla Rogers",
-                        "title": "Happy customer",
+                        "quote": "\"It’s great to see someone taking action while still maintaining a sustainable fish supply to home cooks.\"\n",
+                        "name": "Isabelle Parks",
+                        "title": "Head chef at Parks",
                         "image": {
                             "type": "ImageBlock",
-                            "url": "/images/carla.jpg",
-                            "altText": "Photo of Carla Rogers"
+                            "url": "/images/hero.png",
+                            "altText": "Men fishing"
                         }
                     }
                 ],
@@ -76,23 +76,19 @@
             }
         },
         {
-            "label": "Testimonials light - with small image, text center",
+            "label": "Testimonials light - no image, text centered",
             "thumbnail": "images/testimonials-light-text-image.png",
             "data": {
-                "colors": "colors-a",
+                "colors": "colors-d",
                 "variant": "variant-c",
                 "title": "",
                 "subtitle": "",
                 "testimonials": [
                     {
-                        "quote": "\"Such a great experience to be using this product. It really helped with what I needed help with.\"\n",
-                        "name": "Carla Rogers",
-                        "title": "Happy customer",
-                        "image": {
-                            "type": "ImageBlock",
-                            "url": "/images/carla.jpg",
-                            "altText": "Photo of Carla Rogers"
-                        }
+                        "quote": "\"It’s great to see someone taking action while still maintaining a sustainable fish supply to home cooks.\"\n",
+                        "name": "Isabelle Parks",
+                        "title": "Head chef at Parks",
+                        "image": null
                     }
                 ],
                 "styles": {
