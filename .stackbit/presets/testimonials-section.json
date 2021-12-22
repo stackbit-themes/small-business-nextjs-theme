@@ -3,7 +3,7 @@
     "presets": [
         {
             "label": "Testimonials light - with big image, text left",
-            "thumbnail": "images/testimonials-light-big-image.png",
+            "thumbnail": "images/testimonials-light-image.png",
             "data": {
                 "colors": "colors-d",
                 "variant": "variant-a",
@@ -77,7 +77,7 @@
         },
         {
             "label": "Testimonials light - no image, text centered",
-            "thumbnail": "images/testimonials-light-text-image.png",
+            "thumbnail": "images/testimonials-light-text-centered.png",
             "data": {
                 "colors": "colors-d",
                 "variant": "variant-c",
