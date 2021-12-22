@@ -29,19 +29,19 @@ fields:
       models: [ImageBlock]
     default:
       - type: ImageBlock
-        url: https://assets.stackbit.com/components/images/default/image-1.jpeg
+        url: /images/gallery-1.jpg
         altText: Image one
         caption: Image one caption
       - type: ImageBlock
-        url: https://assets.stackbit.com/components/images/default/image-2.jpeg
+        url: /images/gallery-2.jpg
         altText: Image two
         caption: Image two caption
       - type: ImageBlock
-        url: https://assets.stackbit.com/components/images/default/image-3.jpeg
+        url: /images/gallery-3.jpg
         altText: Image three
         caption: Image three caption
       - type: ImageBlock
-        url: https://assets.stackbit.com/components/images/default/image-4.jpeg
+        url: /images/gallery-4.jpg
         altText: Image four
         caption: Image four caption
   - type: number
