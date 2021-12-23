@@ -125,7 +125,7 @@ sections:
           - ml-0
           - mr-0
         padding:
-          - pt-28
+          - pt-36
           - pb-36
           - pr-4
           - pl-4
@@ -150,7 +150,7 @@ sections:
       url: /images/hero-3.png
       backgroundSize: cover
       backgroundPosition: center
-      opacity: 100
+      opacity: 90
     styles:
       self:
         height: auto

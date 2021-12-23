@@ -12,9 +12,12 @@ featuredImage:
   altText: Post Image
 bottomSections:
   - elementId: ''
-    variant: variant-c
+    variant: variant-d
     colors: colors-d
     title: Read next
+    showDate: true
+    showAuthor: false
+    showExcerpt: true
     recentCount: 3
     styles:
       self:
