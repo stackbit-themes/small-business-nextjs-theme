@@ -58,7 +58,7 @@
             "address": "312 Lovely Street, Brooklyn, NY, 123456",
             "addressAltText": "Our address"
         },
-        "copyrightText": "Powered by Stackbit",
+        "copyrightText": "Powered by [Stackbit](https://www.stackbit.com/)\n",
         "primaryLinks": [
             {
                 "type": "Link",

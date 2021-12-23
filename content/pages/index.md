@@ -5,7 +5,7 @@ sections:
   - type: HeroSection
     elementId: homepage-hero-1
     colors: colors-d
-    backgroundSize: inset
+    backgroundSize: full
     title: We do fishing differently
     subtitle: Fresh. Better. Faster.
     actions:
@@ -18,10 +18,10 @@ sections:
         showIcon: true
     backgroundImage:
       type: BackgroundImage
-      url: /images/hero.jpg
+      url: /images/hero.jpeg
       backgroundSize: cover
-      backgroundPosition: top
-      opacity: 100
+      backgroundPosition: center
+      opacity: 85
     styles:
       self:
         height: auto
@@ -30,7 +30,7 @@ sections:
           - mt-6
           - mb-0
         padding:
-          - pt-36
+          - pt-20
           - pb-96
           - pr-12
           - pl-12
