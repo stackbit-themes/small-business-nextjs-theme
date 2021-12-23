@@ -37,7 +37,7 @@ bottomSections:
           - mr-0
         padding:
           - pt-28
-          - pb-28
+          - pb-20
           - pr-4
           - pl-4
         justifyContent: center
@@ -78,7 +78,7 @@ bottomSections:
           - mr-0
         padding:
           - pt-12
-          - pb-12
+          - pb-4
           - pl-4
           - pr-4
         justifyContent: center

@@ -128,7 +128,18 @@
 
     /* Buttons */
     .sb-component-button {
-        @apply border-2 inline-flex items-center justify-center no-underline text-center transition duration-200 ease-in hover:opacity-80;
+        @apply border-2 inline-flex items-center justify-center no-underline text-center transition duration-200 ease-in;
+    }
+    .sb-component-social {
+        @apply transition duration-200 ease-in;
+    }
+    .sb-component-social:not(.sb-component-social-primary),
+    .sb-component-social:not(.sb-component-social-secondary) {
+        @apply hover:opacity-70;
+    }
+    .sb-component-button-primary,
+    .sb-component-social-primary {
+        @apply bg-primary border-primary text-on-primary hover:bg-light hover:border-primary hover:text-primary;
     }
 
     /* Links */
@@ -151,7 +162,7 @@
 
     /* Socials */
     .sb-component-social {
-        @apply inline-flex items-center justify-center no-underline transition duration-200 ease-in hover:opacity-80;
+        @apply inline-flex items-center justify-center no-underline transition duration-200 ease-in;
     }
 
     .sb-component-social-primary,
@@ -223,13 +234,9 @@
         .sb-textarea {
             @apply text-on-light placeholder-on-light placeholder-opacity-75;
         }
-        .sb-component-button-primary,
-        .sb-component-social-primary {
-            @apply bg-primary border-primary text-on-primary;
-        }
         .sb-component-button-secondary,
         .sb-component-social-secondary {
-            @apply border-on-light text-on-light;
+            @apply border-on-light text-on-light hover:bg-light hover:border-primary hover:text-primary;
         }
         .sb-card {
             @apply bg-complementary text-on-light;
@@ -245,13 +252,9 @@
         .sb-textarea {
             @apply text-on-dark placeholder-on-dark placeholder-opacity-75;
         }
-        .sb-component-button-primary,
-        .sb-component-social-primary {
-            @apply bg-primary border-primary text-on-primary;
-        }
         .sb-component-button-secondary,
         .sb-component-social-secondary {
-            @apply border-on-dark text-on-dark;
+            @apply border-on-dark text-on-dark hover:bg-light hover:border-primary hover:text-primary;
         }
         .sb-card {
             @apply bg-light text-on-light;
@@ -267,13 +270,9 @@
         .sb-textarea {
             @apply text-on-secondary placeholder-on-secondary placeholder-opacity-75;
         }
-        .sb-component-button-primary,
-        .sb-component-social-primary {
-            @apply bg-primary border-primary text-on-primary;
-        }
         .sb-component-button-secondary,
         .sb-component-social-secondary {
-            @apply border-on-secondary text-on-secondary;
+            @apply border-on-secondary text-on-secondary hover:bg-light hover:border-primary hover:text-primary;
         }
         .sb-card {
             @apply bg-light text-on-secondary;
@@ -292,13 +291,9 @@
         .sb-textarea {
             @apply text-on-complementary placeholder-on-complementary placeholder-opacity-75;
         }
-        .sb-component-button-primary,
-        .sb-component-social-primary {
-            @apply bg-primary border-primary text-on-primary;
-        }
         .sb-component-button-secondary,
         .sb-component-social-secondary {
-            @apply border-on-complementary text-on-complementary;
+            @apply border-on-complementary text-on-complementary hover:bg-light hover:border-primary hover:text-primary;
         }
         .sb-card {
             @apply bg-light text-on-complementary;
@@ -314,13 +309,9 @@
         .sb-textarea {
             @apply text-on-complementary-alt placeholder-on-complementary-alt placeholder-opacity-75;
         }
-        .sb-component-button-primary,
-        .sb-component-social-primary {
-            @apply bg-primary border-primary text-on-primary;
-        }
         .sb-component-button-secondary,
         .sb-component-social-secondary {
-            @apply border-on-complementary-alt text-on-complementary-alt;
+            @apply border-on-complementary-alt text-on-complementary-alt hover:bg-light hover:border-primary hover:text-primary;
         }
         .sb-card {
             @apply bg-light text-complementary-alt;
