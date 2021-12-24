@@ -18,7 +18,7 @@ sections:
         showIcon: true
     backgroundImage:
       type: BackgroundImage
-      url: /images/hero.jpeg
+      url: /images/hero.webp
       backgroundSize: cover
       backgroundPosition: center
       opacity: 85

@@ -36,7 +36,7 @@ sections:
     quote: |-
       “This is someone else, not from our team, but she also loves fishing, so we thought we should highlight her.”
     backgroundImage:
-      url: /images/bg.jpg
+      url: /images/bg.webp
       opacity: 70
     styles:
       self:
