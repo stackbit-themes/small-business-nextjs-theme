@@ -1,18 +1,14 @@
 ---
-title: Sunset fishnet
+title: Fishing from the coast
 layout: PostLayout
-date: '2021-07-01'
-author: content/data/team/hugh-saturation.json
+date: '2021-11-03'
+author: content/data/team/desmond-eagle.json
 excerpt: >-
-  Sed in facilisis dui. Nulla molestie risus in mi dapibus, eget porta lorem
-  semper. Donec sed facilisis nibh.
+  Nunc rutrum felis dui, ut consequat sapien scelerisque vel. Integer
+  condimentum dignissim justo vel faucibus.
 featuredImage:
   type: ImageBlock
-  url: /images/hero.webp
-  altText: Post Image
-media:
-  type: ImageBlock
-  url: /images/hero.webp
+  url: /images/post-2.jpg
   altText: Post Image
 bottomSections:
   - elementId: ''

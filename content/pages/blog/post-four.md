@@ -1,14 +1,18 @@
 ---
-title: Fishing from the coast
+title: Extreme fly fishing
 layout: PostLayout
-date: '2021-11-03'
-author: content/data/team/desmond-eagle.json
+date: '2021-12-01'
+colors: colors-c
+author: content/data/team/hilary-ouse.json
 excerpt: >-
-  Nunc rutrum felis dui, ut consequat sapien scelerisque vel. Integer
-  condimentum dignissim justo vel faucibus.
+  We’re local, seasonal fisherman, supporting fishing restrictions. We fish what the sea has to offer, nothing more, and no cheating.
 featuredImage:
   type: ImageBlock
-  url: /images/post-4.jpg
+  url: /images/post-3.jpg
+  altText: Post Thumbnail Image
+media:
+  type: ImageBlock
+  url: /images/post-3.jpg
   altText: Post Image
 bottomSections:
   - elementId: ''
