@@ -139,7 +139,7 @@ function urlPathForPageAtIndex(pageIndex, baseUrlPath) {
 function mapMaxWidthStyles(width) {
     switch (width) {
         case 'narrow':
-            return 'max-w-4xl';
+            return 'max-w-5xl';
         case 'wide':
             return 'max-w-7xl';
         case 'full':

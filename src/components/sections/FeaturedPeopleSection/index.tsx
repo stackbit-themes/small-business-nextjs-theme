@@ -202,7 +202,7 @@ function peopleListVariantC(people, annotIndexStart = 0) {
             )}
             <div>
                 {(person.firstName || person.lastName) && (
-                    <h3 className="text-2xl">
+                    <h3 className="text-xl">
                         {person.firstName && <span data-sb-field-path=".firstName">{person.firstName}</span>}{' '}
                         {person.lastName && <span data-sb-field-path=".lastName">{person.lastName}</span>}
                     </h3>
@@ -239,7 +239,7 @@ function mapMinHeightStyles(height) {
 function mapMaxWidthStyles(width) {
     switch (width) {
         case 'narrow':
-            return 'max-w-4xl';
+            return 'max-w-5xl';
         case 'wide':
             return 'max-w-7xl';
         case 'full':

@@ -22,7 +22,7 @@ export default function PostLayout(props) {
                 <article className={classNames(colors, 'px-4', 'sm:px-8', 'py-14', 'lg:py-20')}>
                     <div className="max-w-7xl mx-auto">
                         {page.media && <div className="w-full mb-8 sm:mb-12">{postMedia(page.media)}</div>}
-                        <header className="max-w-4xl mx-auto mb-12 text-left">
+                        <header className="max-w-5xl mx-auto mb-12 text-left">
                             {page.title && <h1 data-sb-field-path="title">{page.title}</h1>}
                             <div className="text-lg mt-6">
                                 <span>
