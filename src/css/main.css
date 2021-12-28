@@ -275,11 +275,16 @@
             @apply border-on-secondary text-on-secondary hover:bg-light hover:border-primary hover:text-primary;
         }
         .sb-card {
-            @apply bg-light text-on-secondary;
+            @apply bg-light text-dark;
         }
-        h2 {
+        .sb-card h2,
+        .sb-card h3,
+        h1,
+        h2,
+        h3 {
             @apply text-on-secondary;
         }
+
         .sb-component-item-hover {
             @apply hover:bg-dark hover:text-light;
         }
@@ -296,7 +301,14 @@
             @apply border-on-complementary text-on-complementary hover:bg-light hover:border-primary hover:text-primary;
         }
         .sb-card {
-            @apply bg-light text-on-complementary;
+            @apply bg-light text-dark;
+        }
+        .sb-card h2,
+        .sb-card h3,
+        h1,
+        h2,
+        h3 {
+            @apply text-on-complementary;
         }
         .sb-component-item-hover {
             @apply hover:bg-dark hover:text-light;

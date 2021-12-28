@@ -51,7 +51,7 @@ export default function FeatureHighlightSection(props) {
                 {props.backgroundImage && <BackgroundImage {...props.backgroundImage} />}
                 <div className={classNames('relative', 'w-full', bgSize === 'full' ? mapMaxWidthStyles(sectionWidth) : null)}>
                     <div className={classNames('w-full', 'flex', mapStyles({ justifyContent: sectionJustifyContent }))}>
-                        <div className={classNames(colors, 'max-w-2xl', 'px-6', 'py-10', 'sm:px-12', 'sm:py-14')}>
+                        <div className={classNames('sb-card', 'max-w-2xl', 'px-6', 'py-10', 'sm:px-12', 'sm:py-14')}>
                             {featureHighlightBody(props)}
                             {featureHighlightActions(props)}
                         </div>

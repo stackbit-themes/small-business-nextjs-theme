@@ -139,12 +139,11 @@ sections:
     text: >
       We’re local, seasonal fisherman, supporting fishing restrictions.
     actions:
-      - type: Button
+      - type: Link
         label: Join adventure
         url: 'https://www.stackbit.com/'
         showIcon: true
         icon: arrowRight
-        style: secondary
     backgroundImage:
       type: BackgroundImage
       url: /images/hero-3.webp
