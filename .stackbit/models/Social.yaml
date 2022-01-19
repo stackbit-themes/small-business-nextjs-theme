@@ -16,7 +16,7 @@ fields:
     name: altText
     label: Alt text
     default: ''
-    description: The alternative text for screen readers
+    description: Alternative text for screen readers
   - type: string
     name: url
     label: URL
@@ -61,5 +61,5 @@ fields:
     name: elementId
     group: settings
     label: Element ID
-    description: The unique ID for an HTML element, must not contain whitespace
+    description: A unique ID for the HTML element. Must not contain whitespace.
     default: ''

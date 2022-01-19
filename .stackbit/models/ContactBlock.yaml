@@ -8,7 +8,6 @@ fieldGroups:
 fields:
   - type: string
     name: title
-    description: The value of the field is used for presentation purposes in Stackbit
     default: Contact details
   - type: string
     name: phoneNumber
@@ -38,5 +37,5 @@ fields:
     name: elementId
     group: settings
     label: Element ID
-    description: The unique ID for an HTML element, must not contain whitespace
+    description: A unique ID for the HTML element. Must not contain whitespace.
     default: ''

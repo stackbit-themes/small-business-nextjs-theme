@@ -9,21 +9,19 @@ fields:
   - type: image
     name: url
     label: Image
-    description: The URL of the image
     default: https://assets.stackbit.com/components/images/default/default-image.png
   - type: string
     name: altText
     label: Alt text
-    description: The alt text of the image
+    description: Alternative text for screen readers
     default: altText of the image
   - type: string
     name: caption
     label: Caption
-    description: The caption of the image
     default: Caption of the image
   - type: string
     name: elementId
     group: settings
     label: Element ID
-    description: The unique ID for an HTML element, must not contain whitespace
+    description: A unique ID for the HTML element. Must not contain whitespace.
     default: ''

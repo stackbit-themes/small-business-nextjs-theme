@@ -11,7 +11,7 @@ fields:
   - type: number
     name: numOfPostsPerPage
     label: Number of Posts per page
-    description: set to 0 to show all posts on a single page
+    description: Set to zero to show all posts
     default: 10
   - type: model
     name: postFeed

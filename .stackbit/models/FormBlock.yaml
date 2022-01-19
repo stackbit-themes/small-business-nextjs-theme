@@ -48,7 +48,7 @@ fields:
     name: elementId
     group: settings
     label: Element ID
-    description: The unique ID used for id and name attributes, must not contain whitespace
+    description: The unique ID used for id and name attributes in the HTML form. Must not contain whitespace.
     default: 'contact-form'
     required: true
   - type: string

@@ -10,7 +10,6 @@ fields:
   - type: enum
     name: colors
     label: Colors
-    description: The color theme of the section
     group: styles
     controlType: palette
     options:
@@ -44,5 +43,5 @@ fields:
     name: elementId
     group: settings
     label: Element ID
-    description: The unique ID for an HTML element, must not contain whitespace
+    description: A unique ID for the HTML element. Must not contain whitespace.
     default: ''

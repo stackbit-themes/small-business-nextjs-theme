@@ -9,7 +9,6 @@ fields:
   - type: image
     name: url
     label: Background image
-    description: The URL of the image
     default: https://assets.stackbit.com/components/images/default/default-image.png
   - type: enum
     name: backgroundSize

@@ -14,7 +14,6 @@ fields:
   - type: enum
     name: colors
     label: Colors
-    description: The color theme of the section
     group: styles
     controlType: palette
     options:
