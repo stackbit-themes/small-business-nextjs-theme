@@ -1,12 +1,14 @@
 import * as React from 'react';
 import classNames from 'classnames';
 import { mapStylesToClassNames as mapStyles } from '../../../utils/map-styles-to-class-names';
+import { BackgroundImage } from '../../atoms';
 
 type SectionProps = React.PropsWithChildren<{
     type?: string;
     elementId?: string;
     colors?: 'colors-a' | 'colors-b' | 'colors-c' | 'colors-d' | 'colors-e' | 'colors-f';
     backgroundSize?: 'full' | 'inset';
+    backgroundImage?: any;
     styles?: any;
     'data-sb-field-path'?: string;
 }>;
@@ -56,6 +58,7 @@ function SectionInset(props: SectionProps) {
                     borderWidth: styles.borderWidth ? `${styles.borderWidth}px` : null
                 }}
             >
+                {props.backgroundImage && <BackgroundImage {...props.backgroundImage} />}
                 <div className="relative w-full">{children}</div>
             </div>
         </div>
@@ -76,6 +79,7 @@ function SectionFullWidth(props: SectionProps) {
                 'flex',
                 'flex-col',
                 'justify-center',
+                'relative',
                 mapMinHeightStyles(styles.height ?? 'auto'),
                 styles.margin,
                 styles.padding ?? 'py-12 px-4',
@@ -89,6 +93,7 @@ function SectionFullWidth(props: SectionProps) {
             }}
             data-sb-field-path={fieldPath}
         >
+            {props.backgroundImage && <BackgroundImage {...props.backgroundImage} />}
             <div className={classNames('flex', 'w-full', mapStyles({ justifyContent: styles.justifyContent ?? 'center' }))}>
                 <div className={classNames('relative', 'w-full', mapMaxWidthStyles(styles.width ?? 'wide'))}>{children}</div>
             </div>

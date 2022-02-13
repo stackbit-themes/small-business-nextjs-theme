@@ -3,120 +3,63 @@ import Markdown from 'markdown-to-jsx';
 import classNames from 'classnames';
 
 import { mapStylesToClassNames as mapStyles } from '../../../utils/map-styles-to-class-names';
-import { getDataAttrs } from '../../../utils/get-data-attrs';
-import { Action, BackgroundImage } from '../../atoms';
+import Section from '../Section';
+import { Action } from '../../atoms';
 
 export default function CtaSection(props) {
-    const cssId = props.elementId || null;
-    const colors = props.colors || 'colors-d';
-    const bgSize = props.backgroundSize || 'full';
-    const sectionStyles = props.styles?.self || {};
-    const sectionWidth = sectionStyles.width || 'wide';
-    const sectionHeight = sectionStyles.height || 'auto';
-    const sectionJustifyContent = sectionStyles.justifyContent || 'center';
-    const sectionFlexDirection = sectionStyles.flexDirection || 'row';
-    const sectionAlignItems = sectionStyles.alignItems || 'center';
+    const { type, elementId, colors, backgroundSize, backgroundImage, title, text, actions = [], styles = {}, 'data-sb-field-path': fieldPath } = props;
+    const sectionFlexDirection = styles.self?.flexDirection ?? 'row';
+    const sectionAlignItems = styles.self?.alignItems || 'center';
     return (
-        <div
-            id={cssId}
-            {...getDataAttrs(props)}
-            className={classNames(
-                'sb-component',
-                'sb-component-section',
-                'sb-component-cta-section',
-                bgSize === 'inset' ? 'flex' : null,
-                bgSize === 'inset' ? mapStyles({ justifyContent: sectionJustifyContent }) : null,
-                sectionStyles.margin
-            )}
-        >
+        <Section type={type} elementId={elementId} colors={colors} backgroundSize={backgroundSize} backgroundImage={backgroundImage} styles={styles.self} data-sb-field-path={fieldPath}>
             <div
-                className={classNames(
-                    colors,
-                    'flex',
-                    'flex-col',
-                    'justify-center',
-                    'relative',
-                    bgSize === 'inset' ? 'w-full' : null,
-                    bgSize === 'inset' ? mapMaxWidthStyles(sectionWidth) : null,
-                    mapMinHeightStyles(sectionHeight),
-                    sectionStyles.padding || 'py-12 px-4',
-                    sectionStyles.borderColor,
-                    sectionStyles.borderStyle ? mapStyles({ borderStyle: sectionStyles.borderStyle }) : 'border-none',
-                    sectionStyles.borderRadius ? mapStyles({ borderRadius: sectionStyles.borderRadius }) : null,
-                    sectionStyles.boxShadow ? mapStyles({ boxShadow: sectionStyles.boxShadow }) : null
-                )}
-                style={{
-                    borderWidth: sectionStyles.borderWidth ? `${sectionStyles.borderWidth}px` : null
-                }}
+                className={classNames('flex', mapFlexDirectionStyles(sectionFlexDirection), mapStyles({ alignItems: sectionAlignItems }), 'space-y-8', {
+                    'lg:space-y-0 lg:space-x-8': sectionFlexDirection === 'row'
+                })}
             >
-                {props.backgroundImage && <BackgroundImage {...props.backgroundImage} />}
-                <div
-                    className={classNames(
-                        'relative',
-                        'w-full',
-                        bgSize === 'full' ? 'flex' : null,
-                        bgSize === 'full' ? mapStyles({ justifyContent: sectionJustifyContent }) : null
-                    )}
-                >
-                    <div className={classNames('w-full', bgSize === 'full' ? mapMaxWidthStyles(sectionWidth) : null)}>
-                        <div
-                            className={classNames(
-                                'flex',
-                                mapFlexDirectionStyles(sectionFlexDirection),
-                                mapStyles({ alignItems: sectionAlignItems }),
-                                'space-y-8',
-                                {
-                                    'lg:space-y-0 lg:space-x-8': sectionFlexDirection === 'row'
-                                }
-                            )}
-                        >
-                            {ctaBody(props)}
-                            {ctaActions(props)}
-                        </div>
-                    </div>
-                </div>
+                <CtaBody title={title} text={text} styles={styles} />
+                <CtaActions actions={actions} sectionFlexDirection={sectionFlexDirection} styles={styles.actions} />
             </div>
-        </div>
+        </Section>
     );
 }
 
-function ctaBody(props) {
-    if (!props.title && !props.text) {
+function CtaBody(props) {
+    const { title, text, styles = {} } = props;
+    if (!title && !text) {
         return null;
     }
-    const styles = props.styles || {};
     return (
         <div className="w-full lg:flex-grow">
-            {props.title && (
+            {title && (
                 <h2 className={classNames(styles.title ? mapStyles(styles.title) : null)} data-sb-field-path=".title">
-                    {props.title}
+                    {title}
                 </h2>
             )}
-            {props.text && (
+            {text && (
                 <Markdown
                     options={{ forceBlock: true, forceWrapper: true }}
-                    className={classNames('sb-markdown', 'sm:text-lg', styles.text ? mapStyles(styles.text) : null, { 'mt-4': props.title })}
+                    className={classNames('sb-markdown', 'sm:text-lg', styles.text ? mapStyles(styles.text) : null, { 'mt-4': title })}
                     data-sb-field-path=".text"
                 >
-                    {props.text}
+                    {text}
                 </Markdown>
             )}
         </div>
     );
 }
 
-function ctaActions(props) {
-    const actions = props.actions || [];
+function CtaActions(props) {
+    const { actions = [], sectionFlexDirection, styles = {} } = props;
     if (actions.length === 0) {
         return null;
     }
-    const sectionFlexDirection = props.styles?.self?.flexDirection || 'row';
-    const actionsJustifyContent = props.styles?.actions?.justifyContent || 'center';
+    const actionsJustifyContent = styles.justifyContent ?? 'center';
     return (
         <div className={classNames('w-full', { 'lg:w-auto': sectionFlexDirection === 'row' })}>
             <div className={classNames('flex', mapStyles({ justifyContent: actionsJustifyContent }))}>
                 <div
-                    className={classNames('flex', 'flex-col', 'space-y-4', actionsJustifyContent === 'center' ? 'items-center' : 'items-start', {
+                    className={classNames('flex', 'flex-col', 'space-y-5', actionsJustifyContent === 'center' ? 'items-center' : 'items-start', {
                         'lg:items-center': sectionFlexDirection === 'row' && actionsJustifyContent !== 'center'
                     })}
                     data-sb-field-path=".actions"
@@ -130,32 +73,13 @@ function ctaActions(props) {
     );
 }
 
-function mapMinHeightStyles(height) {
-    switch (height) {
-        case 'screen':
-            return 'min-h-screen';
-    }
-    return null;
-}
-
-function mapMaxWidthStyles(width) {
-    switch (width) {
-        case 'narrow':
-            return 'max-w-5xl';
-        case 'wide':
-            return 'max-w-7xl';
-        case 'full':
-            return 'max-w-full';
-    }
-    return null;
-}
-
 function mapFlexDirectionStyles(flexDirection) {
     switch (flexDirection) {
         case 'row':
             return ['flex-col', 'lg:flex-row', 'lg:justify-between'];
         case 'col':
             return ['flex-col'];
+        default:
+            return null;
     }
-    return null;
 }
