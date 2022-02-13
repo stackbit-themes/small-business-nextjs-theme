@@ -40,7 +40,7 @@ fields:
         value: arrowLeftCircle
       - label: Arrow right
         value: arrowRight
-      - label: Arrow right
+      - label: Arrow right circle
         value: arrowRightCircle
       - label: Cart
         value: cart
