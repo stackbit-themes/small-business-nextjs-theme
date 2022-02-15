@@ -47,6 +47,22 @@ fields:
       - label: Top
         value: top
     default: center
+  - type: enum
+    name: backgroundRepeat
+    group: styles
+    label: Background image repeat
+    controlType: button-group
+    options:
+      - label: Repeat
+        value: repeat
+      - label: Repeat X
+        value: repeat-x
+      - label: Repeat Y
+        value: repeat-y
+      - label: No repeat
+        value: no-repeat
+    default: no-repeat
+    required: true
   - type: number
     name: opacity
     group: styles
