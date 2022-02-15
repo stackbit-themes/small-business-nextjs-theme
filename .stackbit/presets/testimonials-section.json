@@ -2,8 +2,8 @@
     "model": "TestimonialsSection",
     "presets": [
         {
-            "label": "Testimonials light - with big image, text left",
-            "thumbnail": "images/testimonials-light-image.png",
+            "label": "Testimonials light - small images, two columns",
+            "thumbnail": "images/testimonials-light-small-images-col.png",
             "data": {
                 "colors": "colors-d",
                 "variant": "variant-a",
@@ -11,7 +11,101 @@
                 "subtitle": "",
                 "testimonials": [
                     {
-                        "quote": "\"It’s great to see someone taking action while still maintaining a sustainable fish supply to home cooks.\"",
+                        "quote": "\"This team is experienced, personable and just fun to be with. You will have the best fishing experience of your life.\"",
+                        "name": "Oliver Mills",
+                        "title": "Head chef at Parks",
+                        "image": {
+                            "type": "ImageBlock",
+                            "url": "/images/gallery-2.jpg",
+                            "altText": "A man fishing"
+                        }
+                    },
+                    {
+                        "quote": "“I have been fishing steelhead and salmon with the SB for over 5 years. I have never been disappointed.”\n",
+                        "name": "Hilary Ouse",
+                        "title": "Product Marketing Manager at Acme",
+                        "image": {
+                            "type": "ImageBlock",
+                            "url": "/images/hilary-ouse.png",
+                            "altText": "Hilary ouse"
+                        }
+                    }
+                ],
+                "styles": {
+                    "self": {
+                        "height": "auto",
+                        "width": "wide",
+                        "margin": ["mt-0", "mb-0"],
+                        "padding": ["pt-28", "pb-28"],
+                        "justifyContent": "center"
+                    },
+                    "title": {
+                        "textAlign": "center"
+                    },
+                    "subtitle": {
+                        "textAlign": "center"
+                    }
+                }
+            }
+        },
+        {
+            "label": "Testimonials dark - small images, list",
+            "thumbnail": "images/testimonials-dark-small-images-list.png",
+            "data": {
+                "colors": "colors-e",
+                "variant": "variant-b",
+                "title": "",
+                "subtitle": "",
+                "testimonials": [
+                    {
+                        "quote": "\"This team is experienced, personable and just fun to be with. You will have the best fishing experience of your life.\"",
+                        "name": "Oliver Mills",
+                        "title": "Head chef at Parks",
+                        "image": {
+                            "type": "ImageBlock",
+                            "url": "/images/gallery-2.jpg",
+                            "altText": "A man fishing"
+                        }
+                    },
+                    {
+                        "quote": "“I have been fishing steelhead and salmon with the SB for over 5 years. I have never been disappointed.”\n",
+                        "name": "Hilary Ouse",
+                        "title": "Product Marketing Manager at Acme",
+                        "image": {
+                            "type": "ImageBlock",
+                            "url": "/images/hilary-ouse.png",
+                            "altText": "Hilary ouse"
+                        }
+                    }
+                ],
+                "styles": {
+                    "self": {
+                        "height": "auto",
+                        "width": "wide",
+                        "margin": ["mt-0", "mb-0"],
+                        "padding": ["pt-28", "pb-28"],
+                        "justifyContent": "center"
+                    },
+                    "title": {
+                        "textAlign": "left"
+                    },
+                    "subtitle": {
+                        "textAlign": "left"
+                    }
+                }
+            }
+        },
+        {
+            "label": "Testimonials light - big images, list",
+            "thumbnail": "images/testimonials-light-big-image-list.png",
+            "data": {
+                "colors": "colors-d",
+                "variant": "variant-c",
+                "title": "",
+                "subtitle": "",
+                "testimonials": [
+                    {
+                        "quote": "\"This team is experienced, personable and just fun to be with. You will have the best fishing experience of your life.\"",
                         "name": "Oliver Mills",
                         "title": "Head chef at Parks",
                         "image": {
@@ -30,80 +124,10 @@
                         "justifyContent": "center"
                     },
                     "title": {
-                        "textAlign": "center"
-                    },
-                    "subtitle": {
-                        "textAlign": "center"
-                    }
-                }
-            }
-        },
-        {
-            "label": "Testimonials dark - with small image, text left",
-            "thumbnail": "images/testimonials-dark-small-image.png",
-            "data": {
-                "colors": "colors-e",
-                "variant": "variant-b",
-                "title": "",
-                "subtitle": "",
-                "testimonials": [
-                    {
-                        "quote": "\"It’s great to see someone taking action while still maintaining a sustainable fish supply to home cooks.\"",
-                        "name": "John Doe",
-                        "title": "Head chef at Parks",
-                        "image": {
-                            "type": "ImageBlock",
-                            "url": "/images/fisherman.jpg",
-                            "altText": "John Doe"
-                        }
-                    }
-                ],
-                "styles": {
-                    "self": {
-                        "height": "auto",
-                        "width": "wide",
-                        "margin": ["mt-0", "mb-0"],
-                        "padding": ["pt-28", "pb-28"],
-                        "justifyContent": "center"
-                    },
-                    "title": {
                         "textAlign": "left"
                     },
                     "subtitle": {
                         "textAlign": "left"
-                    }
-                }
-            }
-        },
-        {
-            "label": "Testimonials light - no image, text centered",
-            "thumbnail": "images/testimonials-light-text-centered.png",
-            "data": {
-                "colors": "colors-d",
-                "variant": "variant-c",
-                "title": "",
-                "subtitle": "",
-                "testimonials": [
-                    {
-                        "quote": "\"It’s great to see someone taking action while still maintaining a sustainable fish supply to home cooks.\"",
-                        "name": "Isabelle Parks",
-                        "title": "Head chef at Parks",
-                        "image": null
-                    }
-                ],
-                "styles": {
-                    "self": {
-                        "height": "auto",
-                        "width": "wide",
-                        "margin": ["mt-0", "mb-0"],
-                        "padding": ["pt-28", "pb-28"],
-                        "justifyContent": "center"
-                    },
-                    "title": {
-                        "textAlign": "center"
-                    },
-                    "subtitle": {
-                        "textAlign": "center"
                     }
                 }
             }
