@@ -6,7 +6,7 @@ import { BackgroundImage } from '../../atoms';
 type SectionProps = React.PropsWithChildren<{
     type?: string;
     elementId?: string;
-    colors?: 'colors-a' | 'colors-b' | 'colors-c' | 'colors-d' | 'colors-e' | 'colors-f';
+    colors?: 'colors-a' | 'colors-b' | 'colors-c' | 'colors-d' | 'colors-e';
     backgroundSize?: 'full' | 'inset';
     backgroundImage?: any;
     styles?: any;
@@ -23,7 +23,7 @@ export default function Section(props: SectionProps) {
 }
 
 function SectionInset(props: SectionProps) {
-    const { type, elementId, colors = 'colors-f', styles = {}, children, 'data-sb-field-path': fieldPath } = props;
+    const { type, elementId, colors = 'colors-d', backgroundImage, styles = {}, children, 'data-sb-field-path': fieldPath } = props;
     const classSuffix = type && type.replace(/([a-z0-9])([A-Z])/g, '$1-$2').toLowerCase();
     return (
         <div
@@ -58,7 +58,7 @@ function SectionInset(props: SectionProps) {
                     borderWidth: styles.borderWidth ? `${styles.borderWidth}px` : null
                 }}
             >
-                {props.backgroundImage && <BackgroundImage {...props.backgroundImage} />}
+                {backgroundImage && <BackgroundImage {...backgroundImage} />}
                 <div className="relative w-full">{children}</div>
             </div>
         </div>
@@ -66,7 +66,7 @@ function SectionInset(props: SectionProps) {
 }
 
 function SectionFullWidth(props: SectionProps) {
-    const { type, elementId, colors = 'colors-f', styles = {}, children, 'data-sb-field-path': fieldPath } = props;
+    const { type, elementId, colors = 'colors-d', backgroundImage, styles = {}, children, 'data-sb-field-path': fieldPath } = props;
     const classSuffix = type && type.replace(/([a-z0-9])([A-Z])/g, '$1-$2').toLowerCase();
     return (
         <div
@@ -93,7 +93,7 @@ function SectionFullWidth(props: SectionProps) {
             }}
             data-sb-field-path={fieldPath}
         >
-            {props.backgroundImage && <BackgroundImage {...props.backgroundImage} />}
+            {backgroundImage && <BackgroundImage {...backgroundImage} />}
             <div className={classNames('flex', 'w-full', mapStyles({ justifyContent: styles.justifyContent ?? 'center' }))}>
                 <div className={classNames('relative', 'w-full', mapMaxWidthStyles(styles.width ?? 'wide'))}>{children}</div>
             </div>

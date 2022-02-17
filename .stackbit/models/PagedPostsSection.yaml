@@ -20,5 +20,3 @@ fields:
   - name: actions
     hidden: true
     default: []
-  - name: colors
-    default: colors-a

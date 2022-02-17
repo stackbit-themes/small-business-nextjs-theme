@@ -7,13 +7,19 @@ import Action from '../../../atoms/Action';
 import ImageBlock from '../../../molecules/ImageBlock';
 
 export default function FeaturedItem(props) {
-    const { elementId, title, subtitle, text, featuredImage, actions = [], styles = {}, 'data-sb-field-path': fieldPath } = props;
+    const { elementId, title, subtitle, text, featuredImage, actions = [], enableHover, styles = {}, 'data-sb-field-path': fieldPath } = props;
     const { self = {} } = styles;
     const { borderWidth, ...otherSelfStyles } = self;
     return (
         <article
             id={elementId || null}
-            className={classNames('sb-component', 'sb-component-block', 'sb-component-item', mapStyles(otherSelfStyles))}
+            className={classNames(
+                'sb-component',
+                'sb-component-block',
+                'sb-component-item',
+                enableHover ? 'sb-component-item-hover' : null,
+                mapStyles(otherSelfStyles)
+            )}
             style={{
                 borderWidth: borderWidth ? `${borderWidth}px` : null
             }}
@@ -58,7 +64,7 @@ function ItemActions(props) {
     return (
         <div
             className={classNames('overflow-x-hidden', {
-                'mt-4': hasTopMargin
+                'mt-6': hasTopMargin
             })}
         >
             <div
@@ -69,7 +75,7 @@ function ItemActions(props) {
                 data-sb-field-path=".actions"
             >
                 {actions.map((action, index) => (
-                    <Action key={index} {...action} className="my-2 mx-2 lg:whitespace-nowrap" data-sb-field-path={`.${index}`} />
+                    <Action key={index} {...action} className="mb-3 mx-2 lg:whitespace-nowrap" data-sb-field-path={`.${index}`} />
                 ))}
             </div>
         </div>

@@ -13,8 +13,6 @@ fieldGroups:
   - name: settings
     label: Settings
 fields:
-  - name: colors
-    default: colors-c
   - type: markdown
     name: quote
     label: Quote

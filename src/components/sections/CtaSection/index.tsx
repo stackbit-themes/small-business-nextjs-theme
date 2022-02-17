@@ -11,7 +11,15 @@ export default function CtaSection(props) {
     const sectionFlexDirection = styles.self?.flexDirection ?? 'row';
     const sectionAlignItems = styles.self?.alignItems || 'center';
     return (
-        <Section type={type} elementId={elementId} colors={colors} backgroundSize={backgroundSize} backgroundImage={backgroundImage} styles={styles.self} data-sb-field-path={fieldPath}>
+        <Section
+            type={type}
+            elementId={elementId}
+            colors={colors}
+            backgroundSize={backgroundSize}
+            backgroundImage={backgroundImage}
+            styles={styles.self}
+            data-sb-field-path={fieldPath}
+        >
             <div
                 className={classNames('flex', mapFlexDirectionStyles(sectionFlexDirection), mapStyles({ alignItems: sectionAlignItems }), 'space-y-8', {
                     'lg:space-y-0 lg:space-x-8': sectionFlexDirection === 'row'
@@ -59,7 +67,7 @@ function CtaActions(props) {
         <div className={classNames('w-full', { 'lg:w-auto': sectionFlexDirection === 'row' })}>
             <div className={classNames('flex', mapStyles({ justifyContent: actionsJustifyContent }))}>
                 <div
-                    className={classNames('flex', 'flex-col', 'space-y-5', actionsJustifyContent === 'center' ? 'items-center' : 'items-start', {
+                    className={classNames('flex', 'flex-col', 'space-y-4', actionsJustifyContent === 'center' ? 'items-center' : 'items-start', {
                         'lg:items-center': sectionFlexDirection === 'row' && actionsJustifyContent !== 'center'
                     })}
                     data-sb-field-path=".actions"

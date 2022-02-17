@@ -13,8 +13,6 @@ fieldGroups:
   - name: settings
     label: Settings
 fields:
-  - name: colors
-    default: colors-d
   - type: enum
     name: variant
     group: styles

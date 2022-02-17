@@ -12,8 +12,6 @@ fields:
     default: Featured
   - name: subtitle
     default: Featured blog posts section example
-  - name: colors
-    default: colors-d
   - type: list
     name: posts
     label: Posts

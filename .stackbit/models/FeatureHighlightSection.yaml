@@ -13,8 +13,6 @@ fieldGroups:
   - name: settings
     label: Settings
 fields:
-  - name: colors
-    default: colors-a
   - type: enum
     name: backgroundSize
     group: styles

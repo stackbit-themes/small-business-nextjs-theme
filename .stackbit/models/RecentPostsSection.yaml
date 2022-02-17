@@ -11,8 +11,6 @@ fields:
     default: Recent Posts
   - name: subtitle
     default: Latest blog posts section example
-  - name: colors
-    default: colors-d
   - type: number
     name: recentCount
     label: Number of recent posts to show

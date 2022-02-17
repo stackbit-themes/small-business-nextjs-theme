@@ -93,6 +93,10 @@ fields:
     step: 1
     unit: 'px'
     default: 16
+  - type: boolean
+    name: enableHover
+    label: Enable hover
+    default: false
   - type: style
     name: styles
     styles:

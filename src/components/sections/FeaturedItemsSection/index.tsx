@@ -18,6 +18,7 @@ export default function FeaturedItemsSection(props) {
         columns = 3,
         spacingX = 16,
         spacingY = 16,
+        enableHover,
         styles = {},
         'data-sb-field-path': fieldPath
     } = props;
@@ -38,10 +39,11 @@ export default function FeaturedItemsSection(props) {
                     {subtitle}
                 </p>
             )}
+            <FeaturedItemsActions actions={actions} styles={styles.actions} hasTopMargin={!!(title || subtitle)} />
             {items.length > 0 && (
                 <div
                     className={classNames('grid', mapColStyles(columns), {
-                        'mt-12': title || subtitle
+                        'mt-12': title || subtitle || actions.length > 0
                     })}
                     style={{
                         columnGap: spacingX ? `${spacingX}px` : null,
@@ -50,25 +52,24 @@ export default function FeaturedItemsSection(props) {
                     data-sb-field-path=".items"
                 >
                     {items.map((item, index) => (
-                        <FeaturedItem key={index} {...item} data-sb-field-path={`.${index}`} />
+                        <FeaturedItem key={index} {...item} enableHover={enableHover} data-sb-field-path={`.${index}`} />
                     ))}
                 </div>
             )}
-            <FeaturedItemsActions actions={actions} styles={styles.actions} />
         </Section>
     );
 }
 
 function FeaturedItemsActions(props) {
-    const { actions = [], styles = {} } = props;
+    const { actions = [], styles = {}, hasTopMargin } = props;
     if (actions.length === 0) {
         return null;
     }
     return (
-        <div className="mt-10 overflow-x-hidden">
+        <div className={classNames('overflow-x-hidden', { 'mt-8': hasTopMargin })}>
             <div className={classNames('flex', 'flex-wrap', 'items-center', '-mx-2', mapStyles(styles))} data-sb-field-path=".actions">
                 {actions.map((action, index) => (
-                    <Action key={index} {...action} className="my-2 mx-2 lg:whitespace-nowrap" data-sb-field-path={`.${index}`} />
+                    <Action key={index} {...action} className="mb-3 mx-2 lg:whitespace-nowrap" data-sb-field-path={`.${index}`} />
                 ))}
             </div>
         </div>
