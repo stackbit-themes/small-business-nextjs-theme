@@ -136,7 +136,8 @@ function urlPathForPageAtIndex(pageIndex, baseUrlPath) {
     return pageIndex === 0 ? baseUrlPath : `${baseUrlPath}/page/${pageIndex + 1}`;
 }
 
-function mapMaxWidthStyles(width) {
+type WidthStyles = 'narrow' | 'wide' | 'full';
+function mapMaxWidthStyles(width?: WidthStyles) {
     switch (width) {
         case 'narrow':
             return 'max-w-5xl';
@@ -144,6 +145,7 @@ function mapMaxWidthStyles(width) {
             return 'max-w-7xl';
         case 'full':
             return 'max-w-full';
+        default:
+            return null;
     }
-    return null;
 }

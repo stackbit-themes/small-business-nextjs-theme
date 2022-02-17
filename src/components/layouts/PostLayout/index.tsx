@@ -11,41 +11,40 @@ import Link from '../../atoms/Link';
 export default function PostLayout(props) {
     const { page, site } = props;
     const BaseLayout = getBaseLayoutComponent(page.baseLayout, site.baseLayout);
-    const colors = page.colors || 'colors-d';
-    const sections = page.bottomSections || [];
-    const dateTimeAttr = dayjs(page.date).format('YYYY-MM-DD HH:mm:ss');
-    const formattedDate = dayjs(page.date).format('MMMM D, YYYY');
+    const { title, date, author, category, colors = 'colors-d', markdown_content, media, bottomSections = [] } = page;
+    const dateTimeAttr = dayjs(date).format('YYYY-MM-DD HH:mm:ss');
+    const formattedDate = dayjs(date).format('MMMM D, YYYY');
 
     return (
         <BaseLayout page={page} site={site}>
             <main id="main" className="sb-layout sb-post-layout">
                 <article className={classNames(colors, 'px-4', 'sm:px-8', 'py-14', 'lg:py-20')}>
                     <div className="max-w-7xl mx-auto">
-                        {page.media && <div className="w-full mb-8 sm:mb-12">{postMedia(page.media)}</div>}
+                        {media && <div className="w-full mb-8 sm:mb-12"><PostMedia media={media} /></div>}
                         <header className="max-w-5xl mx-auto mb-12 text-left">
-                            {page.title && <h1 data-sb-field-path="title">{page.title}</h1>}
+                            {title && <h1 data-sb-field-path="title">{title}</h1>}
                             <div className="text-lg mt-6">
                                 <span>
                                     <time dateTime={dateTimeAttr} data-sb-field-path="date">
                                         {formattedDate}
                                     </time>
                                 </span>
-                                <PostAttribution post={page} />
+                                <PostAttribution author={author} category={category} />
                             </div>
                         </header>
-                        {page.markdown_content && (
+                        {markdown_content && (
                             <Markdown options={{ forceBlock: true }} className="sb-markdown max-w-screen-md mx-auto" data-sb-field-path="markdown_content">
-                                {page.markdown_content}
+                                {markdown_content}
                             </Markdown>
                         )}
                     </div>
                 </article>
-                {sections.length > 0 && (
+                {bottomSections.length > 0 && (
                     <div data-sb-field-path="bottomSections">
-                        {sections.map((section, index) => {
+                        {bottomSections.map((section, index) => {
                             const Component = getComponent(section.type);
                             if (!Component) {
-                                throw new Error(`no component matching the page section's type: ${section.type}`);
+                                throw new Error(`no component matching the post section's type: ${section.type}`);
                             }
                             return <Component key={index} {...section} data-sb-field-path={`bottomSections.${index}`} />;
                         })}
@@ -56,35 +55,35 @@ export default function PostLayout(props) {
     );
 }
 
-function postMedia(media) {
+function PostMedia({ media }) {
     const mediaType = media.type;
     if (!mediaType) {
-        throw new Error(`hero section media does not have the 'type' property`);
+        throw new Error(`post media does not have the 'type' property`);
     }
     const Media = getComponent(mediaType);
     if (!Media) {
-        throw new Error(`no component matching the hero section media type: ${mediaType}`);
+        throw new Error(`no component matching the post media type: ${mediaType}`);
     }
     return <Media {...media} className={classNames({ 'w-full': mediaType === 'ImageBlock' })} data-sb-field-path="media" />;
 }
 
-function PostAttribution({ post }) {
-    if (!post.author && !post.category) {
+function PostAttribution(props) {
+    if (!props.author && !props.category) {
         return null;
     }
-    const author = post.author ? postAuthor(post.author) : null;
-    const category = post.category ? postCategory(post.category) : null;
+    const author = props.author ? postAuthor(props.author) : null;
+    const category = props.category ? postCategory(props.category) : null;
     return (
         <span>
             {author && (
                 <>
-                    {', by '}
+                    {' | '}
                     {author}
                 </>
             )}
             {category && (
                 <>
-                    {author ? ' in ' : 'In '}
+                    {' | '}
                     {category}
                 </>
             )}
