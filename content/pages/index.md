@@ -34,6 +34,7 @@ sections:
       url: /images/hero.webp
       backgroundSize: cover
       backgroundPosition: center
+      backgroundRepeat: no-repeat
       opacity: 85
     styles:
       self:
@@ -163,6 +164,7 @@ sections:
       url: /images/hero-3.webp
       backgroundSize: cover
       backgroundPosition: center
+      backgroundRepeat: no-repeat
       opacity: 90
     styles:
       self:

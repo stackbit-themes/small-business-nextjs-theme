@@ -10,6 +10,7 @@ fields:
     name: url
     label: Background image
     default: https://assets.stackbit.com/components/images/default/default-image.png
+    required: true
   - type: enum
     name: backgroundSize
     group: styles
@@ -23,6 +24,7 @@ fields:
       - label: Contain
         value: contain
     default: cover
+    required: true
   - type: enum
     name: backgroundPosition
     group: styles
@@ -47,6 +49,7 @@ fields:
       - label: Top
         value: top
     default: center
+    required: true
   - type: enum
     name: backgroundRepeat
     group: styles

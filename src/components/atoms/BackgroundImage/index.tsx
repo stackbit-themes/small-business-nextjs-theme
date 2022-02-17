@@ -13,8 +13,11 @@ export default function BackgroundImage(props) {
                 'absolute',
                 'inset-0',
                 'bg-no-repeat',
-                mapStyles({ backgroundSize: backgroundSize ?? 'cover' }),
-                mapStyles({ backgroundPosition: backgroundPosition ?? 'center', backgroundRepeat: backgroundRepeat ?? 'no-repeat' }),
+                mapStyles({
+                    backgroundSize: backgroundSize ?? 'cover',
+                    backgroundPosition: backgroundPosition ?? 'center',
+                    backgroundRepeat: backgroundRepeat ?? 'no-repeat'
+                }),
                 className
             )}
             style={{

@@ -53,7 +53,11 @@ sections:
       “This is someone else, not from our team, but she also loves fishing, so
       we thought we should highlight her.”
     backgroundImage:
+      type: BackgroundImage
       url: /images/bg.webp
+      backgroundSize: cover
+      backgroundPosition: center
+      backgroundRepeat: no-repeat
       opacity: 70
     styles:
       self:
