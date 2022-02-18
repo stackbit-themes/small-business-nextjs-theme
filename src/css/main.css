@@ -6,7 +6,15 @@
 
 @layer base {
     body {
-        @apply bg-main text-base;
+        @apply bg-main text-base flex flex-col min-h-screen;
+    }
+    #__next,
+    .sb-page,
+    .sb-base {
+        @apply flex flex-col flex-grow;
+    }
+    .sb-layout {
+        @apply flex-grow;
     }
     h1,
     h2,

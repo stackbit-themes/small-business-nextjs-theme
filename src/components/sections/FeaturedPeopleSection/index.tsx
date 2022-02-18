@@ -3,78 +3,44 @@ import classNames from 'classnames';
 import Markdown from 'markdown-to-jsx';
 
 import { mapStylesToClassNames as mapStyles } from '../../../utils/map-styles-to-class-names';
-import { getDataAttrs } from '../../../utils/get-data-attrs';
+import Section from '../Section';
 import Action from '../../atoms/Action';
 import ImageBlock from '../../molecules/ImageBlock';
 
 export default function FeaturedPeopleSection(props) {
-    const cssId = props.elementId || null;
-    const colors = props.colors || 'colors-d';
-    const styles = props.styles || {};
-    const sectionWidth = styles.self?.width || 'wide';
-    const sectionHeight = styles.self?.height || 'auto';
-    const sectionJustifyContent = styles.self?.justifyContent || 'center';
+    const { type, elementId, colors, variant, title, subtitle, actions = [], people = [], styles = {}, 'data-sb-field-path': fieldPath } = props;
     return (
-        <div
-            id={cssId}
-            {...getDataAttrs(props)}
-            className={classNames(
-                'sb-component',
-                'sb-component-section',
-                'sb-component-featured-people-section',
-                colors,
-                'flex',
-                'flex-col',
-                'justify-center',
-                mapMinHeightStyles(sectionHeight),
-                styles.self?.margin,
-                styles.self?.padding || 'py-12 px-4',
-                styles.self?.borderColor,
-                styles.self?.borderStyle ? mapStyles({ borderStyle: styles.self?.borderStyle }) : 'border-none',
-                styles.self?.borderRadius ? mapStyles({ borderRadius: styles.self?.borderRadius }) : null
+        <Section type={type} elementId={elementId} colors={colors} styles={styles.self} data-sb-field-path={fieldPath}>
+            {title && (
+                <h2 className={classNames(styles.title ? mapStyles(styles.title) : null)} data-sb-field-path=".title">
+                    {title}
+                </h2>
             )}
-            style={{
-                borderWidth: styles.self?.borderWidth ? `${styles.self?.borderWidth}px` : null
-            }}
-        >
-            <div className={classNames('flex', 'w-full', mapStyles({ justifyContent: sectionJustifyContent }))}>
-                <div className={classNames('w-full', mapMaxWidthStyles(sectionWidth))}>
-                    {props.title && (
-                        <h2 className={classNames(styles.title ? mapStyles(styles.title) : null)} data-sb-field-path=".title">
-                            {props.title}
-                        </h2>
-                    )}
-                    {props.subtitle && (
-                        <p
-                            className={classNames('text-lg', 'sm:text-xl', styles.subtitle ? mapStyles(styles.subtitle) : null, {
-                                'mt-6': props.title
-                            })}
-                            data-sb-field-path=".subtitle"
-                        >
-                            {props.subtitle}
-                        </p>
-                    )}
-                    {featuredPeopleVariants(props)}
-                    {featuredPeopleActions(props)}
-                </div>
-            </div>
-        </div>
+            {subtitle && (
+                <p
+                    className={classNames('text-lg', 'sm:text-xl', styles.subtitle ? mapStyles(styles.subtitle) : null, {
+                        'mt-6': title
+                    })}
+                    data-sb-field-path=".subtitle"
+                >
+                    {subtitle}
+                </p>
+            )}
+            <FeaturedPeopleActions actions={actions} styles={styles.actions} hasTopMargin={!!(title || subtitle)} />
+            <FeaturedPeopleVariants variant={variant} people={people} hasTopMargin={!!(title || subtitle || actions.length > 0)} />
+        </Section>
     );
 }
 
-function featuredPeopleActions(props) {
-    const actions = props.actions || [];
+function FeaturedPeopleActions(props) {
+    const { actions = [], styles = {}, hasTopMargin } = props;
     if (actions.length === 0) {
         return null;
     }
-    const styles = props.styles || {};
     return (
-        <div className="mt-12 overflow-x-hidden">
-            <div
-                className={classNames('flex', 'flex-wrap', 'items-center', '-mx-2', styles.actions ? mapStyles(styles.actions) : null)}
-                data-sb-field-path=".actions"
-            >
-                {props.actions.map((action, index) => (
+        <div className={classNames('overflow-x-hidden', { 'mt-8': hasTopMargin })}>
+            <div className={classNames('flex', 'flex-wrap', 'items-center', '-mx-2', mapStyles(styles))} data-sb-field-path=".actions">
+                {actions.map((action, index) => (
                     <Action key={index} {...action} className="mb-3 mx-2 lg:whitespace-nowrap" data-sb-field-path={`.${index}`} />
                 ))}
             </div>
@@ -82,29 +48,26 @@ function featuredPeopleActions(props) {
     );
 }
 
-function featuredPeopleVariants(props) {
-    const variant = props.variant || 'variant-a';
+function FeaturedPeopleVariants(props) {
+    const { variant = 'variant-a', ...rest } = props;
     switch (variant) {
         case 'variant-a':
-            return peopleVariantA(props);
+            return <PeopleVariantA {...rest} />;
         case 'variant-b':
-            return peopleVariantB(props);
+            return <PeopleVariantB {...rest} />;
         case 'variant-c':
-            return peopleVariantC(props);
+            return <PeopleVariantC {...rest} />;
     }
     return null;
 }
 
-function peopleVariantA(props) {
-    const people = props.people || [];
+function PeopleVariantA(props) {
+    const { people = [], hasTopMargin } = props;
     if (people.length === 0) {
         return null;
     }
     return (
-        <div
-            className={classNames('grid', 'gap-x-8', 'gap-y-10', 'sm:grid-cols-2', 'lg:grid-cols-4', { 'mt-12': props.title || props.subtitle })}
-            data-sb-field-path=".people"
-        >
+        <div className={classNames('grid', 'gap-x-8', 'gap-y-10', 'sm:grid-cols-2', 'lg:grid-cols-4', { 'mt-12': hasTopMargin })} data-sb-field-path=".people">
             {people.map((person, index) => (
                 <article key={index} data-sb-field-path={`.${index}`}>
                     {person.image && (
@@ -129,16 +92,13 @@ function peopleVariantA(props) {
     );
 }
 
-function peopleVariantB(props) {
-    const people = props.people || [];
+function PeopleVariantB(props) {
+    const { people = [], hasTopMargin } = props;
     if (people.length === 0) {
         return null;
     }
     return (
-        <div
-            className={classNames('grid', 'gap-x-8', 'gap-y-10', 'lg:grid-cols-2', 'sm:gap-y-14', { 'mt-12': props.title || props.subtitle })}
-            data-sb-field-path=".people"
-        >
+        <div className={classNames('grid', 'gap-x-8', 'gap-y-10', 'lg:grid-cols-2', 'sm:gap-y-14', { 'mt-12': hasTopMargin })} data-sb-field-path=".people">
             {people.map((person, index) => (
                 <article key={index} className="sm:flex" data-sb-field-path={`.${index}`}>
                     {person.image && (
@@ -176,8 +136,8 @@ function peopleVariantB(props) {
     );
 }
 
-function peopleVariantC(props) {
-    const people = props.people || [];
+function PeopleVariantC(props) {
+    const { people = [], hasTopMargin } = props;
     if (people.length === 0) {
         return null;
     }
@@ -185,65 +145,51 @@ function peopleVariantC(props) {
     const peopleLeft = people.slice(0, middleIndex);
     const peopleRight = people.slice(middleIndex, people.length);
     return (
-        <div className={classNames('grid', 'gap-x-14', 'gap-y-12', 'sm:grid-cols-2', { 'mt-20': props.title || props.subtitle })} data-sb-field-path=".people">
-            {peopleLeft.length > 0 && <div className="sm:mt-32">{peopleListVariantC(peopleLeft)}</div>}
-            {peopleRight.length > 0 && <div>{peopleListVariantC(peopleRight, middleIndex)}</div>}
+        <div className={classNames('grid', 'gap-x-14', 'gap-y-12', 'sm:grid-cols-2', { 'mt-12 sm:mt-20': hasTopMargin })} data-sb-field-path=".people">
+            <PeopleColumnVariantC people={peopleLeft} className="sm:mt-32" />
+            <PeopleColumnVariantC people={peopleRight} fieldPathIndex={middleIndex} />
         </div>
     );
 }
 
-function peopleListVariantC(people, annotIndexStart = 0) {
-    return people.map((person, index, arr) => (
-        <article key={index} className={classNames(arr.length - 1 === index ? null : 'mb-16')} data-sb-field-path={`.${annotIndexStart + index}`}>
-            {person.image && (
-                <div className="mb-4">
-                    <ImageBlock {...person.image} className="w-full" data-sb-field-path=".image" />
-                </div>
-            )}
-            <div>
-                {(person.firstName || person.lastName) && (
-                    <h3 className="text-xl">
-                        {person.firstName && <span data-sb-field-path=".firstName">{person.firstName}</span>}{' '}
-                        {person.lastName && <span data-sb-field-path=".lastName">{person.lastName}</span>}
-                    </h3>
-                )}
-                {person.role && (
-                    <p className={classNames({ 'mt-1': person.firstName || person.lastName })} data-sb-field-path=".role">
-                        {person.role}
-                    </p>
-                )}
-                {person.bio && (
-                    <Markdown
-                        options={{ forceBlock: true, forceWrapper: true }}
-                        className={classNames('sb-markdown', { 'mt-4': person.firstName || person.lastName || person.role })}
-                        data-sb-field-path=".bio"
-                    >
-                        {person.bio}
-                    </Markdown>
-                )}
-            </div>
-        </article>
-    ));
-}
-
-function mapMinHeightStyles(height) {
-    switch (height) {
-        case 'auto':
-            return 'min-h-0';
-        case 'screen':
-            return 'min-h-screen';
+function PeopleColumnVariantC(props) {
+    const { people = [], fieldPathIndex = 0, className } = props;
+    if (people.length === 0) {
+        return null;
     }
-    return null;
-}
-
-function mapMaxWidthStyles(width) {
-    switch (width) {
-        case 'narrow':
-            return 'max-w-5xl';
-        case 'wide':
-            return 'max-w-7xl';
-        case 'full':
-            return 'max-w-full';
-    }
-    return null;
+    return (
+        <div className={classNames('space-y-12', 'sm:space-y-16', className)}>
+            {people.map((person, index, arr) => (
+                <article key={index} data-sb-field-path={`.${fieldPathIndex + index}`}>
+                    {person.image && (
+                        <div className="mb-4">
+                            <ImageBlock {...person.image} className="w-full" data-sb-field-path=".image" />
+                        </div>
+                    )}
+                    <div>
+                        {(person.firstName || person.lastName) && (
+                            <h3 className="text-xl">
+                                {person.firstName && <span data-sb-field-path=".firstName">{person.firstName}</span>}{' '}
+                                {person.lastName && <span data-sb-field-path=".lastName">{person.lastName}</span>}
+                            </h3>
+                        )}
+                        {person.role && (
+                            <p className={classNames({ 'mt-1': person.firstName || person.lastName })} data-sb-field-path=".role">
+                                {person.role}
+                            </p>
+                        )}
+                        {person.bio && (
+                            <Markdown
+                                options={{ forceBlock: true, forceWrapper: true }}
+                                className={classNames('sb-markdown', { 'mt-4': person.firstName || person.lastName || person.role })}
+                                data-sb-field-path=".bio"
+                            >
+                                {person.bio}
+                            </Markdown>
+                        )}
+                    </div>
+                </article>
+            ))}
+        </div>
+    );
 }
