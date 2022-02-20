@@ -3,80 +3,73 @@ import classNames from 'classnames';
 import dayjs from 'dayjs';
 
 import { mapStylesToClassNames as mapStyles } from '../../../utils/map-styles-to-class-names';
-import { getDataAttrs } from '../../../utils/get-data-attrs';
+import Section from '../Section';
 import { Link, Action } from '../../atoms';
 import ImageBlock from '../../molecules/ImageBlock';
 import ArrowRightIcon from '../../svgs/arrow-right';
 import getPageUrlPath from '../../../utils/get-page-url-path';
 
 export default function PostFeedSection(props) {
-    const cssId = props.elementId || null;
-    const colors = props.colors || 'colors-d';
-    const styles = props.styles || {};
-    const sectionWidth = styles.self?.width || 'wide';
-    const sectionHeight = styles.self?.height || 'auto';
-    const sectionJustifyContent = styles.self?.justifyContent || 'center';
+    const {
+        type,
+        elementId,
+        colors,
+        variant,
+        title,
+        subtitle,
+        actions = [],
+        posts = [],
+        showDate,
+        showAuthor,
+        showExcerpt,
+        showReadMoreLink,
+        readMoreLinkLabel,
+        pageLinks,
+        annotatePosts,
+        styles = {},
+        'data-sb-field-path': fieldPath
+    } = props;
     return (
-        <div
-            id={cssId}
-            {...getDataAttrs(props)}
-            className={classNames(
-                'sb-component',
-                'sb-component-section',
-                'sb-component-post-feed-section',
-                colors,
-                'flex',
-                'flex-col',
-                'justify-center',
-                'relative',
-                mapMinHeightStyles(sectionHeight),
-                styles.self?.margin,
-                styles.self?.padding || 'py-12 px-4',
-                styles.self?.borderColor,
-                styles.self?.borderRadius ? mapStyles({ borderRadius: styles.self?.borderRadius }) : null,
-                styles.self?.borderStyle ? mapStyles({ borderStyle: styles.self?.borderStyle }) : 'border-none'
+        <Section type={type} elementId={elementId} colors={colors} styles={styles.self} data-sb-field-path={fieldPath}>
+            {title && (
+                <h2 className={classNames(styles.title ? mapStyles(styles.title) : null)} data-sb-field-path=".title">
+                    {title}
+                </h2>
             )}
-            style={{
-                borderWidth: styles.self?.borderWidth ? `${styles.self?.borderWidth}px` : null
-            }}
-        >
-            <div className={classNames('flex', 'w-full', mapStyles({ justifyContent: sectionJustifyContent }))}>
-                <div className={classNames('w-full', mapMaxWidthStyles(sectionWidth))}>
-                    {props.title && (
-                        <h2 className={classNames(styles.title ? mapStyles(styles.title) : null)} data-sb-field-path=".title">
-                            {props.title}
-                        </h2>
-                    )}
-                    {props.subtitle && (
-                        <p
-                            className={classNames('text-lg', 'sm:text-xl', styles.subtitle ? mapStyles(styles.subtitle) : null, { 'mt-6': props.title })}
-                            data-sb-field-path=".subtitle"
-                        >
-                            {props.subtitle}
-                        </p>
-                    )}
-                    {postFeedActions(props)}
-                    {postFeedVariants(props)}
-                    {props.pageLinks}
-                </div>
-            </div>
-        </div>
+            {subtitle && (
+                <p
+                    className={classNames('text-lg', 'sm:text-xl', styles.subtitle ? mapStyles(styles.subtitle) : null, { 'mt-6': title })}
+                    data-sb-field-path=".subtitle"
+                >
+                    {subtitle}
+                </p>
+            )}
+            <PostFeedActions actions={actions} styles={styles.actions} hasTopMargin={!!(title || subtitle)} />
+            <PostFeedVariants
+                variant={variant}
+                posts={posts}
+                showDate={showDate}
+                showAuthor={showAuthor}
+                showExcerpt={showExcerpt}
+                showReadMoreLink={showReadMoreLink}
+                readMoreLinkLabel={readMoreLinkLabel}
+                hasTopMargin={!!(title || subtitle || actions.length > 0)}
+                annotatePosts={annotatePosts}
+            />
+            {pageLinks}
+        </Section>
     );
 }
 
-function postFeedActions(props) {
-    const actions = props.actions || [];
+function PostFeedActions(props) {
+    const { actions = [], styles = {}, hasTopMargin } = props;
     if (actions.length === 0) {
         return null;
     }
-    const styles = props.styles || {};
     return (
-        <div className={classNames('overflow-x-hidden', { 'mt-8': props.title || props.subtitle })}>
-            <div
-                className={classNames('flex', 'flex-wrap', 'items-center', '-mx-2', styles.actions ? mapStyles(styles.actions) : null)}
-                data-sb-field-path=".actions"
-            >
-                {props.actions.map((action, index) => (
+        <div className={classNames('overflow-x-hidden', { 'mt-8': hasTopMargin })}>
+            <div className={classNames('flex', 'flex-wrap', 'items-center', '-mx-2', mapStyles(styles))} data-sb-field-path=".actions">
+                {actions.map((action, index) => (
                     <Action key={index} {...action} className="mb-3 mx-2 lg:whitespace-nowrap" data-sb-field-path={`.${index}`} />
                 ))}
             </div>
@@ -84,32 +77,33 @@ function postFeedActions(props) {
     );
 }
 
-function postFeedVariants(props) {
-    const variant = props.variant || 'variant-a';
+function PostFeedVariants(props) {
+    const { variant = 'variant-a', ...rest } = props;
     switch (variant) {
         case 'variant-a':
-            return postsVariantA(props);
+            return <PostsVariantA {...rest} />;
         case 'variant-b':
-            return postsVariantB(props);
+            return <PostsVariantB {...rest} />;
         case 'variant-c':
-            return postsVariantC(props);
+            return <PostsVariantC {...rest} />;
         case 'variant-d':
-            return postsVariantD(props);
+            return <PostsVariantD {...rest} />;
+        default:
+            return null;
     }
-    return null;
 }
 
-function postsVariantA(props) {
-    const posts = props.posts || [];
+function PostsVariantA(props) {
+    const { posts = [], showDate, showAuthor, showExcerpt, showReadMoreLink, readMoreLinkLabel, hasTopMargin, annotatePosts } = props;
     if (posts.length === 0) {
         return null;
     }
     return (
         <div
             className={classNames('grid', 'gap-x-6', 'gap-y-12', 'md:grid-cols-2', 'lg:gap-x-8', {
-                'mt-12': props.title || props.subtitle || (props.actions || []).length > 0
+                'mt-12': hasTopMargin
             })}
-            {...(props.annotatePosts ? { 'data-sb-field-path': '.posts' } : null)}
+            {...(annotatePosts ? { 'data-sb-field-path': '.posts' } : null)}
         >
             {posts.map((post, index) => (
                 <article key={index} className="sb-card overflow-hidden" data-sb-object-id={post.__metadata?.id}>
@@ -130,23 +124,23 @@ function postsVariantA(props) {
                                         {post.title}
                                     </Link>
                                 </h3>
-                                <PostAttribution showAuthor={props.showAuthor} post={post} className="mt-2" />
-                                {props.showExcerpt && post.excerpt && (
+                                <PostAttribution showAuthor={showAuthor} post={post} className="mt-2" />
+                                {showExcerpt && post.excerpt && (
                                     <p className="mt-4" data-sb-field-path="excerpt">
                                         {post.excerpt}
                                     </p>
                                 )}
                             </div>
-                            {(props.showDate || props.showReadMoreLink) && (
+                            {(showDate || showReadMoreLink) && (
                                 <div className="mt-12 space-y-6">
-                                    {props.showDate && <PostDate post={post} className="mb-2" />}
-                                    {props.showReadMoreLink && (
+                                    {showDate && <PostDate post={post} className="mb-2" />}
+                                    {showReadMoreLink && (
                                         <div>
                                             <Link
                                                 href={getPageUrlPath(post)}
                                                 className="sb-component sb-component-block sb-component-button sb-component-button-primary"
                                             >
-                                                {props.readMoreLinkLabel && <span className="mr-3">{props.readMoreLinkLabel}</span>}
+                                                {readMoreLinkLabel && <span className="mr-3">{readMoreLinkLabel}</span>}
                                                 <ArrowRightIcon className="fill-current h-5 w-5" />
                                             </Link>
                                         </div>
@@ -161,17 +155,17 @@ function postsVariantA(props) {
     );
 }
 
-function postsVariantB(props) {
-    const posts = props.posts || [];
+function PostsVariantB(props) {
+    const { posts = [], showDate, showAuthor, showExcerpt, showReadMoreLink, readMoreLinkLabel, hasTopMargin, annotatePosts } = props;
     if (posts.length === 0) {
         return null;
     }
     return (
         <div
             className={classNames('grid', 'gap-x-6', 'gap-y-12', 'md:grid-cols-3', 'lg:gap-x-8', {
-                'mt-12': props.title || props.subtitle || (props.actions || []).length > 0
+                'mt-12': hasTopMargin
             })}
-            {...(props.annotatePosts ? { 'data-sb-field-path': '.posts' } : null)}
+            {...(annotatePosts ? { 'data-sb-field-path': '.posts' } : null)}
         >
             {posts.map((post, index) => (
                 <article key={index} className="sb-card overflow-hidden" data-sb-object-id={post.__metadata?.id}>
@@ -192,23 +186,23 @@ function postsVariantB(props) {
                                         {post.title}
                                     </Link>
                                 </h3>
-                                <PostAttribution showAuthor={props.showAuthor} post={post} className="mt-2" />
-                                {props.showExcerpt && post.excerpt && (
+                                <PostAttribution showAuthor={showAuthor} post={post} className="mt-2" />
+                                {showExcerpt && post.excerpt && (
                                     <p className="mt-4" data-sb-field-path="excerpt">
                                         {post.excerpt}
                                     </p>
                                 )}
                             </div>
-                            {(props.showDate || props.showReadMoreLink) && (
+                            {(showDate || showReadMoreLink) && (
                                 <div className="mt-12 space-y-6">
-                                    {props.showDate && <PostDate post={post} className="mb-2" />}
-                                    {props.showReadMoreLink && (
+                                    {showDate && <PostDate post={post} className="mb-2" />}
+                                    {showReadMoreLink && (
                                         <div>
                                             <Link
                                                 href={getPageUrlPath(post)}
                                                 className="sb-component sb-component-block sb-component-button sb-component-button-primary"
                                             >
-                                                {props.readMoreLinkLabel && <span className="mr-3">{props.readMoreLinkLabel}</span>}
+                                                {readMoreLinkLabel && <span className="mr-3">{readMoreLinkLabel}</span>}
                                                 <ArrowRightIcon className="fill-current h-5 w-5" />
                                             </Link>
                                         </div>
@@ -223,17 +217,17 @@ function postsVariantB(props) {
     );
 }
 
-function postsVariantC(props) {
-    const posts = props.posts || [];
+function PostsVariantC(props) {
+    const { posts = [], showDate, showAuthor, showExcerpt, showReadMoreLink, readMoreLinkLabel, hasTopMargin, annotatePosts } = props;
     if (posts.length === 0) {
         return null;
     }
     return (
         <div
             className={classNames('grid', 'gap-6', 'md:grid-cols-6', 'lg:gap-8', {
-                'mt-12': props.title || props.subtitle || (props.actions || []).length > 0
+                'mt-12': hasTopMargin
             })}
-            {...(props.annotatePosts ? { 'data-sb-field-path': '.posts' } : null)}
+            {...(annotatePosts ? { 'data-sb-field-path': '.posts' } : null)}
         >
             {posts.map((post, index) => (
                 <article
@@ -258,23 +252,23 @@ function postsVariantC(props) {
                                         {post.title}
                                     </Link>
                                 </h3>
-                                <PostAttribution showAuthor={props.showAuthor} post={post} className="mt-2" />
-                                {props.showExcerpt && post.excerpt && (
+                                <PostAttribution showAuthor={showAuthor} post={post} className="mt-2" />
+                                {showExcerpt && post.excerpt && (
                                     <p className="mt-4" data-sb-field-path="excerpt">
                                         {post.excerpt}
                                     </p>
                                 )}
                             </div>
-                            {(props.showDate || props.showReadMoreLink) && (
+                            {(showDate || showReadMoreLink) && (
                                 <div className="mt-12 space-y-6">
-                                    {props.showDate && <PostDate post={post} className="mb-2" />}
-                                    {props.showReadMoreLink && (
+                                    {showDate && <PostDate post={post} className="mb-2" />}
+                                    {showReadMoreLink && (
                                         <div>
                                             <Link
                                                 href={getPageUrlPath(post)}
                                                 className="sb-component sb-component-block sb-component-button sb-component-button-primary"
                                             >
-                                                {props.readMoreLinkLabel && <span className="mr-3">{props.readMoreLinkLabel}</span>}
+                                                {readMoreLinkLabel && <span className="mr-3">{readMoreLinkLabel}</span>}
                                                 <ArrowRightIcon className="fill-current h-5 w-5" />
                                             </Link>
                                         </div>
@@ -289,17 +283,17 @@ function postsVariantC(props) {
     );
 }
 
-function postsVariantD(props) {
-    const posts = props.posts || [];
+function PostsVariantD(props) {
+    const { posts = [], showDate, showAuthor, showExcerpt, showReadMoreLink, readMoreLinkLabel, hasTopMargin, annotatePosts } = props;
     if (posts.length === 0) {
         return null;
     }
     return (
         <div
             className={classNames('grid', 'gap-y-12', {
-                'mt-12': props.title || props.subtitle || (props.actions || []).length > 0
+                'mt-12': hasTopMargin
             })}
-            {...(props.annotatePosts ? { 'data-sb-field-path': '.posts' } : null)}
+            {...(annotatePosts ? { 'data-sb-field-path': '.posts' } : null)}
         >
             {posts.map((post, index) => (
                 <article key={index} data-sb-object-id={post.__metadata?.id} className="sb-card overflow-hidden">
@@ -324,22 +318,22 @@ function postsVariantD(props) {
                                     {post.title}
                                 </Link>
                             </h3>
-                            <PostAttribution showAuthor={props.showAuthor} post={post} className="mt-2" />
-                            {props.showExcerpt && post.excerpt && (
+                            <PostAttribution showAuthor={showAuthor} post={post} className="mt-2" />
+                            {showExcerpt && post.excerpt && (
                                 <p className="mt-4" data-sb-field-path="excerpt">
                                     {post.excerpt}
                                 </p>
                             )}
-                            {(props.showDate || props.showReadMoreLink) && (
+                            {(showDate || showReadMoreLink) && (
                                 <div className="mt-12 space-y-6">
-                                    {props.showDate && <PostDate post={post} className="mb-2" />}
-                                    {props.showReadMoreLink && (
+                                    {showDate && <PostDate post={post} className="mb-2" />}
+                                    {showReadMoreLink && (
                                         <div>
                                             <Link
                                                 href={getPageUrlPath(post)}
                                                 className="sb-component sb-component-block sb-component-button sb-component-button-primary"
                                             >
-                                                {props.readMoreLinkLabel && <span className="mr-3">{props.readMoreLinkLabel}</span>}
+                                                {readMoreLinkLabel && <span className="mr-3">{readMoreLinkLabel}</span>}
                                                 <ArrowRightIcon className="fill-current h-5 w-5" />
                                             </Link>
                                         </div>
@@ -426,26 +420,4 @@ function postCategory(post) {
             {category.title}
         </Link>
     );
-}
-
-function mapMinHeightStyles(height) {
-    switch (height) {
-        case 'auto':
-            return 'min-h-0';
-        case 'screen':
-            return 'min-h-screen';
-    }
-    return null;
-}
-
-function mapMaxWidthStyles(width) {
-    switch (width) {
-        case 'narrow':
-            return 'max-w-5xl';
-        case 'wide':
-            return 'max-w-7xl';
-        case 'full':
-            return 'max-w-full';
-    }
-    return null;
 }

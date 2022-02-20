@@ -8,11 +8,32 @@ import Section from '../Section';
 import { Action } from '../../atoms';
 
 export default function HeroSection(props) {
-    const { type, elementId, colors, backgroundSize, backgroundImage, title, subtitle, text, media, actions = [], styles = {}, 'data-sb-field-path': fieldPath } = props;
+    const {
+        type,
+        elementId,
+        colors,
+        backgroundSize,
+        backgroundImage,
+        title,
+        subtitle,
+        text,
+        media,
+        actions = [],
+        styles = {},
+        'data-sb-field-path': fieldPath
+    } = props;
     const sectionFlexDirection = styles.self?.flexDirection ?? 'row';
     const sectionAlignItems = styles.self?.alignItems ?? 'center';
     return (
-        <Section type={type} elementId={elementId} colors={colors} backgroundSize={backgroundSize} backgroundImage={backgroundImage} styles={styles.self} data-sb-field-path={fieldPath}>
+        <Section
+            type={type}
+            elementId={elementId}
+            colors={colors}
+            backgroundSize={backgroundSize}
+            backgroundImage={backgroundImage}
+            styles={styles.self}
+            data-sb-field-path={fieldPath}
+        >
             <div
                 className={classNames('flex', mapFlexDirectionStyles(sectionFlexDirection), mapStyles({ alignItems: sectionAlignItems }), 'space-y-8', {
                     'lg:space-y-0 lg:space-x-8': sectionFlexDirection === 'row',
@@ -91,7 +112,7 @@ function HeroActions(props) {
         >
             <div className={classNames('flex', 'flex-wrap', 'items-center', '-mx-2', mapStyles(styles))} data-sb-field-path=".actions">
                 {actions.map((action, index) => (
-                    <Action key={index} {...action} className="my-2 mx-2 lg:whitespace-nowrap" data-sb-field-path={`.${index}`} />
+                    <Action key={index} {...action} className="mb-3 mx-2 lg:whitespace-nowrap" data-sb-field-path={`.${index}`} />
                 ))}
             </div>
         </div>

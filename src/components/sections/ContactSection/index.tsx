@@ -51,20 +51,21 @@ function ContactMedia({ media }) {
 }
 
 function ContactBody(props) {
+    const { title, text, styles = {} } = props;
     return (
         <>
-            {props.title && (
-                <h2 className={classNames(props.styles?.title ? mapStyles(props.styles?.title) : null)} data-sb-field-path=".title">
-                    {props.title}
+            {title && (
+                <h2 className={classNames(styles.title ? mapStyles(styles.title) : null)} data-sb-field-path=".title">
+                    {title}
                 </h2>
             )}
-            {props.text && (
+            {text && (
                 <Markdown
                     options={{ forceBlock: true, forceWrapper: true }}
-                    className={classNames('sb-markdown', props.styles?.text ? mapStyles(props.styles?.text) : null, { 'mt-4': props.title })}
+                    className={classNames('sb-markdown', styles.text ? mapStyles(styles.text) : null, { 'mt-4': title })}
                     data-sb-field-path=".text"
                 >
-                    {props.text}
+                    {text}
                 </Markdown>
             )}
         </>
