@@ -48,9 +48,9 @@ function TestimonialsVariantA(props) {
         return null;
     }
     return (
-        <div className={classNames('grid', 'md:grid-cols-2', 'gap-y-16', 'md:gap-y-20', { 'mt-16 sm:mt-20': hasTopMargin })} data-sb-field-path=".testimonials">
+        <div className={classNames('grid', 'md:grid-cols-2', 'gap-16', 'md:gap-y-20', { 'mt-16 sm:mt-20': hasTopMargin })} data-sb-field-path=".testimonials">
             {testimonials.map((testimonial, index) => (
-                <blockquote key={index} className={classNames(index % 2 === 0 ? 'md:pr-12' : 'md:pl-12')} data-sb-field-path={`.${index}`}>
+                <blockquote key={index} data-sb-field-path={`.${index}`}>
                     {testimonial.image && (
                         <div className="mb-8">
                             <ImageBlock {...testimonial.image} className="w-32 h-32 object-cover" data-sb-field-path=".image" />
@@ -113,11 +113,7 @@ function TestimonialsVariantB(props) {
                         <footer className="flex flex-wrap mt-6 md:mt-8">
                             {testimonial.image && (
                                 <div className="flex-shrink-0 mt-4 mr-6">
-                                    <ImageBlock
-                                        {...testimonial.image}
-                                        className="w-32 h-32 sm:w-48 sm:h-48 object-cover"
-                                        data-sb-field-path=".image"
-                                    />
+                                    <ImageBlock {...testimonial.image} className="w-32 h-32 sm:w-48 sm:h-48 object-cover" data-sb-field-path=".image" />
                                 </div>
                             )}
                             {(testimonial.name || testimonial.title) && (

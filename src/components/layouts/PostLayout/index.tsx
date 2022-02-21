@@ -18,9 +18,13 @@ export default function PostLayout(props) {
     return (
         <BaseLayout page={page} site={site}>
             <main id="main" className="sb-layout sb-post-layout">
-                <article className={classNames(colors, 'px-4', 'sm:px-8', 'py-14', 'lg:py-20')}>
+                <article className={classNames(colors, 'px-4', 'py-14', 'lg:py-20')}>
                     <div className="max-w-7xl mx-auto">
-                        {media && <div className="w-full mb-8 sm:mb-12"><PostMedia media={media} /></div>}
+                        {media && (
+                            <div className="w-full mb-8 sm:mb-12">
+                                <PostMedia media={media} />
+                            </div>
+                        )}
                         <header className="max-w-5xl mx-auto mb-12 text-left">
                             {title && <h1 data-sb-field-path="title">{title}</h1>}
                             <div className="text-lg mt-6">
