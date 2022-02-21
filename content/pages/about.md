@@ -8,8 +8,8 @@ sections:
       self:
         width: wide
         padding:
-          - pt-4
-          - pb-0
+          - pt-0
+          - pb-4
           - pl-0
           - pr-0
         justifyContent: center
@@ -30,13 +30,8 @@ sections:
       self:
         height: auto
         width: narrow
-        margin:
-          - mt-0
-          - mb-0
-          - ml-0
-          - mr-0
         padding:
-          - pt-36
+          - pt-32
           - pb-56
           - pr-4
           - pl-4
@@ -195,10 +190,10 @@ sections:
       self:
         width: wide
         padding:
-          - pt-8
+          - pt-4
           - pb-4
-          - pl-0
-          - pr-0
+          - pl-4
+          - pr-4
         justifyContent: center
         borderWidth: 1
         borderStyle: solid

@@ -348,15 +348,15 @@ function PostsVariantD(props) {
     );
 }
 
-function PostDate({ post, className = '' }) {
-    if (!post.date) {
+function PostDate({ post, className }) {
+    const date = post.date;
+    if (!date) {
         return null;
     }
-    const date = post.date;
     const dateTimeAttr = dayjs(date).format('YYYY-MM-DD HH:mm:ss');
     const formattedDate = dayjs(date).format('MM/DD/YYYY');
     return (
-        <div className={className ? className : null}>
+        <div className={className}>
             <time dateTime={dateTimeAttr} data-sb-field-path="date">
                 {formattedDate}
             </time>

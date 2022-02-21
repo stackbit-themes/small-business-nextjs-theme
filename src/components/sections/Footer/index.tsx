@@ -6,58 +6,57 @@ import { Social, Action, Link } from '../../atoms';
 import ImageBlock from '../../molecules/ImageBlock';
 
 export default function Footer(props) {
-    const colors = props.colors || 'colors-d';
-    const footerStyles = props.styles?.self || {};
-    const footerWidth = footerStyles.width || 'narrow';
+    const { colors = 'colors-d', styles = {}, annotationPrefix, ...rest } = props;
     return (
         <footer
-            className={classNames('sb-component', 'sb-component-footer', colors, footerStyles.padding || 'py-16 px-4')}
-            data-sb-field-path={`${props.annotationPrefix}:footer`}
+            className={classNames('sb-component', 'sb-component-footer', colors, styles.self?.padding ?? 'py-16 px-4')}
+            data-sb-field-path={`${annotationPrefix}:footer`}
         >
-            <div className={classNames('mx-auto', 'pt-16', mapMaxWidthStyles(footerWidth))}>{footerVariants(props)}</div>
+            <div className={classNames('mx-auto', mapFooterMaxWidthStyles(styles.self?.width ?? 'narrow'))}>
+                <FooterVariants {...rest} />
+            </div>
         </footer>
     );
 }
 
-function footerVariants(props) {
-    const variant = props.variant || 'variant-a';
+function FooterVariants(props) {
+    const { variant = 'variant-a', ...rest } = props;
     switch (variant) {
         case 'variant-a':
-            return footerVariantA(props);
+            return <FooterVariantA {...rest} />;
         case 'variant-b':
-            return footerVariantB(props);
+            return <FooterVariantB {...rest} />;
+        default:
+            return null;
     }
-    return null;
 }
 
-function footerVariantA(props) {
-    const primaryLinks = props.primaryLinks || [];
-    const socialLinks = props.socialLinks || [];
-    const legalLinks = props.legalLinks || [];
+function FooterVariantA(props) {
+    const { logo, title, text, primaryLinks = [], socialLinks = [], legalLinks = [], contacts, copyrightText } = props;
     return (
         <>
-            {(props.logo || props.title || props.text) && (
+            {(logo || title || text) && (
                 <div className="mb-12">
                     <Link href="/" className="sb-footer-logo flex items-center">
-                        {props.logo && <ImageBlock {...props.logo} className={classNames('max-h-12', { 'mr-2': props.title })} data-sb-field-path=".logo" />}
-                        {props.title && (
+                        {logo && <ImageBlock {...logo} className={classNames('max-h-12', { 'mr-2': title })} data-sb-field-path=".logo" />}
+                        {title && (
                             <span className="text-3xl font-medium" data-sb-field-path=".title">
-                                {props.title}
+                                {title}
                             </span>
                         )}
                     </Link>
-                    {props.text && (
+                    {text && (
                         <Markdown
                             options={{ forceBlock: true, forceWrapper: true }}
-                            className={classNames('sb-markdown', 'max-w-xl', { 'mt-8': props.title || props.logo })}
+                            className={classNames('sb-markdown', 'max-w-xl', { 'mt-8': title || logo })}
                             data-sb-field-path=".text"
                         >
-                            {props.text}
+                            {text}
                         </Markdown>
                     )}
                 </div>
             )}
-            {(primaryLinks.length > 0 || socialLinks.length > 0 || props.contacts) && (
+            {(primaryLinks.length > 0 || socialLinks.length > 0 || contacts) && (
                 <div className="sm:flex sm:justify-between sm:items-end">
                     {primaryLinks.length > 0 && (
                         <div className="mb-6">
@@ -70,7 +69,7 @@ function footerVariantA(props) {
                             </ul>
                         </div>
                     )}
-                    {(socialLinks.length > 0 || props.contacts) && (
+                    {(socialLinks.length > 0 || contacts) && (
                         <div className="mb-6">
                             {socialLinks.length > 0 && (
                                 <ul className="flex items-center mb-6 space-x-10" data-sb-field-path=".socialLinks">
@@ -81,19 +80,15 @@ function footerVariantA(props) {
                                     ))}
                                 </ul>
                             )}
-                            {props.contacts && <Contacts {...props.contacts} className="mb-6 space-y-4 text-lg" />}
+                            {contacts && <Contacts {...contacts} className="mb-6 space-y-4 text-lg" />}
                         </div>
                     )}
                 </div>
             )}
             <div className="border-t-2 border-current flex flex-col-reverse justify-between pt-6 lg:flex-row">
-            <Markdown
-                options={{ forceInline: true, forceWrapper: true, wrapper: 'p' }}
-                className="sb-markdown"
-                data-sb-field-path=".copyrightText"
-            >
-                {props.copyrightText}
-            </Markdown>
+                <Markdown options={{ forceInline: true, forceWrapper: true, wrapper: 'p' }} className="sb-markdown" data-sb-field-path=".copyrightText">
+                    {copyrightText}
+                </Markdown>
                 {legalLinks.length > 0 && (
                     <ul className="flex flex-col mb-6 space-y-2 lg:mb-0 sm:space-y-0 sm:space-x-5 sm:flex-row" data-sb-field-path=".legalLinks">
                         {legalLinks.map((link, index) => (
@@ -108,32 +103,28 @@ function footerVariantA(props) {
     );
 }
 
-function footerVariantB(props) {
-    const primaryLinks = props.primaryLinks || [];
-    const socialLinks = props.socialLinks || [];
-    const legalLinks = props.legalLinks || [];
+function FooterVariantB(props) {
+    const { logo, title, text, primaryLinks = [], socialLinks = [], legalLinks = [], contacts, copyrightText } = props;
     return (
         <>
             <div className="flex flex-col items-center pb-20 text-center">
-                {(props.logo || props.title || props.text) && (
+                {(logo || title || text) && (
                     <div className="mb-20">
                         <Link href="/" className="sb-footer-logo flex items-center justify-center">
-                            {props.logo && (
-                                <ImageBlock {...props.logo} className={classNames('max-h-12', { 'mr-2': props.title })} data-sb-field-path=".logo" />
-                            )}
-                            {props.title && (
+                            {logo && <ImageBlock {...logo} className={classNames('max-h-12', { 'mr-2': title })} data-sb-field-path=".logo" />}
+                            {title && (
                                 <span className="text-3xl font-medium" data-sb-field-path=".title">
-                                    {props.title}
+                                    {title}
                                 </span>
                             )}
                         </Link>
-                        {props.text && (
+                        {text && (
                             <Markdown
                                 options={{ forceBlock: true, forceWrapper: true }}
-                                className={classNames('sb-markdown', 'max-w-2xl', { 'mt-8': props.title || props.logo })}
+                                className={classNames('sb-markdown', 'max-w-2xl', { 'mt-8': title || logo })}
                                 data-sb-field-path=".text"
                             >
-                                {props.text}
+                                {text}
                             </Markdown>
                         )}
                     </div>
@@ -149,7 +140,7 @@ function footerVariantB(props) {
                         </ul>
                     </div>
                 )}
-                {(socialLinks.length > 0 || props.contacts) && (
+                {(socialLinks.length > 0 || contacts) && (
                     <div className="flex flex-wrap justify-evenly">
                         {socialLinks.length > 0 && (
                             <ul className="flex items-center justify-center mx-4 mb-4" data-sb-field-path=".socialLinks">
@@ -160,7 +151,7 @@ function footerVariantB(props) {
                                 ))}
                             </ul>
                         )}
-                        {props.contacts && <Contacts {...props.contacts} className="flex flex-wrap justify-center mx-4 mb-4" classNameItem="mx-4 mb-2" />}
+                        {contacts && <Contacts {...contacts} className="flex flex-wrap justify-center mx-4 mb-4" classNameItem="mx-4 mb-2" />}
                     </div>
                 )}
             </div>
@@ -174,22 +165,22 @@ function footerVariantB(props) {
                     'pt-8',
                     'lg:flex-row',
                     'lg:items-start',
-                    props.copyrightText && legalLinks.length > 0 ? 'lg:justify-between' : 'lg:justify-center'
+                    copyrightText && legalLinks.length > 0 ? 'lg:justify-between' : 'lg:justify-center'
                 )}
             >
-                {props.copyrightText && (
-                <Markdown
-                    options={{ forceInline: true, forceWrapper: true, wrapper: 'p' }}
-                    className={classNames('sb-markdown', { 'mt-6 lg:mt-0': legalLinks.length > 0 })}
-                    data-sb-field-path=".copyrightText"
-                >
-                    {props.copyrightText}
-                </Markdown>
+                {copyrightText && (
+                    <Markdown
+                        options={{ forceInline: true, forceWrapper: true, wrapper: 'p' }}
+                        className={classNames('sb-markdown', { 'mt-6 lg:mt-0': legalLinks.length > 0 })}
+                        data-sb-field-path=".copyrightText"
+                    >
+                        {copyrightText}
+                    </Markdown>
                 )}
                 {legalLinks.length > 0 && (
                     <ul className="flex flex-wrap justify-center" data-sb-field-path=".legalLinks">
                         {legalLinks.map((link, index) => (
-                            <li key={index} className={classNames('mx-4', 'mb-2', { 'lg:ml-8 lg:mr-0': props.copyrightText })}>
+                            <li key={index} className={classNames('mx-4', 'mb-2', { 'lg:ml-8 lg:mr-0': copyrightText })}>
                                 <Action {...link} data-sb-field-path={`.${index}`} />
                             </li>
                         ))}
@@ -201,38 +192,33 @@ function footerVariantB(props) {
 }
 
 function Contacts(props) {
-    const cssClasses = props.className || null;
-    const cssClassesItem = props.classNameItem || null;
+    const { phoneNumber, phoneAltText, email, emailAltText, address, addressAltText, elementId, className, classNameItem } = props;
     return (
-        <div className={cssClasses} data-sb-field-path=".contacts">
-            {props.phoneNumber && (
-                <p className={cssClassesItem}>
-                    <a
-                        href={`tel:${props.phoneNumber}`}
-                        aria-label={props.phoneAltText}
-                        data-sb-field-path=".phoneNumber .phoneNumber#@href .phoneAltText#@title"
-                    >
-                        {props.phoneNumber}
+        <div id={elementId || null} className={className} data-sb-field-path=".contacts">
+            {phoneNumber && (
+                <p className={classNameItem}>
+                    <a href={`tel:${phoneNumber}`} aria-label={phoneAltText} data-sb-field-path=".phoneNumber .phoneNumber#@href .phoneAltText#@title">
+                        {phoneNumber}
                     </a>
                 </p>
             )}
-            {props.email && (
-                <p className={cssClassesItem}>
-                    <a href={`mailto:${props.email}`} aria-label={props.emailAltText} data-sb-field-path=".email .email#@href .emailAltText#@title">
-                        {props.email}
+            {email && (
+                <p className={classNameItem}>
+                    <a href={`mailto:${email}`} aria-label={emailAltText} data-sb-field-path=".email .email#@href .emailAltText#@title">
+                        {email}
                     </a>
                 </p>
             )}
-            {props.address && (
-                <p className={cssClassesItem}>
+            {address && (
+                <p className={classNameItem}>
                     <a
-                        href={`https://www.google.com/maps/search/${props.address}`}
-                        aria-label={props.addressAltText}
+                        href={`https://www.google.com/maps/search/${address}`}
+                        aria-label={addressAltText}
                         target="_blank"
                         rel="noopener noreferrer"
                         data-sb-field-path=".address .address#@href .addressAltText#@title"
                     >
-                        {props.address}
+                        {address}
                     </a>
                 </p>
             )}
@@ -240,7 +226,7 @@ function Contacts(props) {
     );
 }
 
-function mapMaxWidthStyles(width) {
+function mapFooterMaxWidthStyles(width) {
     switch (width) {
         case 'narrow':
             return 'max-w-7xl';
@@ -248,6 +234,7 @@ function mapMaxWidthStyles(width) {
             return 'max-w-screen-2xl';
         case 'full':
             return 'max-w-full';
+        default:
+            return null;
     }
-    return null;
 }
